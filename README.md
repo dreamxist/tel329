@@ -2,6 +2,11 @@
 
 Cuatro actividades sobre Contiki-NG + Cooja. Entrega: **jueves 27-ago-2026**.
 
+> 📖 **¿Querés entender qué hace cada actividad sin leer código?**
+> Andá a **[COMO-FUNCIONA.md](COMO-FUNCIONA.md)**: la explicación en simple, los
+> datos reales de cada corrida y los problemas que aparecieron. Este README es la
+> parte operativa (instalar, compilar, correr).
+
 ---
 
 ## Convención única del repo
@@ -22,6 +27,7 @@ cada nodo para que el panel *Mote Output* se entienda sin descifrar direcciones.
 ```
 tel329-tarea1/
 ├── nodos.h                       convención compartida (ID base + nombres)
+├── COMO-FUNCIONA.md              la explicación en simple + los datos de las corridas
 ├── verificar-sintaxis.sh         chequeo rápido de las cuatro sin levantar Cooja
 ├── actividad1-broadcast-boton/   broadcast NullNet disparado por el botón
 ├── actividad2-unicast-etimer/    unicast + LED + intervalo creciente 2→20 s
