@@ -1,0 +1,167 @@
+Random seed: 123456
+236000 n2 [INFO: Main      ] Starting Contiki-NG-813b19f
+236000 n2 [INFO: Main      ] - Routing: nullrouting
+236000 n2 [INFO: Main      ] - Net: nullnet
+236000 n2 [INFO: Main      ] - MAC: TSCH
+236000 n2 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+236000 n2 [INFO: Main      ] - 802.15.4 TSCH default hopping sequence length: 4
+236000 n2 [INFO: Main      ] Node ID: 0
+236000 n2 [INFO: Main      ] Link-layer address: 0200.0000.0000.0000
+236000 n2 [INFO: A4        ] slotframe de 10 ranuras, channel offset 0
+236000 n2 [INFO: A4        ]   ranura  0 | canal 0 | RX baliza EB
+236000 n2 [INFO: A4        ]   ranura  1 | canal 0 | TX al coordinador
+236000 n2 [INFO: A4        ]   ranura  2 | canal 0 | dormir (radio apagada)
+236000 n2 [INFO: A4        ]   ranura  3 | canal 0 | dormir (radio apagada)
+236000 n2 [INFO: A4        ]   ranura  4 | canal 0 | dormir (radio apagada)
+236000 n2 [INFO: A4        ]   ranura  5 | canal 0 | dormir (radio apagada)
+236000 n2 [INFO: A4        ]   ranura  6 | canal 0 | dormir (radio apagada)
+236000 n2 [INFO: A4        ]   ranura  7 | canal 0 | dormir (radio apagada)
+236000 n2 [INFO: A4        ]   ranura  8 | canal 0 | dormir (radio apagada)
+236000 n2 [INFO: A4        ]   ranura  9 | canal 0 | dormir (radio apagada)
+236000 n2 [INFO: A4        ] nodo 2 (Francisco): esperando balizas para sincronizar
+348000 n4 [INFO: Main      ] Starting Contiki-NG-813b19f
+348000 n4 [INFO: Main      ] - Routing: nullrouting
+348000 n4 [INFO: Main      ] - Net: nullnet
+348000 n4 [INFO: Main      ] - MAC: TSCH
+348000 n4 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+348000 n4 [INFO: Main      ] - 802.15.4 TSCH default hopping sequence length: 4
+348000 n4 [INFO: Main      ] Node ID: 0
+348000 n4 [INFO: Main      ] Link-layer address: 0400.0000.0000.0000
+348000 n4 [INFO: A4        ] slotframe de 10 ranuras, channel offset 0
+348000 n4 [INFO: A4        ]   ranura  0 | canal 0 | RX baliza EB
+348000 n4 [INFO: A4        ]   ranura  1 | canal 0 | dormir (radio apagada)
+348000 n4 [INFO: A4        ]   ranura  2 | canal 0 | dormir (radio apagada)
+348000 n4 [INFO: A4        ]   ranura  3 | canal 0 | TX al coordinador
+348000 n4 [INFO: A4        ]   ranura  4 | canal 0 | dormir (radio apagada)
+348000 n4 [INFO: A4        ]   ranura  5 | canal 0 | dormir (radio apagada)
+348000 n4 [INFO: A4        ]   ranura  6 | canal 0 | dormir (radio apagada)
+348000 n4 [INFO: A4        ]   ranura  7 | canal 0 | dormir (radio apagada)
+348000 n4 [INFO: A4        ]   ranura  8 | canal 0 | dormir (radio apagada)
+348000 n4 [INFO: A4        ]   ranura  9 | canal 0 | dormir (radio apagada)
+348000 n4 [INFO: A4        ] nodo 4 (Berioska): esperando balizas para sincronizar
+382000 n1 [INFO: Main      ] Starting Contiki-NG-813b19f
+382000 n1 [INFO: Main      ] - Routing: nullrouting
+382000 n1 [INFO: Main      ] - Net: nullnet
+382000 n1 [INFO: Main      ] - MAC: TSCH
+382000 n1 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+382000 n1 [INFO: Main      ] - 802.15.4 TSCH default hopping sequence length: 4
+382000 n1 [INFO: Main      ] Node ID: 0
+382000 n1 [INFO: Main      ] Link-layer address: 0100.0000.0000.0000
+382000 n1 [INFO: A4        ] slotframe de 10 ranuras, channel offset 0
+382000 n1 [INFO: A4        ]   ranura  0 | canal 0 | TX baliza EB
+382000 n1 [INFO: A4        ]   ranura  1 | canal 0 | RX de un sensor
+382000 n1 [INFO: A4        ]   ranura  2 | canal 0 | RX de un sensor
+382000 n1 [INFO: A4        ]   ranura  3 | canal 0 | RX de un sensor
+382000 n1 [INFO: A4        ]   ranura  4 | canal 0 | dormir (radio apagada)
+382000 n1 [INFO: A4        ]   ranura  5 | canal 0 | dormir (radio apagada)
+382000 n1 [INFO: A4        ]   ranura  6 | canal 0 | dormir (radio apagada)
+382000 n1 [INFO: A4        ]   ranura  7 | canal 0 | dormir (radio apagada)
+382000 n1 [INFO: A4        ]   ranura  8 | canal 0 | dormir (radio apagada)
+382000 n1 [INFO: A4        ]   ranura  9 | canal 0 | dormir (radio apagada)
+382000 n1 [INFO: A4        ] nodo 1 (Pancho): soy el coordinador de tiempo
+899000 n3 [INFO: Main      ] Starting Contiki-NG-813b19f
+899000 n3 [INFO: Main      ] - Routing: nullrouting
+899000 n3 [INFO: Main      ] - Net: nullnet
+899000 n3 [INFO: Main      ] - MAC: TSCH
+899000 n3 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+899000 n3 [INFO: Main      ] - 802.15.4 TSCH default hopping sequence length: 4
+899000 n3 [INFO: Main      ] Node ID: 0
+899000 n3 [INFO: Main      ] Link-layer address: 0300.0000.0000.0000
+899000 n3 [INFO: A4        ] slotframe de 10 ranuras, channel offset 0
+899000 n3 [INFO: A4        ]   ranura  0 | canal 0 | RX baliza EB
+899000 n3 [INFO: A4        ]   ranura  1 | canal 0 | dormir (radio apagada)
+899000 n3 [INFO: A4        ]   ranura  2 | canal 0 | TX al coordinador
+899000 n3 [INFO: A4        ]   ranura  3 | canal 0 | dormir (radio apagada)
+899000 n3 [INFO: A4        ]   ranura  4 | canal 0 | dormir (radio apagada)
+899000 n3 [INFO: A4        ]   ranura  5 | canal 0 | dormir (radio apagada)
+899000 n3 [INFO: A4        ]   ranura  6 | canal 0 | dormir (radio apagada)
+899000 n3 [INFO: A4        ]   ranura  7 | canal 0 | dormir (radio apagada)
+899000 n3 [INFO: A4        ]   ranura  8 | canal 0 | dormir (radio apagada)
+899000 n3 [INFO: A4        ]   ranura  9 | canal 0 | dormir (radio apagada)
+899000 n3 [INFO: A4        ] nodo 3 (Ignacio): esperando balizas para sincronizar
+4236000 n2 [INFO: A4        ] TX en ranura 1: "dato 0 de Francisco"
+4307072 n1 [INFO: A4        ] RX: "dato 0 de Francisco" desde 0200.0000.0000.0000
+4348000 n4 [INFO: A4        ] TX en ranura 3: "dato 0 de Berioska"
+4427040 n1 [INFO: A4        ] RX: "dato 0 de Berioska" desde 0400.0000.0000.0000
+4899000 n3 [INFO: A4        ] TX en ranura 2: "dato 0 de Ignacio"
+4917008 n1 [INFO: A4        ] RX: "dato 0 de Ignacio" desde 0300.0000.0000.0000
+8236000 n2 [INFO: A4        ] TX en ranura 1: "dato 1 de Francisco"
+8307072 n1 [INFO: A4        ] RX: "dato 1 de Francisco" desde 0200.0000.0000.0000
+8348000 n4 [INFO: A4        ] TX en ranura 3: "dato 1 de Berioska"
+8427040 n1 [INFO: A4        ] RX: "dato 1 de Berioska" desde 0400.0000.0000.0000
+8899000 n3 [INFO: A4        ] TX en ranura 2: "dato 1 de Ignacio"
+8917008 n1 [INFO: A4        ] RX: "dato 1 de Ignacio" desde 0300.0000.0000.0000
+12236000 n2 [INFO: A4        ] TX en ranura 1: "dato 2 de Francisco"
+12307072 n1 [INFO: A4        ] RX: "dato 2 de Francisco" desde 0200.0000.0000.0000
+12348000 n4 [INFO: A4        ] TX en ranura 3: "dato 2 de Berioska"
+12427040 n1 [INFO: A4        ] RX: "dato 2 de Berioska" desde 0400.0000.0000.0000
+12899000 n3 [INFO: A4        ] TX en ranura 2: "dato 2 de Ignacio"
+12917008 n1 [INFO: A4        ] RX: "dato 2 de Ignacio" desde 0300.0000.0000.0000
+16236000 n2 [INFO: A4        ] TX en ranura 1: "dato 3 de Francisco"
+16307072 n1 [INFO: A4        ] RX: "dato 3 de Francisco" desde 0200.0000.0000.0000
+16348000 n4 [INFO: A4        ] TX en ranura 3: "dato 3 de Berioska"
+16427040 n1 [INFO: A4        ] RX: "dato 3 de Berioska" desde 0400.0000.0000.0000
+16899000 n3 [INFO: A4        ] TX en ranura 2: "dato 3 de Ignacio"
+16917008 n1 [INFO: A4        ] RX: "dato 3 de Ignacio" desde 0300.0000.0000.0000
+20236000 n2 [INFO: A4        ] TX en ranura 1: "dato 4 de Francisco"
+20307072 n1 [INFO: A4        ] RX: "dato 4 de Francisco" desde 0200.0000.0000.0000
+20348000 n4 [INFO: A4        ] TX en ranura 3: "dato 4 de Berioska"
+20427040 n1 [INFO: A4        ] RX: "dato 4 de Berioska" desde 0400.0000.0000.0000
+20899000 n3 [INFO: A4        ] TX en ranura 2: "dato 4 de Ignacio"
+20917008 n1 [INFO: A4        ] RX: "dato 4 de Ignacio" desde 0300.0000.0000.0000
+24236000 n2 [INFO: A4        ] TX en ranura 1: "dato 5 de Francisco"
+24307072 n1 [INFO: A4        ] RX: "dato 5 de Francisco" desde 0200.0000.0000.0000
+24348000 n4 [INFO: A4        ] TX en ranura 3: "dato 5 de Berioska"
+24427040 n1 [INFO: A4        ] RX: "dato 5 de Berioska" desde 0400.0000.0000.0000
+24899000 n3 [INFO: A4        ] TX en ranura 2: "dato 5 de Ignacio"
+24917008 n1 [INFO: A4        ] RX: "dato 5 de Ignacio" desde 0300.0000.0000.0000
+28236000 n2 [INFO: A4        ] TX en ranura 1: "dato 6 de Francisco"
+28307072 n1 [INFO: A4        ] RX: "dato 6 de Francisco" desde 0200.0000.0000.0000
+28348000 n4 [INFO: A4        ] TX en ranura 3: "dato 6 de Berioska"
+28427040 n1 [INFO: A4        ] RX: "dato 6 de Berioska" desde 0400.0000.0000.0000
+28899000 n3 [INFO: A4        ] TX en ranura 2: "dato 6 de Ignacio"
+28917008 n1 [INFO: A4        ] RX: "dato 6 de Ignacio" desde 0300.0000.0000.0000
+32236000 n2 [INFO: A4        ] TX en ranura 1: "dato 7 de Francisco"
+32307072 n1 [INFO: A4        ] RX: "dato 7 de Francisco" desde 0200.0000.0000.0000
+32348000 n4 [INFO: A4        ] TX en ranura 3: "dato 7 de Berioska"
+32427040 n1 [INFO: A4        ] RX: "dato 7 de Berioska" desde 0400.0000.0000.0000
+32899000 n3 [INFO: A4        ] TX en ranura 2: "dato 7 de Ignacio"
+32917008 n1 [INFO: A4        ] RX: "dato 7 de Ignacio" desde 0300.0000.0000.0000
+36236000 n2 [INFO: A4        ] TX en ranura 1: "dato 8 de Francisco"
+36307072 n1 [INFO: A4        ] RX: "dato 8 de Francisco" desde 0200.0000.0000.0000
+36348000 n4 [INFO: A4        ] TX en ranura 3: "dato 8 de Berioska"
+36427040 n1 [INFO: A4        ] RX: "dato 8 de Berioska" desde 0400.0000.0000.0000
+36899000 n3 [INFO: A4        ] TX en ranura 2: "dato 8 de Ignacio"
+36917008 n1 [INFO: A4        ] RX: "dato 8 de Ignacio" desde 0300.0000.0000.0000
+40236000 n2 [INFO: A4        ] TX en ranura 1: "dato 9 de Francisco"
+40307072 n1 [INFO: A4        ] RX: "dato 9 de Francisco" desde 0200.0000.0000.0000
+40348000 n4 [INFO: A4        ] TX en ranura 3: "dato 9 de Berioska"
+40427040 n1 [INFO: A4        ] RX: "dato 9 de Berioska" desde 0400.0000.0000.0000
+40899000 n3 [INFO: A4        ] TX en ranura 2: "dato 9 de Ignacio"
+40917008 n1 [INFO: A4        ] RX: "dato 9 de Ignacio" desde 0300.0000.0000.0000
+44236000 n2 [INFO: A4        ] TX en ranura 1: "dato 10 de Francisco"
+44307104 n1 [INFO: A4        ] RX: "dato 10 de Francisco" desde 0200.0000.0000.0000
+44348000 n4 [INFO: A4        ] TX en ranura 3: "dato 10 de Berioska"
+44427072 n1 [INFO: A4        ] RX: "dato 10 de Berioska" desde 0400.0000.0000.0000
+44899000 n3 [INFO: A4        ] TX en ranura 2: "dato 10 de Ignacio"
+44917040 n1 [INFO: A4        ] RX: "dato 10 de Ignacio" desde 0300.0000.0000.0000
+48236000 n2 [INFO: A4        ] TX en ranura 1: "dato 11 de Francisco"
+48307104 n1 [INFO: A4        ] RX: "dato 11 de Francisco" desde 0200.0000.0000.0000
+48348000 n4 [INFO: A4        ] TX en ranura 3: "dato 11 de Berioska"
+48427072 n1 [INFO: A4        ] RX: "dato 11 de Berioska" desde 0400.0000.0000.0000
+48899000 n3 [INFO: A4        ] TX en ranura 2: "dato 11 de Ignacio"
+48917040 n1 [INFO: A4        ] RX: "dato 11 de Ignacio" desde 0300.0000.0000.0000
+52236000 n2 [INFO: A4        ] TX en ranura 1: "dato 12 de Francisco"
+52307104 n1 [INFO: A4        ] RX: "dato 12 de Francisco" desde 0200.0000.0000.0000
+52348000 n4 [INFO: A4        ] TX en ranura 3: "dato 12 de Berioska"
+52427072 n1 [INFO: A4        ] RX: "dato 12 de Berioska" desde 0400.0000.0000.0000
+52899000 n3 [INFO: A4        ] TX en ranura 2: "dato 12 de Ignacio"
+52917040 n1 [INFO: A4        ] RX: "dato 12 de Ignacio" desde 0300.0000.0000.0000
+56236000 n2 [INFO: A4        ] TX en ranura 1: "dato 13 de Francisco"
+56307104 n1 [INFO: A4        ] RX: "dato 13 de Francisco" desde 0200.0000.0000.0000
+56348000 n4 [INFO: A4        ] TX en ranura 3: "dato 13 de Berioska"
+56427072 n1 [INFO: A4        ] RX: "dato 13 de Berioska" desde 0400.0000.0000.0000
+56899000 n3 [INFO: A4        ] TX en ranura 2: "dato 13 de Ignacio"
+56917040 n1 [INFO: A4        ] RX: "dato 13 de Ignacio" desde 0300.0000.0000.0000
+TEST OK
+Test ended at simulation time: 60000000

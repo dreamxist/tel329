@@ -1,0 +1,9 @@
+build/
+obj_*/
+*.cooja
+*.o
+*.d
+*.map
+*.log
+!evidencia/*.log
+/contiki-ng

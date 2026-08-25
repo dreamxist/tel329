@@ -1,0 +1,34 @@
+Random seed: 123456
+236000 n2 [INFO: Main      ] Starting Contiki-NG-813b19f
+236000 n2 [INFO: Main      ] - Routing: nullrouting
+236000 n2 [INFO: Main      ] - Net: nullnet
+236000 n2 [INFO: Main      ] - MAC: CSMA
+236000 n2 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+236000 n2 [INFO: Main      ] - 802.15.4 Default channel: 26
+236000 n2 [INFO: Main      ] Node ID: 0
+236000 n2 [INFO: Main      ] Link-layer address: 0200.0000.0000.0000
+236000 n2 [INFO: A1        ] nodo 2 (Francisco) listo, presiona el boton para transmitir
+382000 n1 [INFO: Main      ] Starting Contiki-NG-813b19f
+382000 n1 [INFO: Main      ] - Routing: nullrouting
+382000 n1 [INFO: Main      ] - Net: nullnet
+382000 n1 [INFO: Main      ] - MAC: CSMA
+382000 n1 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+382000 n1 [INFO: Main      ] - 802.15.4 Default channel: 26
+382000 n1 [INFO: Main      ] Node ID: 0
+382000 n1 [INFO: Main      ] Link-layer address: 0100.0000.0000.0000
+382000 n1 [INFO: A1        ] nodo 1 (Pancho) listo, presiona el boton para transmitir
+899000 n3 [INFO: Main      ] Starting Contiki-NG-813b19f
+899000 n3 [INFO: Main      ] - Routing: nullrouting
+899000 n3 [INFO: Main      ] - Net: nullnet
+899000 n3 [INFO: Main      ] - MAC: CSMA
+899000 n3 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+899000 n3 [INFO: Main      ] - 802.15.4 Default channel: 26
+899000 n3 [INFO: Main      ] Node ID: 0
+899000 n3 [INFO: Main      ] Link-layer address: 0300.0000.0000.0000
+899000 n3 [INFO: A1        ] nodo 3 (Ignacio) listo, presiona el boton para transmitir
+*** click de boton en el nodo 2
+5236000 n2 [INFO: A1        ] TX broadcast: "hola desde Francisco"
+5280152 n1 [INFO: A1        ] RX broadcast: "hola desde Francisco" desde 0200.0000.0000.0000
+5280152 n3 [INFO: A1        ] RX broadcast: "hola desde Francisco" desde 0200.0000.0000.0000
+TEST OK
+Test ended at simulation time: 60000000

@@ -1,0 +1,78 @@
+Random seed: 123456
+236000 n2 [INFO: Main      ] Starting Contiki-NG-813b19f
+236000 n2 [INFO: Main      ] - Routing: nullrouting
+236000 n2 [INFO: Main      ] - Net: nullnet
+236000 n2 [INFO: Main      ] - MAC: CSMA
+236000 n2 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+236000 n2 [INFO: Main      ] - 802.15.4 Default channel: 26
+236000 n2 [INFO: Main      ] Node ID: 0
+236000 n2 [INFO: Main      ] Link-layer address: 0200.0000.0000.0000
+236000 n2 [INFO: A2        ] nodo 2 (Francisco) transmite hacia la estacion base
+382000 n1 [INFO: Main      ] Starting Contiki-NG-813b19f
+382000 n1 [INFO: Main      ] - Routing: nullrouting
+382000 n1 [INFO: Main      ] - Net: nullnet
+382000 n1 [INFO: Main      ] - MAC: CSMA
+382000 n1 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+382000 n1 [INFO: Main      ] - 802.15.4 Default channel: 26
+382000 n1 [INFO: Main      ] Node ID: 0
+382000 n1 [INFO: Main      ] Link-layer address: 0100.0000.0000.0000
+382000 n1 [INFO: A2        ] nodo 1 (Pancho) es la estacion base - solo recibe
+899000 n3 [INFO: Main      ] Starting Contiki-NG-813b19f
+899000 n3 [INFO: Main      ] - Routing: nullrouting
+899000 n3 [INFO: Main      ] - Net: nullnet
+899000 n3 [INFO: Main      ] - MAC: CSMA
+899000 n3 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+899000 n3 [INFO: Main      ] - 802.15.4 Default channel: 26
+899000 n3 [INFO: Main      ] Node ID: 0
+899000 n3 [INFO: Main      ] Link-layer address: 0300.0000.0000.0000
+899000 n3 [INFO: A2        ] nodo 3 (Ignacio) transmite hacia la estacion base
+2236000 n2 [INFO: A2        ] TX unicast (intervalo 2s): "msg 0 de Francisco" hacia 0100.0000.0000.0000
+2281376 n1 [INFO: A2        ] RX unicast: "msg 0 de Francisco | leido por Pancho" desde 0200.0000.0000.0000
+2899000 n3 [INFO: A2        ] TX unicast (intervalo 2s): "msg 0 de Ignacio" hacia 0100.0000.0000.0000
+2909312 n1 [INFO: A2        ] RX unicast: "msg 0 de Ignacio | leido por Pancho" desde 0300.0000.0000.0000
+6236000 n2 [INFO: A2        ] TX unicast (intervalo 4s): "msg 1 de Francisco" hacia 0100.0000.0000.0000
+6268376 n1 [INFO: A2        ] RX unicast: "msg 1 de Francisco | leido por Pancho" desde 0200.0000.0000.0000
+6899000 n3 [INFO: A2        ] TX unicast (intervalo 4s): "msg 1 de Ignacio" hacia 0100.0000.0000.0000
+6918312 n1 [INFO: A2        ] RX unicast: "msg 1 de Ignacio | leido por Pancho" desde 0300.0000.0000.0000
+12236000 n2 [INFO: A2        ] TX unicast (intervalo 6s): "msg 2 de Francisco" hacia 0100.0000.0000.0000
+12278376 n1 [INFO: A2        ] RX unicast: "msg 2 de Francisco | leido por Pancho" desde 0200.0000.0000.0000
+12899000 n3 [INFO: A2        ] TX unicast (intervalo 6s): "msg 2 de Ignacio" hacia 0100.0000.0000.0000
+12933312 n1 [INFO: A2        ] RX unicast: "msg 2 de Ignacio | leido por Pancho" desde 0300.0000.0000.0000
+20236000 n2 [INFO: A2        ] TX unicast (intervalo 8s): "msg 3 de Francisco" hacia 0100.0000.0000.0000
+20251376 n1 [INFO: A2        ] RX unicast: "msg 3 de Francisco | leido por Pancho" desde 0200.0000.0000.0000
+20899000 n3 [INFO: A2        ] TX unicast (intervalo 8s): "msg 3 de Ignacio" hacia 0100.0000.0000.0000
+20905312 n1 [INFO: A2        ] RX unicast: "msg 3 de Ignacio | leido por Pancho" desde 0300.0000.0000.0000
+30236000 n2 [INFO: A2        ] TX unicast (intervalo 10s): "msg 4 de Francisco" hacia 0100.0000.0000.0000
+30269376 n1 [INFO: A2        ] RX unicast: "msg 4 de Francisco | leido por Pancho" desde 0200.0000.0000.0000
+30899000 n3 [INFO: A2        ] TX unicast (intervalo 10s): "msg 4 de Ignacio" hacia 0100.0000.0000.0000
+30938312 n1 [INFO: A2        ] RX unicast: "msg 4 de Ignacio | leido por Pancho" desde 0300.0000.0000.0000
+42236000 n2 [INFO: A2        ] TX unicast (intervalo 12s): "msg 5 de Francisco" hacia 0100.0000.0000.0000
+42240376 n1 [INFO: A2        ] RX unicast: "msg 5 de Francisco | leido por Pancho" desde 0200.0000.0000.0000
+42899000 n3 [INFO: A2        ] TX unicast (intervalo 12s): "msg 5 de Ignacio" hacia 0100.0000.0000.0000
+42912312 n1 [INFO: A2        ] RX unicast: "msg 5 de Ignacio | leido por Pancho" desde 0300.0000.0000.0000
+56236000 n2 [INFO: A2        ] TX unicast (intervalo 14s): "msg 6 de Francisco" hacia 0100.0000.0000.0000
+56279376 n1 [INFO: A2        ] RX unicast: "msg 6 de Francisco | leido por Pancho" desde 0200.0000.0000.0000
+56899000 n3 [INFO: A2        ] TX unicast (intervalo 14s): "msg 6 de Ignacio" hacia 0100.0000.0000.0000
+56944312 n1 [INFO: A2        ] RX unicast: "msg 6 de Ignacio | leido por Pancho" desde 0300.0000.0000.0000
+72236000 n2 [INFO: A2        ] TX unicast (intervalo 16s): "msg 7 de Francisco" hacia 0100.0000.0000.0000
+72244376 n1 [INFO: A2        ] RX unicast: "msg 7 de Francisco | leido por Pancho" desde 0200.0000.0000.0000
+72899000 n3 [INFO: A2        ] TX unicast (intervalo 16s): "msg 7 de Ignacio" hacia 0100.0000.0000.0000
+72923312 n1 [INFO: A2        ] RX unicast: "msg 7 de Ignacio | leido por Pancho" desde 0300.0000.0000.0000
+90236000 n2 [INFO: A2        ] TX unicast (intervalo 18s): "msg 8 de Francisco" hacia 0100.0000.0000.0000
+90249376 n1 [INFO: A2        ] RX unicast: "msg 8 de Francisco | leido por Pancho" desde 0200.0000.0000.0000
+90899000 n3 [INFO: A2        ] TX unicast (intervalo 18s): "msg 8 de Ignacio" hacia 0100.0000.0000.0000
+90921312 n1 [INFO: A2        ] RX unicast: "msg 8 de Ignacio | leido por Pancho" desde 0300.0000.0000.0000
+110236000 n2 [INFO: A2        ] TX unicast (intervalo 20s): "msg 9 de Francisco" hacia 0100.0000.0000.0000
+110269376 n1 [INFO: A2        ] RX unicast: "msg 9 de Francisco | leido por Pancho" desde 0200.0000.0000.0000
+110899000 n3 [INFO: A2        ] TX unicast (intervalo 20s): "msg 9 de Ignacio" hacia 0100.0000.0000.0000
+110911312 n1 [INFO: A2        ] RX unicast: "msg 9 de Ignacio | leido por Pancho" desde 0300.0000.0000.0000
+112236000 n2 [INFO: A2        ] TX unicast (intervalo 2s): "msg 10 de Francisco" hacia 0100.0000.0000.0000
+112257408 n1 [INFO: A2        ] RX unicast: "msg 10 de Francisco | leido por Pancho" desde 0200.0000.0000.0000
+112899000 n3 [INFO: A2        ] TX unicast (intervalo 2s): "msg 10 de Ignacio" hacia 0100.0000.0000.0000
+112910344 n1 [INFO: A2        ] RX unicast: "msg 10 de Ignacio | leido por Pancho" desde 0300.0000.0000.0000
+116236000 n2 [INFO: A2        ] TX unicast (intervalo 4s): "msg 11 de Francisco" hacia 0100.0000.0000.0000
+116271408 n1 [INFO: A2        ] RX unicast: "msg 11 de Francisco | leido por Pancho" desde 0200.0000.0000.0000
+116899000 n3 [INFO: A2        ] TX unicast (intervalo 4s): "msg 11 de Ignacio" hacia 0100.0000.0000.0000
+116936344 n1 [INFO: A2        ] RX unicast: "msg 11 de Ignacio | leido por Pancho" desde 0300.0000.0000.0000
+TEST OK
+Test ended at simulation time: 120000000

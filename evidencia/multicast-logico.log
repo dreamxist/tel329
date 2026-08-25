@@ -1,0 +1,95 @@
+Random seed: 123456
+236000 n2 [INFO: Main      ] Starting Contiki-NG-813b19f
+236000 n2 [INFO: Main      ] - Routing: nullrouting
+236000 n2 [INFO: Main      ] - Net: nullnet
+236000 n2 [INFO: Main      ] - MAC: CSMA
+236000 n2 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+236000 n2 [INFO: Main      ] - 802.15.4 Default channel: 26
+236000 n2 [INFO: Main      ] Node ID: 0
+236000 n2 [INFO: Main      ] Link-layer address: 0200.0000.0000.0000
+236000 n2 [INFO: A3        ] nodo 2 (Francisco) escucha - pertenece al grupo A
+348000 n4 [INFO: Main      ] Starting Contiki-NG-813b19f
+348000 n4 [INFO: Main      ] - Routing: nullrouting
+348000 n4 [INFO: Main      ] - Net: nullnet
+348000 n4 [INFO: Main      ] - MAC: CSMA
+348000 n4 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+348000 n4 [INFO: Main      ] - 802.15.4 Default channel: 26
+348000 n4 [INFO: Main      ] Node ID: 0
+348000 n4 [INFO: Main      ] Link-layer address: 0400.0000.0000.0000
+348000 n4 [INFO: A3        ] nodo 4 (Berioska) escucha - pertenece al grupo B
+382000 n1 [INFO: Main      ] Starting Contiki-NG-813b19f
+382000 n1 [INFO: Main      ] - Routing: nullrouting
+382000 n1 [INFO: Main      ] - Net: nullnet
+382000 n1 [INFO: Main      ] - MAC: CSMA
+382000 n1 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+382000 n1 [INFO: Main      ] - 802.15.4 Default channel: 26
+382000 n1 [INFO: Main      ] Node ID: 0
+382000 n1 [INFO: Main      ] Link-layer address: 0100.0000.0000.0000
+382000 n1 [INFO: A3        ] nodo 1 (Pancho) es el emisor - alterna entre grupo A y B
+899000 n3 [INFO: Main      ] Starting Contiki-NG-813b19f
+899000 n3 [INFO: Main      ] - Routing: nullrouting
+899000 n3 [INFO: Main      ] - Net: nullnet
+899000 n3 [INFO: Main      ] - MAC: CSMA
+899000 n3 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+899000 n3 [INFO: Main      ] - 802.15.4 Default channel: 26
+899000 n3 [INFO: Main      ] Node ID: 0
+899000 n3 [INFO: Main      ] Link-layer address: 0300.0000.0000.0000
+899000 n3 [INFO: A3        ] nodo 3 (Ignacio) escucha - pertenece al grupo A
+4382000 n1 [INFO: A3        ] TX broadcast dirigido al grupo A: "aviso 0 para el grupo A"
+4385536 n2 [INFO: A3        ] PROCESA: grupo A - "aviso 0 para el grupo A"
+4385536 n3 [INFO: A3        ] PROCESA: grupo A - "aviso 0 para el grupo A"
+4385536 n4 [INFO: A3        ] DESCARTA: paquete del grupo A y yo soy del grupo B
+8382000 n1 [INFO: A3        ] TX broadcast dirigido al grupo B: "aviso 1 para el grupo B"
+8424536 n2 [INFO: A3        ] DESCARTA: paquete del grupo B y yo soy del grupo A
+8424536 n3 [INFO: A3        ] DESCARTA: paquete del grupo B y yo soy del grupo A
+8424536 n4 [INFO: A3        ] PROCESA: grupo B - "aviso 1 para el grupo B"
+12382000 n1 [INFO: A3        ] TX broadcast dirigido al grupo A: "aviso 2 para el grupo A"
+12416536 n2 [INFO: A3        ] PROCESA: grupo A - "aviso 2 para el grupo A"
+12416536 n3 [INFO: A3        ] PROCESA: grupo A - "aviso 2 para el grupo A"
+12416536 n4 [INFO: A3        ] DESCARTA: paquete del grupo A y yo soy del grupo B
+16382000 n1 [INFO: A3        ] TX broadcast dirigido al grupo B: "aviso 3 para el grupo B"
+16387536 n2 [INFO: A3        ] DESCARTA: paquete del grupo B y yo soy del grupo A
+16387536 n3 [INFO: A3        ] DESCARTA: paquete del grupo B y yo soy del grupo A
+16387536 n4 [INFO: A3        ] PROCESA: grupo B - "aviso 3 para el grupo B"
+20382000 n1 [INFO: A3        ] TX broadcast dirigido al grupo A: "aviso 4 para el grupo A"
+20392536 n2 [INFO: A3        ] PROCESA: grupo A - "aviso 4 para el grupo A"
+20392536 n3 [INFO: A3        ] PROCESA: grupo A - "aviso 4 para el grupo A"
+20392536 n4 [INFO: A3        ] DESCARTA: paquete del grupo A y yo soy del grupo B
+24382000 n1 [INFO: A3        ] TX broadcast dirigido al grupo B: "aviso 5 para el grupo B"
+24417536 n2 [INFO: A3        ] DESCARTA: paquete del grupo B y yo soy del grupo A
+24417536 n3 [INFO: A3        ] DESCARTA: paquete del grupo B y yo soy del grupo A
+24417536 n4 [INFO: A3        ] PROCESA: grupo B - "aviso 5 para el grupo B"
+28382000 n1 [INFO: A3        ] TX broadcast dirigido al grupo A: "aviso 6 para el grupo A"
+28407536 n2 [INFO: A3        ] PROCESA: grupo A - "aviso 6 para el grupo A"
+28407536 n3 [INFO: A3        ] PROCESA: grupo A - "aviso 6 para el grupo A"
+28407536 n4 [INFO: A3        ] DESCARTA: paquete del grupo A y yo soy del grupo B
+32382000 n1 [INFO: A3        ] TX broadcast dirigido al grupo B: "aviso 7 para el grupo B"
+32418536 n2 [INFO: A3        ] DESCARTA: paquete del grupo B y yo soy del grupo A
+32418536 n3 [INFO: A3        ] DESCARTA: paquete del grupo B y yo soy del grupo A
+32418536 n4 [INFO: A3        ] PROCESA: grupo B - "aviso 7 para el grupo B"
+36382000 n1 [INFO: A3        ] TX broadcast dirigido al grupo A: "aviso 8 para el grupo A"
+36391536 n2 [INFO: A3        ] PROCESA: grupo A - "aviso 8 para el grupo A"
+36391536 n3 [INFO: A3        ] PROCESA: grupo A - "aviso 8 para el grupo A"
+36391536 n4 [INFO: A3        ] DESCARTA: paquete del grupo A y yo soy del grupo B
+40382000 n1 [INFO: A3        ] TX broadcast dirigido al grupo B: "aviso 9 para el grupo B"
+40395536 n2 [INFO: A3        ] DESCARTA: paquete del grupo B y yo soy del grupo A
+40395536 n3 [INFO: A3        ] DESCARTA: paquete del grupo B y yo soy del grupo A
+40395536 n4 [INFO: A3        ] PROCESA: grupo B - "aviso 9 para el grupo B"
+44382000 n1 [INFO: A3        ] TX broadcast dirigido al grupo A: "aviso 10 para el grupo A"
+44415536 n2 [INFO: A3        ] PROCESA: grupo A - "aviso 10 para el grupo A"
+44415536 n3 [INFO: A3        ] PROCESA: grupo A - "aviso 10 para el grupo A"
+44415536 n4 [INFO: A3        ] DESCARTA: paquete del grupo A y yo soy del grupo B
+48382000 n1 [INFO: A3        ] TX broadcast dirigido al grupo B: "aviso 11 para el grupo B"
+48407536 n2 [INFO: A3        ] DESCARTA: paquete del grupo B y yo soy del grupo A
+48407536 n3 [INFO: A3        ] DESCARTA: paquete del grupo B y yo soy del grupo A
+48407536 n4 [INFO: A3        ] PROCESA: grupo B - "aviso 11 para el grupo B"
+52382000 n1 [INFO: A3        ] TX broadcast dirigido al grupo A: "aviso 12 para el grupo A"
+52388536 n2 [INFO: A3        ] PROCESA: grupo A - "aviso 12 para el grupo A"
+52388536 n3 [INFO: A3        ] PROCESA: grupo A - "aviso 12 para el grupo A"
+52388536 n4 [INFO: A3        ] DESCARTA: paquete del grupo A y yo soy del grupo B
+56382000 n1 [INFO: A3        ] TX broadcast dirigido al grupo B: "aviso 13 para el grupo B"
+56387536 n2 [INFO: A3        ] DESCARTA: paquete del grupo B y yo soy del grupo A
+56387536 n3 [INFO: A3        ] DESCARTA: paquete del grupo B y yo soy del grupo A
+56387536 n4 [INFO: A3        ] PROCESA: grupo B - "aviso 13 para el grupo B"
+TEST OK
+Test ended at simulation time: 60000000
