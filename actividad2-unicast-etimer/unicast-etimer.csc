@@ -4,6 +4,8 @@
     <title>A2 unicast con etimer</title>
     <randomseed>123456</randomseed>
     <motedelay_us>1000000</motedelay_us>
+    <!-- 20x permite observar la escalera 2..20 s sin inundar la interfaz. -->
+    <speedlimit>20.0</speedlimit>
     <radiomedium>
       org.contikios.cooja.radiomediums.UDGM
       <transmitting_range>50.0</transmitting_range>
@@ -99,10 +101,13 @@
     org.contikios.cooja.plugins.Visualizer
     <plugin_config>
       <moterelations>true</moterelations>
+      <skin>org.contikios.cooja.plugins.skins.MoteTypeVisualizerSkin</skin>
       <skin>org.contikios.cooja.plugins.skins.IDVisualizerSkin</skin>
+      <skin>org.contikios.cooja.plugins.skins.GridVisualizerSkin</skin>
+      <skin>org.contikios.cooja.plugins.skins.TrafficVisualizerSkin</skin>
       <skin>org.contikios.cooja.plugins.skins.UDGMVisualizerSkin</skin>
       <skin>org.contikios.cooja.plugins.skins.LEDVisualizerSkin</skin>
-      <viewport>3.0 0.0 0.0 3.0 120.0 120.0</viewport>
+      <viewport>8.0 0.0 0.0 8.0 100.0 100.0</viewport>
     </plugin_config>
     <width>400</width><z>3</z><height>400</height>
     <location_x>1</location_x><location_y>1</location_y>
