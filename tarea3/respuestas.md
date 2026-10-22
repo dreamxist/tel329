@@ -35,25 +35,48 @@ El cliente imprime el valor al arrancar, así que no hay que creerlo:
 [INFO: A1cli] CLOCK_SECOND=1000 -> intervalo = 0 ticks
 ```
 
-### Qué pasa en la red con 0 ticks
+### Qué pasa en la red con 0 ticks — medido
 
 Un `etimer` armado en 0 está vencido en la siguiente vuelta del planificador:
 `PROCESS_WAIT_EVENT_UNTIL(etimer_expired(...))` deja pasar de inmediato y el
 proceso del cliente queda girando tan rápido como el planificador lo despacha.
-Consecuencias, en orden de aparición:
 
-1. **La radio no duerme.** El nodo pasa de transmitir una vez cada 10 s a
-   intentarlo de forma continua. Todo el argumento de ahorro de energía de una
-   WSN — el de la Lección 1 y el que la Tarea 1 demostró con el slotframe TSCH
-   — desaparece: el *duty cycle* se va al techo.
-2. **La cola de CSMA se llena y empieza a descartar.** El cliente genera
-   datagramas más rápido de lo que la MAC puede sacarlos.
-3. **El tráfico de control de RPL queda tapado.** Los DIO y DAO compiten por el
-   mismo medio contra el flood de la aplicación, así que la convergencia del
-   DODAG se retrasa o no ocurre.
-4. **`node_is_reachable()` puede no volverse nunca verdadero**, y el log se
-   llena de `todavia sin ruta hacia la raiz` mientras `missed_tx` sube. El nodo
-   se inunda a sí mismo antes de tener con quién hablar.
+Las cuatro corridas están en `evidencia/` (Cooja headless, semilla fija
+`123456`, cuatro nodos a un salto). Esto es lo que dicen:
+
+| | base (10 s) | `1e-5` · `1e-10` · `1e-20` |
+|---|---|---|
+| Intervalo | 10000 ticks | **0 ticks** |
+| Clientes con ruta en la ventana | 3 de 3 | **1 de 3** |
+| Envíos del nodo 3 | 16 en 180 s | ≥500 en 1,9 s |
+| Recibidos por la raíz | 45, **0 perdidos** | 65 de ≥500 (**≈87% de pérdida**) |
+| Nodo 2 | manda normal | **30.000 vueltas sin ruta** y nunca manda |
+
+Los números del nodo 2 son el corazón del asunto: entre 3,81 s y 18,56 s
+simulados gira **más de 30.000 veces** preguntando por una ruta —unas 2.000
+veces por segundo simulado— y no consigue ninguna. El nodo 3 sí entra al DODAG
+a los 16,65 s, y desde ahí manda 500 datagramas en menos de 2 s de los que a la
+raíz llegan 65: el último que registra es `seq=64`, así que el resto muere en la
+cola o en colisiones.
+
+**Los tres casos degenerados dan la misma corrida.** Los logs de `1e-5`,
+`1e-10` y `1e-20` difieren en **exactamente 3 líneas** sobre 4004: las que
+imprimen el nombre del caso. Timestamps, contadores y pérdidas son idénticos.
+Es la prueba más directa de que no son tres escenarios: es uno, etiquetado de
+tres formas.
+
+### Un hallazgo lateral: la convergencia del caso base es un artefacto
+
+En el caso base el primer envío exitoso ocurre a los **23,58 s**, y es fácil
+leerlo como "RPL tardó 23 s en converger". No es eso. El cliente consulta
+`node_is_reachable()` una vez por periodo, o sea cada 10 s: chequea a los
+3,58 s, a los 13,58 s y a los 23,58 s. La ruta pudo existir en cualquier
+momento de esa última ventana.
+
+El caso degenerado, que consulta continuamente, la detecta en el instante en que
+aparece: **16,65 s**. Dicho de otra forma, el periodo de muestreo de la
+aplicación no se puede confundir con el tiempo de convergencia de la red — y el
+escenario roto es el que lo deja ver.
 
 ### El fondo: `etimer` no puede expresar sub-milisegundos
 
@@ -65,16 +88,20 @@ su propia base `RTIMER_SECOND`, que es la herramienta correcta cuando se
 necesita precisión por debajo del tick del sistema — y es lo que usa TSCH por
 dentro para sus ranuras.
 
-### [FALTA] Evidencia
+### Evidencia
 
-- [ ] Correr los cuatro casos y guardar los logs en `evidencia/` (hay script:
-      `./correr-casos.sh`, ver README).
+Hecho: los cuatro logs están en `evidencia/a1-*.log`, generados con
+`./correr-casos.sh` (ver README).
+
 - [ ] Captura del *Timeline* del caso base: ráfagas separadas, radio apagada
       entre medio.
 - [ ] Captura del *Timeline* de un caso degenerado: actividad continua y
       colisiones.
-- [ ] Mote output del servidor con el `acumulado:` de cada caso — es la cifra
-      que compara los cuatro de una sola mirada.
+- [ ] **Pregunta abierta**: los nodos 2 y 4 no consiguen ruta en los 18,6 s que
+      alcanzó la corrida. ¿Nunca la consiguen, o solo tardan más porque el
+      nodo 3 les tapa el medio? Se responde subiendo `MAX_LINEAS` en
+      `js/volcar-log.js` y dejando correr los 90 s completos. **No afirmar que
+      la red no se forma hasta tener ese dato.**
 
 ---
 

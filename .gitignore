@@ -10,3 +10,4 @@ obj_*/
 
 # worktrees que crean los agentes
 .claude/worktrees/
+.headless-*

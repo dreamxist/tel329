@@ -1,0 +1,991 @@
+Random seed: 123456
+236000 n2 [INFO: Main      ] Starting Contiki-NG-7a4df8a-dirty
+236000 n2 [INFO: Main      ] - Routing: RPL Lite
+236000 n2 [INFO: Main      ] - Net: sicslowpan
+236000 n2 [INFO: Main      ] - MAC: CSMA
+236000 n2 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+236000 n2 [INFO: Main      ] - 802.15.4 Default channel: 26
+236000 n2 [INFO: Main      ] Node ID: 2
+236000 n2 [INFO: Main      ] Link-layer address: 0002.0002.0002.0002
+236000 n2 [INFO: RPL       ] initializing
+236000 n2 [INFO: Main      ] Tentative link-local IPv6 address: fe80::202:2:2:2
+236000 n2 [INFO: A1cli     ] nodo 2 (Francisco) cliente, caso base: 10 * CLOCK_SECOND
+236000 n2 [INFO: A1cli     ] CLOCK_SECOND=1000 -> intervalo = 10000 ticks
+348000 n4 [INFO: Main      ] Starting Contiki-NG-7a4df8a-dirty
+348000 n4 [INFO: Main      ] - Routing: RPL Lite
+348000 n4 [INFO: Main      ] - Net: sicslowpan
+348000 n4 [INFO: Main      ] - MAC: CSMA
+348000 n4 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+348000 n4 [INFO: Main      ] - 802.15.4 Default channel: 26
+348000 n4 [INFO: Main      ] Node ID: 4
+348000 n4 [INFO: Main      ] Link-layer address: 0004.0004.0004.0004
+348000 n4 [INFO: RPL       ] initializing
+348000 n4 [INFO: Main      ] Tentative link-local IPv6 address: fe80::204:4:4:4
+348000 n4 [INFO: A1cli     ] nodo 4 (Berioska) cliente, caso base: 10 * CLOCK_SECOND
+348000 n4 [INFO: A1cli     ] CLOCK_SECOND=1000 -> intervalo = 10000 ticks
+382000 n1 [INFO: Main      ] Starting Contiki-NG-7a4df8a-dirty
+382000 n1 [INFO: Main      ] - Routing: RPL Lite
+382000 n1 [INFO: Main      ] - Net: sicslowpan
+382000 n1 [INFO: Main      ] - MAC: CSMA
+382000 n1 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+382000 n1 [INFO: Main      ] - 802.15.4 Default channel: 26
+382000 n1 [INFO: Main      ] Node ID: 1
+382000 n1 [INFO: Main      ] Link-layer address: 0001.0001.0001.0001
+382000 n1 [INFO: RPL       ] initializing
+382000 n1 [INFO: Main      ] Tentative link-local IPv6 address: fe80::201:1:1:1
+382000 n1 [INFO: A1srv     ] nodo 1 (Pancho) arranca como raiz del DODAG
+382000 n1 [INFO: RPL       ] IPv6 addresses:
+382000 n1 [INFO: RPL       ] -- fd00::201:1:1:1
+382000 n1 [INFO: RPL       ] -- fe80::201:1:1:1
+382000 n1 [INFO: RPL       ] reset DIO timer (Init root)
+382000 n1 [INFO: RPL       ] created DAG with instance ID 0, DAG ID fd00::201:1:1:1, rank 128
+382000 n1 [INFO: RPL       ] created a new RPL DAG
+899000 n3 [INFO: Main      ] Starting Contiki-NG-7a4df8a-dirty
+899000 n3 [INFO: Main      ] - Routing: RPL Lite
+899000 n3 [INFO: Main      ] - Net: sicslowpan
+899000 n3 [INFO: Main      ] - MAC: CSMA
+899000 n3 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+899000 n3 [INFO: Main      ] - 802.15.4 Default channel: 26
+899000 n3 [INFO: Main      ] Node ID: 3
+899000 n3 [INFO: Main      ] Link-layer address: 0003.0003.0003.0003
+899000 n3 [INFO: RPL       ] initializing
+899000 n3 [INFO: Main      ] Tentative link-local IPv6 address: fe80::203:3:3:3
+899000 n3 [INFO: A1cli     ] nodo 3 (Ignacio) cliente, caso base: 10 * CLOCK_SECOND
+899000 n3 [INFO: A1cli     ] CLOCK_SECOND=1000 -> intervalo = 10000 ticks
+3487000 n1 [INFO: RPL       ] sending a multicast-DIO with rank 128 to ff02::1a
+3499040 n2 [INFO: RPL       ] received a multicast-DIO from fe80::201:1:1:1, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 128
+3499040 n2 [INFO: RPL       ] adding global IP address fd00::202:2:2:2
+3499040 n2 [INFO: RPL       ] reset MRHOF
+3499040 n2 [INFO: RPL       ] initialized DAG with instance ID 0, DAG ID fd00::201:1:1:1, prexix fd00::/64, rank 65535
+3499040 n2 [WARN: RPL       ] just joined, no parent yet, setting timer for leaving
+3499040 n2 [INFO: RPL       ] refreshing lifetime
+3499040 n2 [INFO: RPL       ] best parent is not fresh, schedule urgent probing to fe80::201:1:1:1
+3499040 n3 [INFO: RPL       ] received a multicast-DIO from fe80::201:1:1:1, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 128
+3499040 n3 [INFO: RPL       ] adding global IP address fd00::203:3:3:3
+3499040 n3 [INFO: RPL       ] reset MRHOF
+3499040 n3 [INFO: RPL       ] initialized DAG with instance ID 0, DAG ID fd00::201:1:1:1, prexix fd00::/64, rank 65535
+3499040 n3 [WARN: RPL       ] just joined, no parent yet, setting timer for leaving
+3499040 n3 [INFO: RPL       ] refreshing lifetime
+3499040 n3 [INFO: RPL       ] best parent is not fresh, schedule urgent probing to fe80::201:1:1:1
+3499040 n4 [INFO: RPL       ] received a multicast-DIO from fe80::201:1:1:1, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 128
+3499040 n4 [INFO: RPL       ] adding global IP address fd00::204:4:4:4
+3499040 n4 [INFO: RPL       ] reset MRHOF
+3499040 n4 [INFO: RPL       ] initialized DAG with instance ID 0, DAG ID fd00::201:1:1:1, prexix fd00::/64, rank 65535
+3499040 n4 [WARN: RPL       ] just joined, no parent yet, setting timer for leaving
+3499040 n4 [INFO: RPL       ] refreshing lifetime
+3499040 n4 [INFO: RPL       ] best parent is not fresh, schedule urgent probing to fe80::201:1:1:1
+3581000 n3 [INFO: A1cli     ] todavia sin ruta hacia la raiz (intento 0)
+3813000 n2 [INFO: A1cli     ] todavia sin ruta hacia la raiz (intento 0)
+4132000 n3 [INFO: RPL       ] probing fe80::201:1:1:1 (urgent) last tx 0 min ago
+4132000 n3 [INFO: RPL       ] sending a unicast-DIO with rank 65535 to fe80::201:1:1:1
+4178200 n2 [WARN: CSMA      ] not for us
+4178200 n4 [WARN: CSMA      ] not for us
+4179296 n1 [INFO: RPL       ] received a unicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 65535
+4179296 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 224
+4179296 n3 [INFO: RPL       ] best parent is not fresh, schedule urgent probing to fe80::201:1:1:1
+5175000 n2 [INFO: RPL       ] probing fe80::201:1:1:1 (urgent) last tx 0 min ago
+5175000 n2 [INFO: RPL       ] sending a unicast-DIO with rank 65535 to fe80::201:1:1:1
+5219200 n3 [WARN: CSMA      ] not for us
+5219200 n4 [WARN: CSMA      ] not for us
+5220296 n1 [INFO: RPL       ] received a unicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 65535
+5220296 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 224
+5220296 n2 [INFO: RPL       ] best parent is not fresh, schedule urgent probing to fe80::201:1:1:1
+5375000 n4 [INFO: RPL       ] probing fe80::201:1:1:1 (urgent) last tx 0 min ago
+5375000 n4 [INFO: RPL       ] sending a unicast-DIO with rank 65535 to fe80::201:1:1:1
+5418200 n2 [WARN: CSMA      ] not for us
+5418200 n3 [WARN: CSMA      ] not for us
+5419296 n1 [INFO: RPL       ] received a unicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 65535
+5419296 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 224
+5419296 n4 [INFO: RPL       ] best parent is not fresh, schedule urgent probing to fe80::201:1:1:1
+6519000 n3 [INFO: RPL       ] probing fe80::201:1:1:1 (urgent) last tx 0 min ago
+6519000 n3 [INFO: RPL       ] sending a unicast-DIO with rank 65535 to fe80::201:1:1:1
+6532200 n2 [WARN: CSMA      ] not for us
+6532200 n4 [WARN: CSMA      ] not for us
+6533296 n1 [INFO: RPL       ] received a unicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 65535
+6533296 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 200
+6533296 n3 [INFO: RPL       ] best parent is not fresh, schedule urgent probing to fe80::201:1:1:1
+7461000 n4 [INFO: A1cli     ] todavia sin ruta hacia la raiz (intento 0)
+8250000 n3 [INFO: RPL       ] probing fe80::201:1:1:1 (urgent) last tx 0 min ago
+8250000 n3 [INFO: RPL       ] sending a unicast-DIO with rank 65535 to fe80::201:1:1:1
+8290200 n2 [WARN: CSMA      ] not for us
+8290200 n4 [WARN: CSMA      ] not for us
+8291296 n1 [INFO: RPL       ] received a unicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 65535
+8291296 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 182
+8291296 n3 [INFO: RPL       ] best parent is not fresh, schedule urgent probing to fe80::201:1:1:1
+8599000 n4 [INFO: RPL       ] probing fe80::201:1:1:1 (urgent) last tx 0 min ago
+8599000 n4 [INFO: RPL       ] sending a unicast-DIO with rank 65535 to fe80::201:1:1:1
+8644200 n2 [WARN: CSMA      ] not for us
+8644200 n3 [WARN: CSMA      ] not for us
+8645296 n1 [INFO: RPL       ] received a unicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 65535
+8645296 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 200
+8645296 n4 [INFO: RPL       ] best parent is not fresh, schedule urgent probing to fe80::201:1:1:1
+8829000 n1 [INFO: RPL       ] sending a multicast-DIO with rank 128 to ff02::1a
+8856040 n2 [INFO: RPL       ] received a multicast-DIO from fe80::201:1:1:1, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 128
+8856040 n3 [INFO: RPL       ] received a multicast-DIO from fe80::201:1:1:1, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 128
+8856040 n4 [INFO: RPL       ] received a multicast-DIO from fe80::201:1:1:1, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 128
+9109000 n2 [INFO: RPL       ] probing fe80::201:1:1:1 (urgent) last tx 0 min ago
+9109000 n2 [INFO: RPL       ] sending a unicast-DIO with rank 65535 to fe80::201:1:1:1
+9143200 n3 [WARN: CSMA      ] not for us
+9143200 n4 [WARN: CSMA      ] not for us
+9144296 n1 [INFO: RPL       ] received a unicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 65535
+9144296 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 200
+9144296 n2 [INFO: RPL       ] best parent is not fresh, schedule urgent probing to fe80::201:1:1:1
+10021000 n2 [INFO: RPL       ] probing fe80::201:1:1:1 (urgent) last tx 0 min ago
+10021000 n2 [INFO: RPL       ] sending a unicast-DIO with rank 65535 to fe80::201:1:1:1
+10044200 n3 [WARN: CSMA      ] not for us
+10044200 n4 [WARN: CSMA      ] not for us
+10045296 n1 [INFO: RPL       ] received a unicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 65535
+10045296 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 182
+10045296 n2 [INFO: RPL       ] best parent is not fresh, schedule urgent probing to fe80::201:1:1:1
+10382000 n1 [INFO: A1srv     ] acumulado: 0 peticiones recibidas
+11262000 n3 [INFO: RPL       ] probing fe80::201:1:1:1 (urgent) last tx 0 min ago
+11262000 n3 [INFO: RPL       ] sending a unicast-DIO with rank 65535 to fe80::201:1:1:1
+11278200 n2 [WARN: CSMA      ] not for us
+11278200 n4 [WARN: CSMA      ] not for us
+11279296 n1 [INFO: RPL       ] received a unicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 65535
+11279296 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 176
+11279296 n3 [INFO: RPL       ] parent switch: (NULL IP addr) -> fe80::201:1:1:1
+11279296 n3 [WARN: RPL       ] found parent: fe80::201:1:1:1, staying in DAG
+11279296 n3 [INFO: RPL       ] nbr: own state, addr fd00::203:3:3:3, DAG state: joined, MOP 1 OCP 1 rank 304 max-rank 1328, dioint 0, nbr count 1 (Parent switch)
+11279296 n3 [INFO: RPL       ] nbr: fe80::201:1:1:1  128,   176 =>   304 --  4 rbafp (last tx 0 min ago)
+11279296 n3 [INFO: RPL       ] nbr: end of list
+11654000 n4 [INFO: RPL       ] probing fe80::201:1:1:1 (urgent) last tx 0 min ago
+11654000 n4 [INFO: RPL       ] sending a unicast-DIO with rank 65535 to fe80::201:1:1:1
+11661200 n2 [WARN: CSMA      ] not for us
+11661200 n3 [WARN: CSMA      ] not for us
+11662296 n1 [INFO: RPL       ] received a unicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 65535
+11662296 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 182
+11662296 n4 [INFO: RPL       ] best parent is not fresh, schedule urgent probing to fe80::201:1:1:1
+13503000 n2 [INFO: RPL       ] probing fe80::201:1:1:1 (urgent) last tx 0 min ago
+13503000 n2 [INFO: RPL       ] sending a unicast-DIO with rank 65535 to fe80::201:1:1:1
+13513200 n3 [WARN: CSMA      ] not for us
+13513200 n4 [WARN: CSMA      ] not for us
+13514296 n1 [INFO: RPL       ] received a unicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 65535
+13514296 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 176
+13514296 n2 [INFO: RPL       ] parent switch: (NULL IP addr) -> fe80::201:1:1:1
+13514296 n2 [WARN: RPL       ] found parent: fe80::201:1:1:1, staying in DAG
+13514296 n2 [INFO: RPL       ] nbr: own state, addr fd00::202:2:2:2, DAG state: joined, MOP 1 OCP 1 rank 304 max-rank 1328, dioint 0, nbr count 1 (Parent switch)
+13514296 n2 [INFO: RPL       ] nbr: fe80::201:1:1:1  128,   176 =>   304 --  4 rbafp (last tx 0 min ago)
+13514296 n2 [INFO: RPL       ] nbr: end of list
+13581000 n3 [INFO: A1cli     ] todavia sin ruta hacia la raiz (intento 1)
+13813000 n2 [INFO: A1cli     ] todavia sin ruta hacia la raiz (intento 1)
+14886000 n4 [INFO: RPL       ] probing fe80::201:1:1:1 (urgent) last tx 0 min ago
+14886000 n4 [INFO: RPL       ] sending a unicast-DIO with rank 65535 to fe80::201:1:1:1
+14901200 n2 [WARN: CSMA      ] not for us
+14901200 n3 [WARN: CSMA      ] not for us
+14902296 n1 [INFO: RPL       ] received a unicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 65535
+14902296 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 176
+14902296 n4 [INFO: RPL       ] parent switch: (NULL IP addr) -> fe80::201:1:1:1
+14902296 n4 [WARN: RPL       ] found parent: fe80::201:1:1:1, staying in DAG
+14902296 n4 [INFO: RPL       ] nbr: own state, addr fd00::204:4:4:4, DAG state: joined, MOP 1 OCP 1 rank 304 max-rank 1328, dioint 0, nbr count 1 (Parent switch)
+14902296 n4 [INFO: RPL       ] nbr: fe80::201:1:1:1  128,   176 =>   304 --  4 rbafp (last tx 0 min ago)
+14902296 n4 [INFO: RPL       ] nbr: end of list
+16603000 n3 [INFO: RPL       ] sending a DAO seqno 241, tx count 1, lifetime 30, prefix fd00::203:3:3:3 to fd00::201:1:1:1, parent fe80::201:1:1:1
+16603000 n3 [INFO: RPL       ] creating hop-by-hop option
+16628656 n2 [WARN: CSMA      ] not for us
+16628656 n4 [WARN: CSMA      ] not for us
+16629752 n1 [INFO: RPL       ] ext hdr: packet from fd00::203:3:3:3 to fd00::201:1:1:1 going up, sender closer 0 (304 < 128), rank error 0, loop detected 0
+16629752 n1 [INFO: RPL       ] received a DAO from fd00::203:3:3:3, seqno 241, lifetime 30, prefix fd00::203:3:3:3, prefix length 128, parent fd00::201:1:1:1 
+16629752 n1 [INFO: RPL       ] sending a DAO-ACK seqno 241 to fd00::203:3:3:3 with status 0
+16629752 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::203:3:3:3 
+16629752 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+16629752 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 171
+16638312 n2 [WARN: CSMA      ] not for us
+16638312 n4 [WARN: CSMA      ] not for us
+16639408 n3 [INFO: RPL       ] received a DAO-ACK with seqno 241 (241 241) and status 0 from fd00::201:1:1:1
+16639408 n3 [INFO: RPL       ] reset DIO timer (Reachable)
+16639408 n1 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 224
+17461000 n4 [INFO: A1cli     ] todavia sin ruta hacia la raiz (intento 1)
+18785000 n3 [INFO: RPL       ] sending a multicast-DIO with rank 299 to ff02::1a
+18828040 n1 [INFO: RPL       ] received a multicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 299
+18828040 n2 [INFO: RPL       ] received a multicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 299
+18828040 n4 [INFO: RPL       ] received a multicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 299
+19328000 n2 [INFO: RPL       ] sending a DAO seqno 241, tx count 1, lifetime 30, prefix fd00::202:2:2:2 to fd00::201:1:1:1, parent fe80::201:1:1:1
+19328000 n2 [INFO: RPL       ] creating hop-by-hop option
+19355656 n3 [WARN: CSMA      ] not for us
+19355656 n4 [WARN: CSMA      ] not for us
+19356752 n1 [INFO: RPL       ] ext hdr: packet from fd00::202:2:2:2 to fd00::201:1:1:1 going up, sender closer 0 (304 < 128), rank error 0, loop detected 0
+19356752 n1 [INFO: RPL       ] received a DAO from fd00::202:2:2:2, seqno 241, lifetime 30, prefix fd00::202:2:2:2, prefix length 128, parent fd00::201:1:1:1 
+19356752 n1 [INFO: RPL       ] sending a DAO-ACK seqno 241 to fd00::202:2:2:2 with status 0
+19356752 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::202:2:2:2 
+19356752 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+19356752 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 171
+19369312 n3 [WARN: CSMA      ] not for us
+19369312 n4 [WARN: CSMA      ] not for us
+19370408 n2 [INFO: RPL       ] received a DAO-ACK with seqno 241 (241 241) and status 0 from fd00::201:1:1:1
+19370408 n2 [INFO: RPL       ] reset DIO timer (Reachable)
+19370408 n1 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 224
+19670000 n4 [INFO: RPL       ] sending a DAO seqno 241, tx count 1, lifetime 30, prefix fd00::204:4:4:4 to fd00::201:1:1:1, parent fe80::201:1:1:1
+19670000 n4 [INFO: RPL       ] creating hop-by-hop option
+19684656 n2 [WARN: CSMA      ] not for us
+19684656 n3 [WARN: CSMA      ] not for us
+19685752 n1 [INFO: RPL       ] ext hdr: packet from fd00::204:4:4:4 to fd00::201:1:1:1 going up, sender closer 0 (304 < 128), rank error 0, loop detected 0
+19685752 n1 [INFO: RPL       ] received a DAO from fd00::204:4:4:4, seqno 241, lifetime 30, prefix fd00::204:4:4:4, prefix length 128, parent fd00::201:1:1:1 
+19685752 n1 [INFO: RPL       ] sending a DAO-ACK seqno 241 to fd00::204:4:4:4 with status 0
+19685752 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::204:4:4:4 
+19685752 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+19685752 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 171
+19718312 n2 [WARN: CSMA      ] not for us
+19718312 n3 [WARN: CSMA      ] not for us
+19719408 n4 [INFO: RPL       ] received a DAO-ACK with seqno 241 (241 241) and status 0 from fd00::201:1:1:1
+19719408 n4 [INFO: RPL       ] reset DIO timer (Reachable)
+19719408 n1 [INFO: RPL       ] packet sent to 0004.0004.0004.0004, status 0, tx 1, new link metric 224
+20382000 n1 [INFO: A1srv     ] acumulado: 0 peticiones recibidas
+21665000 n2 [INFO: RPL       ] sending a multicast-DIO with rank 299 to ff02::1a
+21689040 n1 [INFO: RPL       ] received a multicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 299
+21689040 n3 [INFO: RPL       ] received a multicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 299
+21689040 n4 [INFO: RPL       ] received a multicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 299
+23324000 n4 [INFO: RPL       ] sending a multicast-DIO with rank 299 to ff02::1a
+23365040 n1 [INFO: RPL       ] received a multicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 299
+23365040 n2 [INFO: RPL       ] received a multicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 299
+23365040 n3 [INFO: RPL       ] received a multicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 299
+23581000 n3 [INFO: RPL       ] creating hop-by-hop option
+23582000 n3 [INFO: A1cli     ] tx 0 'id=3 seq=0 t=24' (rx 0, perdidos 0)
+23602728 n2 [WARN: CSMA      ] not for us
+23602728 n4 [WARN: CSMA      ] not for us
+23603824 n1 [INFO: RPL       ] ext hdr: packet from fd00::203:3:3:3 to fd00::201:1:1:1 going up, sender closer 0 (299 < 128), rank error 0, loop detected 0
+23603824 n1 [INFO: A1srv     ] rx 'id=3 seq=0 t=24' desde fd00::203:3:3:3
+23603824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::203:3:3:3 
+23603824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+23603824 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 166
+23628728 n2 [WARN: CSMA      ] not for us
+23628728 n4 [WARN: CSMA      ] not for us
+23629824 n1 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 200
+23813000 n2 [INFO: RPL       ] creating hop-by-hop option
+23814000 n2 [INFO: A1cli     ] tx 0 'id=2 seq=0 t=24' (rx 0, perdidos 0)
+23855728 n3 [WARN: CSMA      ] not for us
+23855728 n4 [WARN: CSMA      ] not for us
+23856824 n1 [INFO: RPL       ] ext hdr: packet from fd00::202:2:2:2 to fd00::201:1:1:1 going up, sender closer 0 (299 < 128), rank error 0, loop detected 0
+23856824 n1 [INFO: A1srv     ] rx 'id=2 seq=0 t=24' desde fd00::202:2:2:2
+23856824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::202:2:2:2 
+23856824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+23856824 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 166
+23862728 n3 [WARN: CSMA      ] not for us
+23862728 n4 [WARN: CSMA      ] not for us
+23863824 n1 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 200
+27461000 n4 [INFO: RPL       ] creating hop-by-hop option
+27462000 n4 [INFO: A1cli     ] tx 0 'id=4 seq=0 t=25' (rx 0, perdidos 0)
+27482728 n2 [WARN: CSMA      ] not for us
+27482728 n3 [WARN: CSMA      ] not for us
+27483824 n1 [INFO: RPL       ] ext hdr: packet from fd00::204:4:4:4 to fd00::201:1:1:1 going up, sender closer 0 (299 < 128), rank error 0, loop detected 0
+27483824 n1 [INFO: A1srv     ] rx 'id=4 seq=0 t=25' desde fd00::204:4:4:4
+27483824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::204:4:4:4 
+27483824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+27483824 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 166
+27488728 n2 [WARN: CSMA      ] not for us
+27488728 n3 [WARN: CSMA      ] not for us
+27489824 n1 [INFO: RPL       ] packet sent to 0004.0004.0004.0004, status 0, tx 1, new link metric 200
+27540000 n1 [INFO: RPL       ] sending a multicast-DIO with rank 128 to ff02::1a
+27567040 n2 [INFO: RPL       ] received a multicast-DIO from fe80::201:1:1:1, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 128
+27567040 n2 [INFO: RPL       ] refreshing lifetime
+27567040 n3 [INFO: RPL       ] received a multicast-DIO from fe80::201:1:1:1, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 128
+27567040 n3 [INFO: RPL       ] refreshing lifetime
+27567040 n4 [INFO: RPL       ] received a multicast-DIO from fe80::201:1:1:1, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 128
+27567040 n4 [INFO: RPL       ] refreshing lifetime
+28205000 n2 [INFO: RPL       ] sending a multicast-DIO with rank 294 to ff02::1a
+28235040 n1 [INFO: RPL       ] received a multicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 294
+28235040 n3 [INFO: RPL       ] received a multicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 294
+28235040 n4 [INFO: RPL       ] received a multicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 294
+28560000 n3 [INFO: RPL       ] sending a multicast-DIO with rank 294 to ff02::1a
+28573040 n1 [INFO: RPL       ] received a multicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 294
+28573040 n2 [INFO: RPL       ] received a multicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 294
+28573040 n4 [INFO: RPL       ] received a multicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 294
+30382000 n1 [INFO: A1srv     ] acumulado: 3 peticiones recibidas
+31067000 n4 [INFO: RPL       ] sending a multicast-DIO with rank 294 to ff02::1a
+31086040 n1 [INFO: RPL       ] received a multicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 294
+31086040 n2 [INFO: RPL       ] received a multicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 294
+31086040 n3 [INFO: RPL       ] received a multicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 294
+33582000 n3 [INFO: RPL       ] creating hop-by-hop option
+33583000 n3 [INFO: A1cli     ] tx 1 'id=3 seq=1 t=23' (rx 1, perdidos 0)
+33593728 n2 [WARN: CSMA      ] not for us
+33593728 n4 [WARN: CSMA      ] not for us
+33594824 n1 [INFO: RPL       ] ext hdr: packet from fd00::203:3:3:3 to fd00::201:1:1:1 going up, sender closer 0 (294 < 128), rank error 0, loop detected 0
+33594824 n1 [INFO: A1srv     ] rx 'id=3 seq=1 t=23' desde fd00::203:3:3:3
+33594824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::203:3:3:3 
+33594824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+33594824 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 162
+33622728 n2 [WARN: CSMA      ] not for us
+33622728 n4 [WARN: CSMA      ] not for us
+33623824 n1 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 182
+33814000 n2 [INFO: RPL       ] creating hop-by-hop option
+33815000 n2 [INFO: A1cli     ] tx 1 'id=2 seq=1 t=23' (rx 1, perdidos 0)
+33844728 n3 [WARN: CSMA      ] not for us
+33844728 n4 [WARN: CSMA      ] not for us
+33845824 n1 [INFO: RPL       ] ext hdr: packet from fd00::202:2:2:2 to fd00::201:1:1:1 going up, sender closer 0 (294 < 128), rank error 0, loop detected 0
+33845824 n1 [INFO: A1srv     ] rx 'id=2 seq=1 t=23' desde fd00::202:2:2:2
+33845824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::202:2:2:2 
+33845824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+33845824 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 162
+33860728 n3 [WARN: CSMA      ] not for us
+33860728 n4 [WARN: CSMA      ] not for us
+33861824 n1 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 182
+37462000 n4 [INFO: RPL       ] creating hop-by-hop option
+37463000 n4 [INFO: A1cli     ] tx 1 'id=4 seq=1 t=24' (rx 1, perdidos 0)
+37486728 n2 [WARN: CSMA      ] not for us
+37486728 n3 [WARN: CSMA      ] not for us
+37487824 n1 [INFO: RPL       ] ext hdr: packet from fd00::204:4:4:4 to fd00::201:1:1:1 going up, sender closer 0 (294 < 128), rank error 0, loop detected 0
+37487824 n1 [INFO: A1srv     ] rx 'id=4 seq=1 t=24' desde fd00::204:4:4:4
+37487824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::204:4:4:4 
+37487824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+37487824 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 162
+37513728 n2 [WARN: CSMA      ] not for us
+37513728 n3 [WARN: CSMA      ] not for us
+37514824 n1 [INFO: RPL       ] packet sent to 0004.0004.0004.0004, status 0, tx 1, new link metric 182
+39080000 n3 [INFO: RPL       ] sending a multicast-DIO with rank 290 to ff02::1a
+39109040 n1 [INFO: RPL       ] received a multicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 290
+39109040 n2 [INFO: RPL       ] received a multicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 290
+39109040 n4 [INFO: RPL       ] received a multicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 290
+40382000 n1 [INFO: A1srv     ] acumulado: 6 peticiones recibidas
+42204000 n4 [INFO: RPL       ] sending a multicast-DIO with rank 290 to ff02::1a
+42210040 n1 [INFO: RPL       ] received a multicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 290
+42210040 n2 [INFO: RPL       ] received a multicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 290
+42210040 n3 [INFO: RPL       ] received a multicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 290
+43583000 n3 [INFO: RPL       ] creating hop-by-hop option
+43584000 n3 [INFO: A1cli     ] tx 2 'id=3 seq=2 t=25' (rx 2, perdidos 0)
+43612728 n2 [WARN: CSMA      ] not for us
+43612728 n4 [WARN: CSMA      ] not for us
+43613824 n1 [INFO: RPL       ] ext hdr: packet from fd00::203:3:3:3 to fd00::201:1:1:1 going up, sender closer 0 (290 < 128), rank error 0, loop detected 0
+43613824 n1 [INFO: A1srv     ] rx 'id=3 seq=2 t=25' desde fd00::203:3:3:3
+43613824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::203:3:3:3 
+43613824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+43613824 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 158
+43641728 n2 [WARN: CSMA      ] not for us
+43641728 n4 [WARN: CSMA      ] not for us
+43642824 n1 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 176
+43815000 n2 [INFO: RPL       ] creating hop-by-hop option
+43816000 n2 [INFO: A1cli     ] tx 2 'id=2 seq=2 t=23' (rx 2, perdidos 0)
+43853728 n3 [WARN: CSMA      ] not for us
+43853728 n4 [WARN: CSMA      ] not for us
+43854824 n1 [INFO: RPL       ] ext hdr: packet from fd00::202:2:2:2 to fd00::201:1:1:1 going up, sender closer 0 (290 < 128), rank error 0, loop detected 0
+43854824 n1 [INFO: A1srv     ] rx 'id=2 seq=2 t=23' desde fd00::202:2:2:2
+43854824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::202:2:2:2 
+43854824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+43854824 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 158
+43859552 n3 [WARN: CSMA      ] not for us
+43859552 n4 [WARN: CSMA      ] not for us
+43860648 n1 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 176
+47341000 n2 [INFO: RPL       ] sending a multicast-DIO with rank 286 to ff02::1a
+47349040 n1 [INFO: RPL       ] received a multicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 286
+47349040 n3 [INFO: RPL       ] received a multicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 286
+47349040 n4 [INFO: RPL       ] received a multicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 286
+47463000 n4 [INFO: RPL       ] creating hop-by-hop option
+47464000 n4 [INFO: A1cli     ] tx 2 'id=4 seq=2 t=26' (rx 2, perdidos 0)
+47481728 n2 [WARN: CSMA      ] not for us
+47481728 n3 [WARN: CSMA      ] not for us
+47482824 n1 [INFO: RPL       ] ext hdr: packet from fd00::204:4:4:4 to fd00::201:1:1:1 going up, sender closer 0 (290 < 128), rank error 0, loop detected 0
+47482824 n1 [INFO: A1srv     ] rx 'id=4 seq=2 t=26' desde fd00::204:4:4:4
+47482824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::204:4:4:4 
+47482824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+47482824 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 158
+47509728 n2 [WARN: CSMA      ] not for us
+47509728 n3 [WARN: CSMA      ] not for us
+47510824 n1 [INFO: RPL       ] packet sent to 0004.0004.0004.0004, status 0, tx 1, new link metric 176
+50382000 n1 [INFO: A1srv     ] acumulado: 9 peticiones recibidas
+53584000 n3 [INFO: RPL       ] creating hop-by-hop option
+53585000 n3 [INFO: A1cli     ] tx 3 'id=3 seq=3 t=24' (rx 3, perdidos 0)
+53597728 n2 [WARN: CSMA      ] not for us
+53597728 n4 [WARN: CSMA      ] not for us
+53598824 n1 [INFO: RPL       ] ext hdr: packet from fd00::203:3:3:3 to fd00::201:1:1:1 going up, sender closer 0 (286 < 128), rank error 0, loop detected 0
+53598824 n1 [INFO: A1srv     ] rx 'id=3 seq=3 t=24' desde fd00::203:3:3:3
+53598824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::203:3:3:3 
+53598824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+53598824 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 155
+53610728 n2 [WARN: CSMA      ] not for us
+53610728 n4 [WARN: CSMA      ] not for us
+53611824 n1 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 171
+53816000 n2 [INFO: RPL       ] creating hop-by-hop option
+53817000 n2 [INFO: A1cli     ] tx 3 'id=2 seq=3 t=24' (rx 3, perdidos 0)
+53836728 n3 [WARN: CSMA      ] not for us
+53836728 n4 [WARN: CSMA      ] not for us
+53837824 n1 [INFO: RPL       ] ext hdr: packet from fd00::202:2:2:2 to fd00::201:1:1:1 going up, sender closer 0 (286 < 128), rank error 0, loop detected 0
+53837824 n1 [INFO: A1srv     ] rx 'id=2 seq=3 t=24' desde fd00::202:2:2:2
+53837824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::202:2:2:2 
+53837824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+53837824 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 155
+53842552 n3 [WARN: CSMA      ] not for us
+53842552 n4 [WARN: CSMA      ] not for us
+53843648 n1 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 171
+57464000 n4 [INFO: RPL       ] creating hop-by-hop option
+57465000 n4 [INFO: A1cli     ] tx 3 'id=4 seq=3 t=25' (rx 3, perdidos 0)
+57487728 n2 [WARN: CSMA      ] not for us
+57487728 n3 [WARN: CSMA      ] not for us
+57488824 n1 [INFO: RPL       ] ext hdr: packet from fd00::204:4:4:4 to fd00::201:1:1:1 going up, sender closer 0 (286 < 128), rank error 0, loop detected 0
+57488824 n1 [INFO: A1srv     ] rx 'id=4 seq=3 t=25' desde fd00::204:4:4:4
+57488824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::204:4:4:4 
+57488824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+57488824 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 155
+57504728 n2 [WARN: CSMA      ] not for us
+57504728 n3 [WARN: CSMA      ] not for us
+57505824 n1 [INFO: RPL       ] packet sent to 0004.0004.0004.0004, status 0, tx 1, new link metric 171
+60236000 n2 [INFO: RPL       ] nbr: own state, addr fd00::202:2:2:2, DAG state: reachable, MOP 1 OCP 1 rank 283 max-rank 1307, dioint 15, nbr count 3 (Periodic)
+60236000 n2 [INFO: RPL       ] nbr: fe80::201:1:1:1  128,   155 =>   283 --  9 rbafp (last tx 0 min ago)
+60236000 n2 [INFO: RPL       ] nbr: fe80::203:3:3:3  290,   256 =>   546 --  0   a   (no tx)
+60236000 n2 [INFO: RPL       ] nbr: fe80::204:4:4:4  290,   256 =>   546 --  0   a   (no tx)
+60236000 n2 [INFO: RPL       ] nbr: end of list
+60348000 n4 [INFO: RPL       ] nbr: own state, addr fd00::204:4:4:4, DAG state: reachable, MOP 1 OCP 1 rank 283 max-rank 1307, dioint 15, nbr count 3 (Periodic)
+60348000 n4 [INFO: RPL       ] nbr: fe80::201:1:1:1  128,   155 =>   283 --  9 rbafp (last tx 0 min ago)
+60348000 n4 [INFO: RPL       ] nbr: fe80::203:3:3:3  290,   256 =>   546 --  0   a   (no tx)
+60348000 n4 [INFO: RPL       ] nbr: fe80::202:2:2:2  286,   256 =>   542 --  0   a   (no tx)
+60348000 n4 [INFO: RPL       ] nbr: end of list
+60382000 n1 [INFO: A1srv     ] acumulado: 12 peticiones recibidas
+60382000 n1 [INFO: RPL       ] nbr: own state, addr fd00::201:1:1:1, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 15, nbr count 3 (Periodic)
+60382000 n1 [INFO: RPL       ] nbr: fe80::203:3:3:3  290,   171 =>   461 --  5   af  (last tx 0 min ago)
+60382000 n1 [INFO: RPL       ] nbr: fe80::202:2:2:2  286,   171 =>   457 --  5  baf  (last tx 0 min ago)
+60382000 n1 [INFO: RPL       ] nbr: fe80::204:4:4:4  290,   171 =>   461 --  5   af  (last tx 0 min ago)
+60382000 n1 [INFO: RPL       ] nbr: end of list
+60382000 n1 [INFO: RPL       ] links: 4 routing links in total (Periodic)
+60382000 n1 [INFO: RPL       ] links: fd00::201:1:1:1  (DODAG root) (lifetime: infinite)
+60382000 n1 [INFO: RPL       ] links: fd00::203:3:3:3  to fd00::201:1:1:1 (lifetime: 1740 seconds)
+60382000 n1 [INFO: RPL       ] links: fd00::202:2:2:2  to fd00::201:1:1:1 (lifetime: 1740 seconds)
+60382000 n1 [INFO: RPL       ] links: fd00::204:4:4:4  to fd00::201:1:1:1 (lifetime: 1740 seconds)
+60382000 n1 [INFO: RPL       ] links: end of list
+60899000 n3 [INFO: RPL       ] nbr: own state, addr fd00::203:3:3:3, DAG state: reachable, MOP 1 OCP 1 rank 283 max-rank 1307, dioint 15, nbr count 3 (Periodic)
+60899000 n3 [INFO: RPL       ] nbr: fe80::201:1:1:1  128,   155 =>   283 --  9 rbafp (last tx 0 min ago)
+60899000 n3 [INFO: RPL       ] nbr: fe80::202:2:2:2  286,   256 =>   542 --  0   a   (no tx)
+60899000 n3 [INFO: RPL       ] nbr: fe80::204:4:4:4  290,   256 =>   546 --  0   a   (no tx)
+60899000 n3 [INFO: RPL       ] nbr: end of list
+61603000 n1 [INFO: RPL       ] sending a multicast-DIO with rank 128 to ff02::1a
+61613040 n2 [INFO: RPL       ] received a multicast-DIO from fe80::201:1:1:1, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 128
+61613040 n2 [INFO: RPL       ] refreshing lifetime
+61613040 n3 [INFO: RPL       ] received a multicast-DIO from fe80::201:1:1:1, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 128
+61613040 n3 [INFO: RPL       ] refreshing lifetime
+61613040 n4 [INFO: RPL       ] received a multicast-DIO from fe80::201:1:1:1, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 128
+61613040 n4 [INFO: RPL       ] refreshing lifetime
+63585000 n3 [INFO: RPL       ] creating hop-by-hop option
+63586000 n3 [INFO: A1cli     ] tx 4 'id=3 seq=4 t=24' (rx 4, perdidos 0)
+63604728 n2 [WARN: CSMA      ] not for us
+63604728 n4 [WARN: CSMA      ] not for us
+63605824 n1 [INFO: RPL       ] ext hdr: packet from fd00::203:3:3:3 to fd00::201:1:1:1 going up, sender closer 0 (283 < 128), rank error 0, loop detected 0
+63605824 n1 [INFO: A1srv     ] rx 'id=3 seq=4 t=24' desde fd00::203:3:3:3
+63605824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::203:3:3:3 
+63605824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+63605824 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 152
+63649728 n2 [WARN: CSMA      ] not for us
+63649728 n4 [WARN: CSMA      ] not for us
+63650824 n1 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 166
+63817000 n2 [INFO: RPL       ] creating hop-by-hop option
+63818000 n2 [INFO: A1cli     ] tx 4 'id=2 seq=4 t=24' (rx 4, perdidos 0)
+63823728 n3 [WARN: CSMA      ] not for us
+63823728 n4 [WARN: CSMA      ] not for us
+63824824 n1 [INFO: RPL       ] ext hdr: packet from fd00::202:2:2:2 to fd00::201:1:1:1 going up, sender closer 0 (283 < 128), rank error 0, loop detected 0
+63824824 n1 [INFO: A1srv     ] rx 'id=2 seq=4 t=24' desde fd00::202:2:2:2
+63824824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::202:2:2:2 
+63824824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+63824824 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 152
+63829728 n3 [WARN: CSMA      ] not for us
+63829728 n4 [WARN: CSMA      ] not for us
+63830824 n1 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 166
+67465000 n4 [INFO: RPL       ] creating hop-by-hop option
+67466000 n4 [INFO: A1cli     ] tx 4 'id=4 seq=4 t=26' (rx 4, perdidos 0)
+67479728 n2 [WARN: CSMA      ] not for us
+67479728 n3 [WARN: CSMA      ] not for us
+67480824 n1 [INFO: RPL       ] ext hdr: packet from fd00::204:4:4:4 to fd00::201:1:1:1 going up, sender closer 0 (283 < 128), rank error 0, loop detected 0
+67480824 n1 [INFO: A1srv     ] rx 'id=4 seq=4 t=26' desde fd00::204:4:4:4
+67480824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::204:4:4:4 
+67480824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+67480824 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 152
+67506728 n2 [WARN: CSMA      ] not for us
+67506728 n3 [WARN: CSMA      ] not for us
+67507824 n1 [INFO: RPL       ] packet sent to 0004.0004.0004.0004, status 0, tx 1, new link metric 166
+70382000 n1 [INFO: A1srv     ] acumulado: 15 peticiones recibidas
+71461000 n2 [INFO: RPL       ] sending a multicast-DIO with rank 280 to ff02::1a
+71492040 n1 [INFO: RPL       ] received a multicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 280
+71492040 n3 [INFO: RPL       ] received a multicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 280
+71492040 n4 [INFO: RPL       ] received a multicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 280
+71670000 n3 [INFO: RPL       ] sending a multicast-DIO with rank 280 to ff02::1a
+71699040 n1 [INFO: RPL       ] received a multicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 280
+71699040 n2 [INFO: RPL       ] received a multicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 280
+71699040 n4 [INFO: RPL       ] received a multicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 280
+73516000 n4 [INFO: RPL       ] sending a multicast-DIO with rank 280 to ff02::1a
+73530040 n1 [INFO: RPL       ] received a multicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 280
+73530040 n2 [INFO: RPL       ] received a multicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 280
+73530040 n3 [INFO: RPL       ] received a multicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 280
+73586000 n3 [INFO: RPL       ] creating hop-by-hop option
+73587000 n3 [INFO: A1cli     ] tx 5 'id=3 seq=5 t=25' (rx 5, perdidos 0)
+73624728 n2 [WARN: CSMA      ] not for us
+73624728 n4 [WARN: CSMA      ] not for us
+73625824 n1 [INFO: RPL       ] ext hdr: packet from fd00::203:3:3:3 to fd00::201:1:1:1 going up, sender closer 0 (280 < 128), rank error 0, loop detected 0
+73625824 n1 [INFO: A1srv     ] rx 'id=3 seq=5 t=25' desde fd00::203:3:3:3
+73625824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::203:3:3:3 
+73625824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+73625824 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 149
+73651728 n2 [WARN: CSMA      ] not for us
+73651728 n4 [WARN: CSMA      ] not for us
+73652824 n1 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 162
+73818000 n2 [INFO: RPL       ] creating hop-by-hop option
+73819000 n2 [INFO: A1cli     ] tx 5 'id=2 seq=5 t=24' (rx 5, perdidos 0)
+73829728 n3 [WARN: CSMA      ] not for us
+73829728 n4 [WARN: CSMA      ] not for us
+73830824 n1 [INFO: RPL       ] ext hdr: packet from fd00::202:2:2:2 to fd00::201:1:1:1 going up, sender closer 0 (280 < 128), rank error 0, loop detected 0
+73830824 n1 [INFO: A1srv     ] rx 'id=2 seq=5 t=24' desde fd00::202:2:2:2
+73830824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::202:2:2:2 
+73830824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+73830824 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 149
+73865728 n3 [WARN: CSMA      ] not for us
+73865728 n4 [WARN: CSMA      ] not for us
+73866824 n1 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 162
+77075000 n4 [INFO: RPL       ] probing fe80::203:3:3:3  last tx 1 min ago
+77075000 n4 [INFO: RPL       ] sending a unicast-DIO with rank 280 to fe80::203:3:3:3
+77098200 n1 [WARN: CSMA      ] not for us
+77098200 n2 [WARN: CSMA      ] not for us
+77099296 n3 [INFO: RPL       ] received a unicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 280
+77099296 n4 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 224
+77466000 n4 [INFO: RPL       ] creating hop-by-hop option
+77467000 n4 [INFO: A1cli     ] tx 5 'id=4 seq=5 t=24' (rx 5, perdidos 0)
+77500728 n2 [WARN: CSMA      ] not for us
+77500728 n3 [WARN: CSMA      ] not for us
+77501824 n1 [INFO: RPL       ] ext hdr: packet from fd00::204:4:4:4 to fd00::201:1:1:1 going up, sender closer 0 (280 < 128), rank error 0, loop detected 0
+77501824 n1 [INFO: A1srv     ] rx 'id=4 seq=5 t=24' desde fd00::204:4:4:4
+77501824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::204:4:4:4 
+77501824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+77501824 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 149
+77536728 n2 [WARN: CSMA      ] not for us
+77536728 n3 [WARN: CSMA      ] not for us
+77537824 n1 [INFO: RPL       ] packet sent to 0004.0004.0004.0004, status 0, tx 1, new link metric 162
+80382000 n1 [INFO: A1srv     ] acumulado: 18 peticiones recibidas
+83587000 n3 [INFO: RPL       ] creating hop-by-hop option
+83588000 n3 [INFO: A1cli     ] tx 6 'id=3 seq=6 t=23' (rx 6, perdidos 0)
+83629728 n2 [WARN: CSMA      ] not for us
+83629728 n4 [WARN: CSMA      ] not for us
+83630824 n1 [INFO: RPL       ] ext hdr: packet from fd00::203:3:3:3 to fd00::201:1:1:1 going up, sender closer 0 (277 < 128), rank error 0, loop detected 0
+83630824 n1 [INFO: A1srv     ] rx 'id=3 seq=6 t=23' desde fd00::203:3:3:3
+83630824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::203:3:3:3 
+83630824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+83630824 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 146
+83658728 n2 [WARN: CSMA      ] not for us
+83658728 n4 [WARN: CSMA      ] not for us
+83659824 n1 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 158
+83819000 n2 [INFO: RPL       ] creating hop-by-hop option
+83820000 n2 [INFO: A1cli     ] tx 6 'id=2 seq=6 t=24' (rx 6, perdidos 0)
+83841728 n3 [WARN: CSMA      ] not for us
+83841728 n4 [WARN: CSMA      ] not for us
+83842824 n1 [INFO: RPL       ] ext hdr: packet from fd00::202:2:2:2 to fd00::201:1:1:1 going up, sender closer 0 (277 < 128), rank error 0, loop detected 0
+83842824 n1 [INFO: A1srv     ] rx 'id=2 seq=6 t=24' desde fd00::202:2:2:2
+83842824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::202:2:2:2 
+83842824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+83842824 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 146
+83847728 n3 [WARN: CSMA      ] not for us
+83847728 n4 [WARN: CSMA      ] not for us
+83848824 n1 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 158
+86476000 n2 [INFO: RPL       ] probing fe80::203:3:3:3  last tx 1 min ago
+86476000 n2 [INFO: RPL       ] sending a unicast-DIO with rank 274 to fe80::203:3:3:3
+86496200 n1 [WARN: CSMA      ] not for us
+86496200 n4 [WARN: CSMA      ] not for us
+86497296 n3 [INFO: RPL       ] received a unicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 274
+86497296 n2 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 224
+87467000 n4 [INFO: RPL       ] creating hop-by-hop option
+87468000 n4 [INFO: A1cli     ] tx 6 'id=4 seq=6 t=24' (rx 6, perdidos 0)
+87484728 n2 [WARN: CSMA      ] not for us
+87484728 n3 [WARN: CSMA      ] not for us
+87485824 n1 [INFO: RPL       ] ext hdr: packet from fd00::204:4:4:4 to fd00::201:1:1:1 going up, sender closer 0 (277 < 128), rank error 0, loop detected 0
+87485824 n1 [INFO: A1srv     ] rx 'id=4 seq=6 t=24' desde fd00::204:4:4:4
+87485824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::204:4:4:4 
+87485824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+87485824 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 146
+87490552 n2 [WARN: CSMA      ] not for us
+87490552 n3 [WARN: CSMA      ] not for us
+87491648 n1 [INFO: RPL       ] packet sent to 0004.0004.0004.0004, status 0, tx 1, new link metric 158
+90382000 n1 [INFO: A1srv     ] acumulado: 21 peticiones recibidas
+92674000 n3 [INFO: RPL       ] probing fe80::202:2:2:2  last tx 1 min ago
+92674000 n3 [INFO: RPL       ] sending a unicast-DIO with rank 274 to fe80::202:2:2:2
+92685200 n1 [WARN: CSMA      ] not for us
+92685200 n4 [WARN: CSMA      ] not for us
+92686296 n2 [INFO: RPL       ] received a unicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 274
+92686296 n3 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 224
+93588000 n3 [INFO: RPL       ] creating hop-by-hop option
+93589000 n3 [INFO: A1cli     ] tx 7 'id=3 seq=7 t=25' (rx 7, perdidos 0)
+93592728 n2 [WARN: CSMA      ] not for us
+93592728 n4 [WARN: CSMA      ] not for us
+93593824 n1 [INFO: RPL       ] ext hdr: packet from fd00::203:3:3:3 to fd00::201:1:1:1 going up, sender closer 0 (274 < 128), rank error 0, loop detected 0
+93593824 n1 [INFO: A1srv     ] rx 'id=3 seq=7 t=25' desde fd00::203:3:3:3
+93593824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::203:3:3:3 
+93593824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+93593824 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 144
+93632728 n2 [WARN: CSMA      ] not for us
+93632728 n4 [WARN: CSMA      ] not for us
+93633824 n1 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 155
+93820000 n2 [INFO: RPL       ] creating hop-by-hop option
+93821000 n2 [INFO: A1cli     ] tx 7 'id=2 seq=7 t=24' (rx 7, perdidos 0)
+93842728 n3 [WARN: CSMA      ] not for us
+93842728 n4 [WARN: CSMA      ] not for us
+93843824 n1 [INFO: RPL       ] ext hdr: packet from fd00::202:2:2:2 to fd00::201:1:1:1 going up, sender closer 0 (274 < 128), rank error 0, loop detected 0
+93843824 n1 [INFO: A1srv     ] rx 'id=2 seq=7 t=24' desde fd00::202:2:2:2
+93843824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::202:2:2:2 
+93843824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+93843824 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 144
+93852728 n3 [WARN: CSMA      ] not for us
+93852728 n4 [WARN: CSMA      ] not for us
+93853824 n1 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 155
+97468000 n4 [INFO: RPL       ] creating hop-by-hop option
+97469000 n4 [INFO: A1cli     ] tx 7 'id=4 seq=7 t=25' (rx 7, perdidos 0)
+97475728 n2 [WARN: CSMA      ] not for us
+97475728 n3 [WARN: CSMA      ] not for us
+97476824 n1 [INFO: RPL       ] ext hdr: packet from fd00::204:4:4:4 to fd00::201:1:1:1 going up, sender closer 0 (274 < 128), rank error 0, loop detected 0
+97476824 n1 [INFO: A1srv     ] rx 'id=4 seq=7 t=25' desde fd00::204:4:4:4
+97476824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::204:4:4:4 
+97476824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+97476824 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 144
+97510728 n2 [WARN: CSMA      ] not for us
+97510728 n3 [WARN: CSMA      ] not for us
+97511824 n1 [INFO: RPL       ] packet sent to 0004.0004.0004.0004, status 0, tx 1, new link metric 155
+100382000 n1 [INFO: A1srv     ] acumulado: 24 peticiones recibidas
+103589000 n3 [INFO: RPL       ] creating hop-by-hop option
+103590000 n3 [INFO: A1cli     ] tx 8 'id=3 seq=8 t=23' (rx 8, perdidos 0)
+103601728 n2 [WARN: CSMA      ] not for us
+103601728 n4 [WARN: CSMA      ] not for us
+103602824 n1 [INFO: RPL       ] ext hdr: packet from fd00::203:3:3:3 to fd00::201:1:1:1 going up, sender closer 0 (272 < 128), rank error 0, loop detected 0
+103602824 n1 [INFO: A1srv     ] rx 'id=3 seq=8 t=23' desde fd00::203:3:3:3
+103602824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::203:3:3:3 
+103602824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+103602824 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 142
+103628728 n2 [WARN: CSMA      ] not for us
+103628728 n4 [WARN: CSMA      ] not for us
+103629824 n1 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 152
+103821000 n2 [INFO: RPL       ] creating hop-by-hop option
+103822000 n2 [INFO: A1cli     ] tx 8 'id=2 seq=8 t=24' (rx 8, perdidos 0)
+103829728 n3 [WARN: CSMA      ] not for us
+103829728 n4 [WARN: CSMA      ] not for us
+103830824 n1 [INFO: RPL       ] ext hdr: packet from fd00::202:2:2:2 to fd00::201:1:1:1 going up, sender closer 0 (272 < 128), rank error 0, loop detected 0
+103830824 n1 [INFO: A1srv     ] rx 'id=2 seq=8 t=24' desde fd00::202:2:2:2
+103830824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::202:2:2:2 
+103830824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+103830824 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 142
+103835552 n3 [WARN: CSMA      ] not for us
+103835552 n4 [WARN: CSMA      ] not for us
+103836648 n1 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 152
+107469000 n4 [INFO: RPL       ] creating hop-by-hop option
+107470000 n4 [INFO: A1cli     ] tx 8 'id=4 seq=8 t=26' (rx 8, perdidos 0)
+107503728 n2 [WARN: CSMA      ] not for us
+107503728 n3 [WARN: CSMA      ] not for us
+107504824 n1 [INFO: RPL       ] ext hdr: packet from fd00::204:4:4:4 to fd00::201:1:1:1 going up, sender closer 0 (272 < 128), rank error 0, loop detected 0
+107504824 n1 [INFO: A1srv     ] rx 'id=4 seq=8 t=26' desde fd00::204:4:4:4
+107504824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::204:4:4:4 
+107504824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+107504824 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 142
+107525728 n2 [WARN: CSMA      ] not for us
+107525728 n3 [WARN: CSMA      ] not for us
+107526824 n1 [INFO: RPL       ] packet sent to 0004.0004.0004.0004, status 0, tx 1, new link metric 152
+110382000 n1 [INFO: A1srv     ] acumulado: 27 peticiones recibidas
+113590000 n3 [INFO: RPL       ] creating hop-by-hop option
+113591000 n3 [INFO: A1cli     ] tx 9 'id=3 seq=9 t=24' (rx 9, perdidos 0)
+113624728 n2 [WARN: CSMA      ] not for us
+113624728 n4 [WARN: CSMA      ] not for us
+113625824 n1 [INFO: RPL       ] ext hdr: packet from fd00::203:3:3:3 to fd00::201:1:1:1 going up, sender closer 0 (270 < 128), rank error 0, loop detected 0
+113625824 n1 [INFO: A1srv     ] rx 'id=3 seq=9 t=24' desde fd00::203:3:3:3
+113625824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::203:3:3:3 
+113625824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+113625824 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 140
+113663728 n2 [WARN: CSMA      ] not for us
+113663728 n4 [WARN: CSMA      ] not for us
+113664824 n1 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 149
+113822000 n2 [INFO: RPL       ] creating hop-by-hop option
+113823000 n2 [INFO: A1cli     ] tx 9 'id=2 seq=9 t=22' (rx 9, perdidos 0)
+113853728 n3 [WARN: CSMA      ] not for us
+113853728 n4 [WARN: CSMA      ] not for us
+113854824 n1 [INFO: RPL       ] ext hdr: packet from fd00::202:2:2:2 to fd00::201:1:1:1 going up, sender closer 0 (270 < 128), rank error 0, loop detected 0
+113854824 n1 [INFO: A1srv     ] rx 'id=2 seq=9 t=22' desde fd00::202:2:2:2
+113854824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::202:2:2:2 
+113854824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+113854824 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 140
+113868728 n3 [WARN: CSMA      ] not for us
+113868728 n4 [WARN: CSMA      ] not for us
+113869824 n1 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 149
+117470000 n4 [INFO: RPL       ] creating hop-by-hop option
+117471000 n4 [INFO: A1cli     ] tx 9 'id=4 seq=9 t=25' (rx 9, perdidos 0)
+117506728 n2 [WARN: CSMA      ] not for us
+117506728 n3 [WARN: CSMA      ] not for us
+117507824 n1 [INFO: RPL       ] ext hdr: packet from fd00::204:4:4:4 to fd00::201:1:1:1 going up, sender closer 0 (270 < 128), rank error 0, loop detected 0
+117507824 n1 [INFO: A1srv     ] rx 'id=4 seq=9 t=25' desde fd00::204:4:4:4
+117507824 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::204:4:4:4 
+117507824 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+117507824 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 140
+117546728 n2 [WARN: CSMA      ] not for us
+117546728 n3 [WARN: CSMA      ] not for us
+117547824 n1 [INFO: RPL       ] packet sent to 0004.0004.0004.0004, status 0, tx 1, new link metric 149
+120236000 n2 [INFO: RPL       ] nbr: own state, addr fd00::202:2:2:2, DAG state: reachable, MOP 1 OCP 1 rank 268 max-rank 1292, dioint 16, nbr count 3 (Periodic)
+120236000 n2 [INFO: RPL       ] nbr: fe80::201:1:1:1  128,   140 =>   268 -- 15 rbafp (last tx 0 min ago)
+120236000 n2 [INFO: RPL       ] nbr: fe80::203:3:3:3  274,   224 =>   498 --  1   a   (last tx 0 min ago)
+120236000 n2 [INFO: RPL       ] nbr: fe80::204:4:4:4  280,   256 =>   536 --  0   a   (no tx)
+120236000 n2 [INFO: RPL       ] nbr: end of list
+120348000 n4 [INFO: RPL       ] nbr: own state, addr fd00::204:4:4:4, DAG state: reachable, MOP 1 OCP 1 rank 268 max-rank 1292, dioint 16, nbr count 3 (Periodic)
+120348000 n4 [INFO: RPL       ] nbr: fe80::201:1:1:1  128,   140 =>   268 -- 15 rbafp (last tx 0 min ago)
+120348000 n4 [INFO: RPL       ] nbr: fe80::203:3:3:3  280,   224 =>   504 --  1   a   (last tx 0 min ago)
+120348000 n4 [INFO: RPL       ] nbr: fe80::202:2:2:2  280,   256 =>   536 --  0   a   (no tx)
+120348000 n4 [INFO: RPL       ] nbr: end of list
+120382000 n1 [INFO: A1srv     ] acumulado: 30 peticiones recibidas
+120382000 n1 [INFO: RPL       ] nbr: own state, addr fd00::201:1:1:1, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 16, nbr count 3 (Periodic)
+120382000 n1 [INFO: RPL       ] nbr: fe80::203:3:3:3  280,   149 =>   429 -- 11   af  (last tx 0 min ago)
+120382000 n1 [INFO: RPL       ] nbr: fe80::202:2:2:2  280,   149 =>   429 -- 11   af  (last tx 0 min ago)
+120382000 n1 [INFO: RPL       ] nbr: fe80::204:4:4:4  280,   149 =>   429 -- 11  baf  (last tx 0 min ago)
+120382000 n1 [INFO: RPL       ] nbr: end of list
+120382000 n1 [INFO: RPL       ] links: 4 routing links in total (Periodic)
+120382000 n1 [INFO: RPL       ] links: fd00::201:1:1:1  (DODAG root) (lifetime: infinite)
+120382000 n1 [INFO: RPL       ] links: fd00::203:3:3:3  to fd00::201:1:1:1 (lifetime: 1680 seconds)
+120382000 n1 [INFO: RPL       ] links: fd00::202:2:2:2  to fd00::201:1:1:1 (lifetime: 1680 seconds)
+120382000 n1 [INFO: RPL       ] links: fd00::204:4:4:4  to fd00::201:1:1:1 (lifetime: 1680 seconds)
+120382000 n1 [INFO: RPL       ] links: end of list
+120899000 n3 [INFO: RPL       ] nbr: own state, addr fd00::203:3:3:3, DAG state: reachable, MOP 1 OCP 1 rank 268 max-rank 1292, dioint 16, nbr count 3 (Periodic)
+120899000 n3 [INFO: RPL       ] nbr: fe80::201:1:1:1  128,   140 =>   268 -- 15 rbafp (last tx 0 min ago)
+120899000 n3 [INFO: RPL       ] nbr: fe80::202:2:2:2  274,   224 =>   498 --  1   a   (last tx 0 min ago)
+120899000 n3 [INFO: RPL       ] nbr: fe80::204:4:4:4  280,   256 =>   536 --  0   a   (no tx)
+120899000 n3 [INFO: RPL       ] nbr: end of list
+123349000 n1 [INFO: RPL       ] sending a multicast-DIO with rank 128 to ff02::1a
+123360040 n2 [INFO: RPL       ] received a multicast-DIO from fe80::201:1:1:1, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 128
+123360040 n2 [INFO: RPL       ] refreshing lifetime
+123360040 n3 [INFO: RPL       ] received a multicast-DIO from fe80::201:1:1:1, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 128
+123360040 n3 [INFO: RPL       ] refreshing lifetime
+123360040 n4 [INFO: RPL       ] received a multicast-DIO from fe80::201:1:1:1, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 128
+123360040 n4 [INFO: RPL       ] refreshing lifetime
+123591000 n3 [INFO: RPL       ] creating hop-by-hop option
+123592000 n3 [INFO: A1cli     ] tx 10 'id=3 seq=10 t=25' (rx 10, perdidos 0)
+123605760 n2 [WARN: CSMA      ] not for us
+123605760 n4 [WARN: CSMA      ] not for us
+123606856 n1 [INFO: RPL       ] ext hdr: packet from fd00::203:3:3:3 to fd00::201:1:1:1 going up, sender closer 0 (268 < 128), rank error 0, loop detected 0
+123606856 n1 [INFO: A1srv     ] rx 'id=3 seq=10 t=25' desde fd00::203:3:3:3
+123606856 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::203:3:3:3 
+123606856 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+123606856 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 138
+123645760 n2 [WARN: CSMA      ] not for us
+123645760 n4 [WARN: CSMA      ] not for us
+123646856 n1 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 146
+123823000 n2 [INFO: RPL       ] creating hop-by-hop option
+123824000 n2 [INFO: A1cli     ] tx 10 'id=2 seq=10 t=24' (rx 10, perdidos 0)
+123845760 n3 [WARN: CSMA      ] not for us
+123845760 n4 [WARN: CSMA      ] not for us
+123846856 n1 [INFO: RPL       ] ext hdr: packet from fd00::202:2:2:2 to fd00::201:1:1:1 going up, sender closer 0 (268 < 128), rank error 0, loop detected 0
+123846856 n1 [INFO: A1srv     ] rx 'id=2 seq=10 t=24' desde fd00::202:2:2:2
+123846856 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::202:2:2:2 
+123846856 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+123846856 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 138
+123857760 n3 [WARN: CSMA      ] not for us
+123857760 n4 [WARN: CSMA      ] not for us
+123858856 n1 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 146
+125234000 n3 [INFO: RPL       ] sending a multicast-DIO with rank 266 to ff02::1a
+125257040 n1 [INFO: RPL       ] received a multicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 266
+125257040 n2 [INFO: RPL       ] received a multicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 266
+125257040 n4 [INFO: RPL       ] received a multicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 266
+127471000 n4 [INFO: RPL       ] creating hop-by-hop option
+127472000 n4 [INFO: A1cli     ] tx 10 'id=4 seq=10 t=26' (rx 10, perdidos 0)
+127505760 n2 [WARN: CSMA      ] not for us
+127505760 n3 [WARN: CSMA      ] not for us
+127506856 n1 [INFO: RPL       ] ext hdr: packet from fd00::204:4:4:4 to fd00::201:1:1:1 going up, sender closer 0 (268 < 128), rank error 0, loop detected 0
+127506856 n1 [INFO: A1srv     ] rx 'id=4 seq=10 t=26' desde fd00::204:4:4:4
+127506856 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::204:4:4:4 
+127506856 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+127506856 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 138
+127511616 n2 [WARN: CSMA      ] not for us
+127511616 n3 [WARN: CSMA      ] not for us
+127512712 n1 [INFO: RPL       ] packet sent to 0004.0004.0004.0004, status 0, tx 1, new link metric 146
+130382000 n1 [INFO: A1srv     ] acumulado: 33 peticiones recibidas
+130954000 n2 [INFO: RPL       ] sending a multicast-DIO with rank 266 to ff02::1a
+130960040 n1 [INFO: RPL       ] received a multicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 266
+130960040 n3 [INFO: RPL       ] received a multicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 266
+130960040 n4 [INFO: RPL       ] received a multicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 266
+133592000 n3 [INFO: RPL       ] creating hop-by-hop option
+133593000 n3 [INFO: A1cli     ] tx 11 'id=3 seq=11 t=25' (rx 11, perdidos 0)
+133604760 n2 [WARN: CSMA      ] not for us
+133604760 n4 [WARN: CSMA      ] not for us
+133605856 n1 [INFO: RPL       ] ext hdr: packet from fd00::203:3:3:3 to fd00::201:1:1:1 going up, sender closer 0 (266 < 128), rank error 0, loop detected 0
+133605856 n1 [INFO: A1srv     ] rx 'id=3 seq=11 t=25' desde fd00::203:3:3:3
+133605856 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::203:3:3:3 
+133605856 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+133605856 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 137
+133627760 n2 [WARN: CSMA      ] not for us
+133627760 n4 [WARN: CSMA      ] not for us
+133628856 n1 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 144
+133824000 n2 [INFO: RPL       ] creating hop-by-hop option
+133825000 n2 [INFO: A1cli     ] tx 11 'id=2 seq=11 t=22' (rx 11, perdidos 0)
+133864760 n3 [WARN: CSMA      ] not for us
+133864760 n4 [WARN: CSMA      ] not for us
+133865856 n1 [INFO: RPL       ] ext hdr: packet from fd00::202:2:2:2 to fd00::201:1:1:1 going up, sender closer 0 (266 < 128), rank error 0, loop detected 0
+133865856 n1 [INFO: A1srv     ] rx 'id=2 seq=11 t=22' desde fd00::202:2:2:2
+133865856 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::202:2:2:2 
+133865856 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+133865856 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 137
+133904760 n3 [WARN: CSMA      ] not for us
+133904760 n4 [WARN: CSMA      ] not for us
+133905856 n1 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 144
+137472000 n4 [INFO: RPL       ] creating hop-by-hop option
+137473000 n4 [INFO: A1cli     ] tx 11 'id=4 seq=11 t=24' (rx 11, perdidos 0)
+137500760 n2 [WARN: CSMA      ] not for us
+137500760 n3 [WARN: CSMA      ] not for us
+137501856 n1 [INFO: RPL       ] ext hdr: packet from fd00::204:4:4:4 to fd00::201:1:1:1 going up, sender closer 0 (266 < 128), rank error 0, loop detected 0
+137501856 n1 [INFO: A1srv     ] rx 'id=4 seq=11 t=24' desde fd00::204:4:4:4
+137501856 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::204:4:4:4 
+137501856 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+137501856 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 137
+137526760 n2 [WARN: CSMA      ] not for us
+137526760 n3 [WARN: CSMA      ] not for us
+137527856 n1 [INFO: RPL       ] packet sent to 0004.0004.0004.0004, status 0, tx 1, new link metric 144
+139170000 n4 [INFO: RPL       ] sending a multicast-DIO with rank 265 to ff02::1a
+139188040 n1 [INFO: RPL       ] received a multicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 265
+139188040 n2 [INFO: RPL       ] received a multicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 265
+139188040 n3 [INFO: RPL       ] received a multicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 265
+140382000 n1 [INFO: A1srv     ] acumulado: 36 peticiones recibidas
+141386000 n2 [INFO: RPL       ] probing fe80::203:3:3:3  last tx 0 min ago
+141386000 n2 [INFO: RPL       ] sending a unicast-DIO with rank 265 to fe80::203:3:3:3
+141418200 n1 [WARN: CSMA      ] not for us
+141418200 n4 [WARN: CSMA      ] not for us
+141419296 n3 [INFO: RPL       ] received a unicast-DIO from fe80::202:2:2:2, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 265
+141419296 n2 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 200
+143593000 n3 [INFO: RPL       ] creating hop-by-hop option
+143594000 n3 [INFO: A1cli     ] tx 12 'id=3 seq=12 t=24' (rx 12, perdidos 0)
+143633760 n2 [WARN: CSMA      ] not for us
+143633760 n4 [WARN: CSMA      ] not for us
+143634856 n1 [INFO: RPL       ] ext hdr: packet from fd00::203:3:3:3 to fd00::201:1:1:1 going up, sender closer 0 (265 < 128), rank error 0, loop detected 0
+143634856 n1 [INFO: A1srv     ] rx 'id=3 seq=12 t=24' desde fd00::203:3:3:3
+143634856 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::203:3:3:3 
+143634856 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+143634856 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 136
+143655760 n2 [WARN: CSMA      ] not for us
+143655760 n4 [WARN: CSMA      ] not for us
+143656856 n1 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 142
+143825000 n2 [INFO: RPL       ] creating hop-by-hop option
+143826000 n2 [INFO: A1cli     ] tx 12 'id=2 seq=12 t=24' (rx 12, perdidos 0)
+143832760 n3 [WARN: CSMA      ] not for us
+143832760 n4 [WARN: CSMA      ] not for us
+143833856 n1 [INFO: RPL       ] ext hdr: packet from fd00::202:2:2:2 to fd00::201:1:1:1 going up, sender closer 0 (265 < 128), rank error 0, loop detected 0
+143833856 n1 [INFO: A1srv     ] rx 'id=2 seq=12 t=24' desde fd00::202:2:2:2
+143833856 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::202:2:2:2 
+143833856 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+143833856 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 136
+143861760 n3 [WARN: CSMA      ] not for us
+143861760 n4 [WARN: CSMA      ] not for us
+143862856 n1 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 142
+147473000 n4 [INFO: RPL       ] creating hop-by-hop option
+147474000 n4 [INFO: A1cli     ] tx 12 'id=4 seq=12 t=26' (rx 12, perdidos 0)
+147492760 n2 [WARN: CSMA      ] not for us
+147492760 n3 [WARN: CSMA      ] not for us
+147493856 n1 [INFO: RPL       ] ext hdr: packet from fd00::204:4:4:4 to fd00::201:1:1:1 going up, sender closer 0 (265 < 128), rank error 0, loop detected 0
+147493856 n1 [INFO: A1srv     ] rx 'id=4 seq=12 t=26' desde fd00::204:4:4:4
+147493856 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::204:4:4:4 
+147493856 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+147493856 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 136
+147498760 n2 [WARN: CSMA      ] not for us
+147498760 n3 [WARN: CSMA      ] not for us
+147499856 n1 [INFO: RPL       ] packet sent to 0004.0004.0004.0004, status 0, tx 1, new link metric 142
+150382000 n1 [INFO: A1srv     ] acumulado: 39 peticiones recibidas
+153594000 n3 [INFO: RPL       ] creating hop-by-hop option
+153595000 n3 [INFO: A1cli     ] tx 13 'id=3 seq=13 t=23' (rx 13, perdidos 0)
+153598760 n2 [WARN: CSMA      ] not for us
+153598760 n4 [WARN: CSMA      ] not for us
+153599856 n1 [INFO: RPL       ] ext hdr: packet from fd00::203:3:3:3 to fd00::201:1:1:1 going up, sender closer 0 (264 < 128), rank error 0, loop detected 0
+153599856 n1 [INFO: A1srv     ] rx 'id=3 seq=13 t=23' desde fd00::203:3:3:3
+153599856 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::203:3:3:3 
+153599856 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+153599856 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 135
+153606760 n2 [WARN: CSMA      ] not for us
+153606760 n4 [WARN: CSMA      ] not for us
+153607856 n1 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 140
+153826000 n2 [INFO: RPL       ] creating hop-by-hop option
+153827000 n2 [INFO: A1cli     ] tx 13 'id=2 seq=13 t=22' (rx 13, perdidos 0)
+153831760 n3 [WARN: CSMA      ] not for us
+153831760 n4 [WARN: CSMA      ] not for us
+153832856 n1 [INFO: RPL       ] ext hdr: packet from fd00::202:2:2:2 to fd00::201:1:1:1 going up, sender closer 0 (264 < 128), rank error 0, loop detected 0
+153832856 n1 [INFO: A1srv     ] rx 'id=2 seq=13 t=22' desde fd00::202:2:2:2
+153832856 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::202:2:2:2 
+153832856 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+153832856 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 135
+153870760 n3 [WARN: CSMA      ] not for us
+153870760 n4 [WARN: CSMA      ] not for us
+153871856 n1 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 140
+157474000 n4 [INFO: RPL       ] creating hop-by-hop option
+157475000 n4 [INFO: A1cli     ] tx 13 'id=4 seq=13 t=26' (rx 13, perdidos 0)
+157501760 n2 [WARN: CSMA      ] not for us
+157501760 n3 [WARN: CSMA      ] not for us
+157502856 n1 [INFO: RPL       ] ext hdr: packet from fd00::204:4:4:4 to fd00::201:1:1:1 going up, sender closer 0 (264 < 128), rank error 0, loop detected 0
+157502856 n1 [INFO: A1srv     ] rx 'id=4 seq=13 t=26' desde fd00::204:4:4:4
+157502856 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::204:4:4:4 
+157502856 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+157502856 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 135
+157538760 n2 [WARN: CSMA      ] not for us
+157538760 n3 [WARN: CSMA      ] not for us
+157539856 n1 [INFO: RPL       ] packet sent to 0004.0004.0004.0004, status 0, tx 1, new link metric 140
+158103000 n3 [INFO: RPL       ] probing fe80::204:4:4:4  last tx 2 min ago
+158103000 n3 [INFO: RPL       ] sending a unicast-DIO with rank 263 to fe80::204:4:4:4
+158127200 n1 [WARN: CSMA      ] not for us
+158127200 n2 [WARN: CSMA      ] not for us
+158128296 n4 [INFO: RPL       ] received a unicast-DIO from fe80::203:3:3:3, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 263
+158128296 n3 [INFO: RPL       ] packet sent to 0004.0004.0004.0004, status 0, tx 1, new link metric 224
+160382000 n1 [INFO: A1srv     ] acumulado: 42 peticiones recibidas
+163595000 n3 [INFO: RPL       ] creating hop-by-hop option
+163596000 n3 [INFO: A1cli     ] tx 14 'id=3 seq=14 t=24' (rx 14, perdidos 0)
+163635760 n2 [WARN: CSMA      ] not for us
+163635760 n4 [WARN: CSMA      ] not for us
+163636856 n1 [INFO: RPL       ] ext hdr: packet from fd00::203:3:3:3 to fd00::201:1:1:1 going up, sender closer 0 (263 < 128), rank error 0, loop detected 0
+163636856 n1 [INFO: A1srv     ] rx 'id=3 seq=14 t=24' desde fd00::203:3:3:3
+163636856 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::203:3:3:3 
+163636856 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+163636856 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 134
+163661760 n2 [WARN: CSMA      ] not for us
+163661760 n4 [WARN: CSMA      ] not for us
+163662856 n1 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 138
+163827000 n2 [INFO: RPL       ] creating hop-by-hop option
+163828000 n2 [INFO: A1cli     ] tx 14 'id=2 seq=14 t=22' (rx 14, perdidos 0)
+163867760 n3 [WARN: CSMA      ] not for us
+163867760 n4 [WARN: CSMA      ] not for us
+163868856 n1 [INFO: RPL       ] ext hdr: packet from fd00::202:2:2:2 to fd00::201:1:1:1 going up, sender closer 0 (263 < 128), rank error 0, loop detected 0
+163868856 n1 [INFO: A1srv     ] rx 'id=2 seq=14 t=22' desde fd00::202:2:2:2
+163868856 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::202:2:2:2 
+163868856 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+163868856 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 134
+163883760 n3 [WARN: CSMA      ] not for us
+163883760 n4 [WARN: CSMA      ] not for us
+163884856 n1 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 138
+167475000 n4 [INFO: RPL       ] creating hop-by-hop option
+167476000 n4 [INFO: A1cli     ] tx 14 'id=4 seq=14 t=24' (rx 14, perdidos 0)
+167506760 n2 [WARN: CSMA      ] not for us
+167506760 n3 [WARN: CSMA      ] not for us
+167507856 n1 [INFO: RPL       ] ext hdr: packet from fd00::204:4:4:4 to fd00::201:1:1:1 going up, sender closer 0 (263 < 128), rank error 0, loop detected 0
+167507856 n1 [INFO: A1srv     ] rx 'id=4 seq=14 t=24' desde fd00::204:4:4:4
+167507856 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::204:4:4:4 
+167507856 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+167507856 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 134
+167518760 n2 [WARN: CSMA      ] not for us
+167518760 n3 [WARN: CSMA      ] not for us
+167519856 n1 [INFO: RPL       ] packet sent to 0004.0004.0004.0004, status 0, tx 1, new link metric 138
+169205000 n4 [INFO: RPL       ] probing fe80::202:2:2:2  last tx 2 min ago
+169205000 n4 [INFO: RPL       ] sending a unicast-DIO with rank 262 to fe80::202:2:2:2
+169230200 n1 [WARN: CSMA      ] not for us
+169230200 n3 [WARN: CSMA      ] not for us
+169231296 n2 [INFO: RPL       ] received a unicast-DIO from fe80::204:4:4:4, instance_id 0, DAG ID fd00::201:1:1:1, version 240, dtsn 240, rank 262
+169231296 n4 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 224
+170382000 n1 [INFO: A1srv     ] acumulado: 45 peticiones recibidas
+173596000 n3 [INFO: RPL       ] creating hop-by-hop option
+173597000 n3 [INFO: A1cli     ] tx 15 'id=3 seq=15 t=25' (rx 15, perdidos 0)
+173633760 n2 [WARN: CSMA      ] not for us
+173633760 n4 [WARN: CSMA      ] not for us
+173634856 n1 [INFO: RPL       ] ext hdr: packet from fd00::203:3:3:3 to fd00::201:1:1:1 going up, sender closer 0 (262 < 128), rank error 0, loop detected 0
+173634856 n1 [INFO: A1srv     ] rx 'id=3 seq=15 t=25' desde fd00::203:3:3:3
+173634856 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::203:3:3:3 
+173634856 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+173634856 n3 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 133
+173659760 n2 [WARN: CSMA      ] not for us
+173659760 n4 [WARN: CSMA      ] not for us
+173660856 n1 [INFO: RPL       ] packet sent to 0003.0003.0003.0003, status 0, tx 1, new link metric 137
+173828000 n2 [INFO: RPL       ] creating hop-by-hop option
+173829000 n2 [INFO: A1cli     ] tx 15 'id=2 seq=15 t=24' (rx 15, perdidos 0)
+173834760 n3 [WARN: CSMA      ] not for us
+173834760 n4 [WARN: CSMA      ] not for us
+173835856 n1 [INFO: RPL       ] ext hdr: packet from fd00::202:2:2:2 to fd00::201:1:1:1 going up, sender closer 0 (262 < 128), rank error 0, loop detected 0
+173835856 n1 [INFO: A1srv     ] rx 'id=2 seq=15 t=24' desde fd00::202:2:2:2
+173835856 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::202:2:2:2 
+173835856 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+173835856 n2 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 133
+173859760 n3 [WARN: CSMA      ] not for us
+173859760 n4 [WARN: CSMA      ] not for us
+173860856 n1 [INFO: RPL       ] packet sent to 0002.0002.0002.0002, status 0, tx 1, new link metric 137
+177476000 n4 [INFO: RPL       ] creating hop-by-hop option
+177477000 n4 [INFO: A1cli     ] tx 15 'id=4 seq=15 t=26' (rx 15, perdidos 0)
+177492760 n2 [WARN: CSMA      ] not for us
+177492760 n3 [WARN: CSMA      ] not for us
+177493856 n1 [INFO: RPL       ] ext hdr: packet from fd00::204:4:4:4 to fd00::201:1:1:1 going up, sender closer 0 (262 < 128), rank error 0, loop detected 0
+177493856 n1 [INFO: A1srv     ] rx 'id=4 seq=15 t=26' desde fd00::204:4:4:4
+177493856 n1 [INFO: RPL       ] SRH creating source routing header with destination fd00::204:4:4:4 
+177493856 n1 [INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+177493856 n4 [INFO: RPL       ] packet sent to 0001.0001.0001.0001, status 0, tx 1, new link metric 133
+177505760 n2 [WARN: CSMA      ] not for us
+177505760 n3 [WARN: CSMA      ] not for us
+177506856 n1 [INFO: RPL       ] packet sent to 0004.0004.0004.0004, status 0, tx 1, new link metric 137
+TEST OK
+Test ended at simulation time: 180000000

@@ -90,6 +90,26 @@ simulación.
 `speedlimit` está en 20 para el caso base. Para los degenerados conviene
 bajarlo a 1, o la interfaz no da abasto.
 
+#### Los cuatro casos de una sola vez (headless)
+
+`correr-casos.sh` compila y corre los cuatro en Cooja sin GUI, y deja un log
+por caso en `evidencia/`:
+
+```bash
+docker run --rm -e CCACHE_DISABLE=1 \
+  -v ~/contiki-ng:/home/user/contiki-ng -v "$PWD":/work \
+  contiker/contiki-ng /work/tarea3/a1-etimer-degenerado/correr-casos.sh
+```
+
+Pasarle casos como argumentos corre solo esos (`./correr-casos.sh base`).
+
+Dos cosas que el script resuelve y conviene saber por si se corre a mano:
+Cooja en `--no-gui` **aborta** con `No plugin controlling simulation` si nadie
+maneja la simulación, así que el script le inyecta un `ScriptRunner` con
+`js/volcar-log.js`; y el `.csc` generado tiene que quedar **en esta carpeta**,
+porque `[CONFIG_DIR]` es el directorio del propio `.csc` y de ahí salen los
+`.c` de cada tipo de mote.
+
 ### A3 — Lite vs Classic
 
 ```bash
@@ -123,7 +143,7 @@ En el *Mote output*, filtrar por `SENSOR`. Cada muestra sale como
 
 | Actividad | Código | Respuesta escrita | Corrida + evidencia |
 |---|---|---|---|
-| A1 · periodo del etimer | ✅ compila | ✅ conclusión y el porqué | ❌ faltan los 4 logs y el Timeline |
+| A1 · periodo del etimer | ✅ compila | ✅ conclusión, el porqué y las cifras medidas | ⚠️ los 4 logs están; faltan las capturas del Timeline |
 | A2 · `simple_udp` y `tunslip6` | — (no lleva) | ✅ completa | — (no lleva) |
 | A3 · Lite vs Classic | ✅ compila en los dos modos | ✅ método + lo deducible (TTL) | ❌ faltan las dos tablas de medición |
 | A4 · sensor → sink | ✅ compila | ✅ completa | ❌ falta la serie `SENSOR,…` |

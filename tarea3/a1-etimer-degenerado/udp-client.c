@@ -137,9 +137,19 @@ PROCESS_THREAD(udp_client_process, ev, data)
       }
       tx_count++;
     } else {
-      if(tx_count == 0 || tx_count % LOG_CADA_N == 0) {
-        LOG_INFO("todavia sin ruta hacia la raiz\n");
+      /*
+       * El contador propio es necesario: con el periodo degenerado el nodo
+       * puede no enviar nunca, y entonces tx_count se queda en 0 y cualquier
+       * throttle que dependa de el imprime en cada vuelta. Con el etimer en 0
+       * ticks eso son miles de lineas por segundo simulado.
+       */
+      static uint32_t sin_ruta;
+
+      if(sin_ruta % LOG_CADA_N == 0) {
+        LOG_INFO("todavia sin ruta hacia la raiz (intento %" PRIu32 ")\n",
+                 sin_ruta);
       }
+      sin_ruta++;
       if(tx_count > 0) {
         missed_tx_count++;
       }
