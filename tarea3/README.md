@@ -145,8 +145,15 @@ En el *Mote output*, filtrar por `SENSOR`. Cada muestra sale como
 |---|---|---|---|
 | A1 · periodo del etimer | ✅ compila | ✅ conclusión, el porqué y las cifras medidas | ⚠️ los 4 logs están; faltan las capturas del Timeline |
 | A2 · `simple_udp` y `tunslip6` | — (no lleva) | ✅ completa | — (no lleva) |
-| A3 · Lite vs Classic | ✅ compila en los dos modos | ✅ método + lo deducible (TTL) | ❌ faltan las dos tablas de medición |
+| A3 · Lite vs Classic | ✅ compila en los dos modos | ✅ método + tablas con lo medido por Ignacio | ⚠️ faltan sus archivos de respaldo, `routes` y el Timeline |
 | A4 · sensor → sink | ✅ compila | ✅ completa | ❌ falta la serie `SENSOR,…` |
+
+**La entrega es el notebook de Ignacio**, en [entrega/](entrega/): el `.ipynb`
+del enunciado con las cuatro actividades resueltas, más su informe largo y su
+lista de pendientes. Está sin tocar; lo verificado y lo que falta pedirle están
+en [entrega/README.md](entrega/README.md). Su implementación es distinta de la
+de este repo (él usa `PERIOD_CASE`, acá es `CASO`): las dos llegan al mismo
+resultado, no hay que unificarlas.
 
 Todo lo pendiente está marcado **[FALTA]** en [respuestas.md](respuestas.md).
 

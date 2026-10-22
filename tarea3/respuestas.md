@@ -207,15 +207,21 @@ make distclean TARGET=cooja && make TARGET=cooja MAKE_ROUTING=MAKE_ROUTING_RPL_C
 **El TTL es aritmética, no medición.** El hop limit por defecto es
 `UIP_TTL 64` (`os/net/ipv6/uipopt.h:125`), puesto en
 `uip_ds6_if.cur_hop_limit` al inicializar la interfaz
-(`os/net/ipv6/uip-ds6.c:139`), y cada reenvío lo baja en 1. Entonces el TTL que
-el servidor ve en el paquete de un cliente a *n* saltos es **64 − n**:
+(`os/net/ipv6/uip-ds6.c:139`). Lo decrementa **solo el nodo que reenvía**, no el
+destino al entregar: un vecino directo llega con los 64 intactos. Entonces el
+TTL que la raíz ve en el paquete de un cliente a *n* saltos es **64 − (n − 1)**,
+o dicho al revés, los saltos son **65 − ttl**:
 
-| Nodo | Saltos a la raíz | TTL esperado en la raíz |
-|---|---|---|
-| 2 | 1 | 63 |
-| 3 | 2 | 62 |
-| 4 | 3 | 61 |
-| 5 | 4 | 60 |
+| Nodo | Saltos a la raíz | TTL esperado en la raíz | Medido por Ignacio |
+|---|---|---|---|
+| 2 | 1 | 64 | **64** ✅ |
+| 3 | 2 | 63 | **63** ✅ |
+| 4 | 3 | 62 | **62** ✅ |
+| 5 | 4 | 61 | — (su cadena tiene 3 clientes) |
+
+> Esta tabla estaba corrida en 1 hasta el 22-oct: decía 63/62/61/60, por asumir
+> que el destino también descuenta. Las mediciones de Ignacio la corrigieron, y
+> el cálculo de `saltos` en `a3-lite-vs-classic/*.c` se arregló con ellas.
 
 El código imprime las dos cosas —`ttl=` y `saltos=`— en cada recepción, así que
 la tabla se comprueba de una pasada. Si un TTL no calza con la posición del
@@ -245,32 +251,42 @@ descendente, o sea en el **eco** de la aplicación y en la respuesta del `ping`
    *storing* vs *non-storing* — en Classic el intermedio tiene entradas, en
    Lite no.
 
-### [FALTA] Tablas de resultados
+### Resultados medidos por Ignacio
 
-**RPL Lite (non-storing)**
+Corrida headless sobre una cadena de **cuatro motes** (raíz en x=0, clientes en
+40, 80 y 120 m, alcance 50 m), con el `ping` disparado desde el shell serie de
+la raíz. Una corrida de control por protocolo. Fuente:
+[entrega/Solucion_Tarea3.md](entrega/Solucion_Tarea3.md).
 
-| Nodo | Saltos | TTL observado | Delay ICMP (ms) | RTT UDP (ms) | Tx/Rx/MissedTx |
-|---|---|---|---|---|---|
-| 2 | 1 | | | | |
-| 3 | 2 | | | | |
-| 4 | 3 | | | | |
-| 5 | 4 | | | | |
+| Cliente | Saltos | Lite: TTL / ICMP | Classic: TTL / ICMP | Lite: RTT UDP medio | Classic: RTT UDP medio |
+|---|---:|---:|---:|---:|---:|
+| Mote 2 | 1 | 64 / 70 ms | 64 / 76 ms | 51,67 ms (9 ecos) | 45,78 ms (9 ecos) |
+| Mote 3 | 2 | 63 / 95 ms | 63 / 119 ms | 93,12 ms (8 ecos) | 95,44 ms (9 ecos) |
+| Mote 4 | 3 | 62 / 152 ms | 62 / 125 ms | 149,86 ms (7 ecos) | 165,89 ms (9 ecos) |
 
-**RPL Classic (storing)**
+Lo que se puede decir de esos números, y lo que no:
 
-| Nodo | Saltos | TTL observado | Delay ICMP (ms) | RTT UDP (ms) | Tx/Rx/MissedTx |
-|---|---|---|---|---|---|
-| 2 | 1 | | | | |
-| 3 | 2 | | | | |
-| 4 | 3 | | | | |
-| 5 | 4 | | | | |
+- **El RTT crece con los saltos, y es casi lineal.** En Lite va de ~52 a ~94 a
+  ~150 ms para 1, 2 y 3 saltos: unos 50 ms por salto. El `ping` ICMP marca la
+  misma pendiente (70 → 95 → 152 ms).
+- **El TTL confirma la cadena.** 64, 63 y 62 son exactamente los saltos
+  esperados, así que el DODAG se armó como la topología pedía y no en estrella.
+- **No se puede declarar ganador.** Es **una** corrida por protocolo: Classic
+  gana en el mote 2 y en el 4 por ICMP, pierde en el 3, y en UDP el orden se
+  invierte. Las diferencias están dentro de lo que mueve el azar de los eventos
+  discretos. Para afirmar algo haría falta repetir con varias semillas — lo dice
+  él mismo en su informe, y es la lectura correcta.
 
-- [ ] `routes` en la raíz y en el nodo 3, en los dos escenarios (captura).
-- [ ] Captura del *Timeline* de cada escenario, para las colisiones.
-- [ ] Una línea de cierre: ¿el RTT crece lineal con los saltos o se degrada
-      más rápido? ¿Y es peor en Lite por el tamaño de la cabecera de bajada?
+### [FALTA] Lo que sigue abierto en A3
 
----
+- [ ] **Pedirle a Ignacio los `evidencia/rpl-udp-case-*.txt` y los `.log`.** Las
+      cifras de arriba no tienen archivo de respaldo en el repo todavía (ver
+      [entrega/README.md](entrega/README.md)).
+- [ ] `routes` en la raíz y en un nodo intermedio, en los dos modos — es la
+      forma directa de mostrar *storing* vs *non-storing*, y no está medido.
+- [ ] Capturas del *Timeline* en los dos modos, para las colisiones. Las dos
+      corridas fueron headless, así que la atribución de cada pérdida a una
+      colisión sigue sin respaldo visual.
 
 ## Actividad 4 — de `sky-websense.c` a Contiki-NG
 

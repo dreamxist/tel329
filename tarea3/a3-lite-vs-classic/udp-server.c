@@ -12,9 +12,11 @@
  *
  *   2. El TTL del paquete que llega. uip_buf todavia tiene el datagrama
  *      cuando corre el callback, asi que UIP_IP_BUF->ttl es el hop limit que
- *      le quedaba al llegar. Con el default de 64, los saltos recorridos son
- *      64 - ttl: es la forma de comprobar que la cadena es multi-salto y no
- *      que todos hablan directo con la raiz.
+ *      le quedaba al llegar. El hop limit lo decrementa SOLO el nodo que
+ *      reenvia, no el destino: un vecino directo llega con los 64 intactos,
+ *      asi que los saltos recorridos son 65 - ttl. Es la forma de comprobar
+ *      que la cadena es multi-salto y no que todos hablan directo con la
+ *      raiz.
  *
  * La direccion de cada cliente se imprime en cada rx: de ahi se copia para el
  * ping.
@@ -60,7 +62,7 @@ udp_rx_callback(struct simple_udp_connection *c,
   rx_total++;
 
   LOG_INFO("rx '%.*s' ttl=%u (saltos=%u) desde ",
-           datalen, (char *)data, ttl, (unsigned)(64 - ttl));
+           datalen, (char *)data, ttl, (unsigned)(65 - ttl));
   LOG_INFO_6ADDR(sender_addr);
   LOG_INFO_("\n");
 

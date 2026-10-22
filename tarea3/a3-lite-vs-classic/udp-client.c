@@ -8,6 +8,8 @@
  *   - guarda clock_time() al enviar la peticion seq N;
  *   - cuando llega el eco, el RTT es la diferencia, en ms;
  *   - ademas lee UIP_IP_BUF->ttl del eco, que da los saltos de bajada.
+ *     Ojo con la cuenta: el hop limit lo baja el que reenvia, no el destino,
+ *     asi que los saltos son 65 - ttl y no 64 - ttl.
  *
  * Importante para la comparacion: el RTT de aplicacion incluye el camino
  * descendente, y ahi es donde Lite (non-storing) y Classic (storing por
@@ -74,7 +76,7 @@ udp_rx_callback(struct simple_udp_connection *c,
     LOG_INFO("eco '%.*s' rtt=%lu ms ttl=%u (saltos=%u)\n",
              datalen, (char *)data,
              (unsigned long)((1000UL * rtt) / CLOCK_SECOND),
-             ttl, (unsigned)(64 - ttl));
+             ttl, (unsigned)(65 - ttl));
     esperando_eco = 0;
   } else {
     LOG_INFO("eco fuera de turno '%.*s' ttl=%u\n", datalen, (char *)data, ttl);
