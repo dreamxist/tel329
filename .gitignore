@@ -5,5 +5,8 @@ obj_*/
 *.d
 *.map
 *.log
-!evidencia/*.log
+!**/evidencia/*.log
 /contiki-ng
+
+# worktrees que crean los agentes
+.claude/worktrees/
