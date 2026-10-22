@@ -78,6 +78,32 @@ aparece: **16,65 s**. Dicho de otra forma, el periodo de muestreo de la
 aplicación no se puede confundir con el tiempo de convergencia de la red — y el
 escenario roto es el que lo deja ver.
 
+### La red SÍ se forma: se degrada, no se cae
+
+La corrida corta dejaba la duda de si con 0 ticks el DODAG llega a armarse. La
+larga —`evidencia/a1-1e-5-largo.log`, 25.004 líneas hasta los 24 s simulados—
+la cierra: **el nodo 2 consigue ruta a los 19,47 s y empieza a enviar**, después
+de 32.000 vueltas en vano. El nodo 4 sigue sin ruta al terminar la ventana
+(34.500 intentos), pero ya habiendo entrado dos de tres, lo honesto es decir
+que tarda, no que no puede.
+
+O sea: el periodo degenerado **no impide que la red se forme, la degrada**. Y el
+log muestra exactamente dónde:
+
+| Módulo | Líneas | Qué es |
+|---|---|---|
+| RPL | 12.417 | el control explota junto con el flood |
+| CSMA | 12.068 | de las cuales **5.410 son `Neighbor queue full`** |
+| A1cli + A1srv | 479 | la aplicación, que es lo único que se quería ver |
+
+La primera `Neighbor queue full` aparece a los **16,78 s**, es decir 130 ms
+después de que el nodo 3 consigue ruta y empieza a transmitir. Ahí está la
+respuesta a dónde mueren los paquetes: en la cola de la MAC, con
+`could not allocate packet, dropping packet` acompañando. El flood de la
+aplicación no desplaza al control de RPL, lo arrastra: por cada datagrama que
+el cliente intenta mandar, RPL vuelve a armar su opción hop-by-hop y CSMA
+vuelve a intentar encolar.
+
 ### El fondo: `etimer` no puede expresar sub-milisegundos
 
 La conclusión que vale la pena escribir en el informe no es "se inunda", es que
@@ -97,11 +123,9 @@ Hecho: los cuatro logs están en `evidencia/a1-*.log`, generados con
       entre medio.
 - [ ] Captura del *Timeline* de un caso degenerado: actividad continua y
       colisiones.
-- [ ] **Pregunta abierta**: los nodos 2 y 4 no consiguen ruta en los 18,6 s que
-      alcanzó la corrida. ¿Nunca la consiguen, o solo tardan más porque el
-      nodo 3 les tapa el medio? Se responde subiendo `MAX_LINEAS` en
-      `js/volcar-log.js` y dejando correr los 90 s completos. **No afirmar que
-      la red no se forma hasta tener ese dato.**
+- [ ] Correr `1e-10` y `1e-20` largos también, si se quiere simetría — pero no
+      hace falta para el informe: la corrida larga de `1e-5` ya respondió lo
+      que faltaba (abajo).
 
 ---
 
