@@ -1,0 +1,2 @@
+Falta EVENTHUB_COMPATIBLE_CONNECTION_STRING (IoT Hub > Built-in endpoints > Event Hub compatible endpoint). Ver .env.example
+exit=1

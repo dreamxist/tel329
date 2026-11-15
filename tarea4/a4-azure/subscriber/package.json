@@ -1,0 +1,11 @@
+{
+  "name": "tel329-a4-subscriber",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TEL329 Tarea 4 - suscriptor al endpoint compatible con Event Hubs de Azure IoT Hub",
+  "type": "module",
+  "main": "azure-sensor-subscriber.js",
+  "engines": { "node": ">=22" },
+  "scripts": { "start": "node azure-sensor-subscriber.js" },
+  "dependencies": { "@azure/event-hubs": "^6.0.4" }
+}

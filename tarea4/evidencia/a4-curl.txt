@@ -1,0 +1,39 @@
+# Dentro del contenedor (contiker/contiki-ng, --privileged), sensor TARGET=native corriendo
+
+# ifconfig tun0
+tun0: flags=4305<UP,POINTOPOINT,RUNNING,NOARP,MULTICAST>  mtu 1500
+        inet 192.168.215.2  netmask 255.255.255.255  destination 192.168.215.2
+        inet6 fe80::f620:46b5:604c:f0c  prefixlen 64  scopeid 0x20<link>
+        inet6 fd00::1  prefixlen 64  scopeid 0x0<global>
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 500  (UNSPEC)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2  bytes 96 (96.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+# ping6 -c 3 fd00::302:304:506:708
+PING fd00::302:304:506:708(fd00::302:304:506:708) 56 data bytes
+64 bytes from fd00::302:304:506:708: icmp_seq=1 ttl=64 time=0.772 ms
+64 bytes from fd00::302:304:506:708: icmp_seq=2 ttl=64 time=0.072 ms
+64 bytes from fd00::302:304:506:708: icmp_seq=3 ttl=64 time=0.097 ms
+
+--- fd00::302:304:506:708 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2004ms
+rtt min/avg/max/mdev = 0.072/0.313/0.772/0.324 ms
+
+# GET http://[fd00::302:304:506:708]/ (python3 urllib, la imagen no trae curl) x3
+HTTP 200 OK {'Server': 'Contiki', 'Connection': 'close', 'Content-Type': 'application/json'}
+{"temp":24,"hum":80}
+HTTP 200 OK {'Server': 'Contiki', 'Connection': 'close', 'Content-Type': 'application/json'}
+{"temp":24,"hum":81}
+HTTP 200 OK {'Server': 'Contiki', 'Connection': 'close', 'Content-Type': 'application/json'}
+{"temp":16,"hum":86}
+
+# Desde el Mac, via puente TCP del contenedor (docker -p 127.0.0.1:8080 -> [fd00::302:304:506:708]:80)
+$ curl -s -i http://127.0.0.1:8080/
+HTTP/1.0 200 OK
+Server: Contiki
+Connection: close
+Content-Type: application/json
+
+{"temp":33,"hum":80}

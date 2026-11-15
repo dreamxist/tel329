@@ -1,0 +1,10 @@
+Modo --dry-run: sin conexión a Azure. deviceId=contiki-ng-01 sensor=http://127.0.0.1:8080/ cada 3000 ms
+Contiki-NG Azure Middleware started.
+[sensor] http://127.0.0.1:8080/ -> {"temp":26,"hum":89}
+[dry-run] enviaría a IoT Hub: {"deviceId":"contiki-ng-01","temperature":26,"humidity":89} properties={temperatureAlert:false}
+[sensor] http://127.0.0.1:8080/ -> {"temp":26,"hum":80}
+[dry-run] enviaría a IoT Hub: {"deviceId":"contiki-ng-01","temperature":26,"humidity":80} properties={temperatureAlert:false}
+[sensor] http://127.0.0.1:8080/ -> {"temp":35,"hum":83}
+[dry-run] enviaría a IoT Hub: {"deviceId":"contiki-ng-01","temperature":35,"humidity":83} properties={temperatureAlert:true}
+[sensor] http://127.0.0.1:8080/ -> {"temp":18,"hum":89}
+[dry-run] enviaría a IoT Hub: {"deviceId":"contiki-ng-01","temperature":18,"humidity":89} properties={temperatureAlert:false}
