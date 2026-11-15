@@ -2,16 +2,18 @@
   "name": "tel329-a4-middleware",
   "version": "1.0.0",
   "private": true,
-  "description": "TEL329 Tarea 4 - middleware sensor Contiki-NG -> Azure IoT Hub",
+  "description": "TEL329 Tarea 4 - middleware sensor Contiki-NG -> Azure IoT Hub o broker MQTT local",
   "type": "module",
   "main": "middleware-azure.js",
   "engines": { "node": ">=22" },
   "scripts": {
     "start": "node middleware-azure.js",
+    "local": "node middleware-azure.js --destino local",
     "dry-run": "node middleware-azure.js --dry-run"
   },
   "dependencies": {
     "azure-iot-device": "^1.18.4",
-    "azure-iot-device-mqtt": "^1.16.4"
+    "azure-iot-device-mqtt": "^1.16.4",
+    "mqtt": "^5.16.1"
   }
 }
