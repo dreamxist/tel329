@@ -313,7 +313,7 @@ Latencias de la corrida (90 s, un mensaje cada 3 s, middleware y suscriptor en e
 
 La mediana de 1 ms dice que entregar un dato a través del broker cuesta lo mismo que la ida y vuelta al broker: Mosquitto reenvía el `PUBLISH` al suscriptor antes de mandar el `PUBACK` al middleware (en ese orden aparecen en `a4-mosquitto.log`), así que las dos columnas miden casi el mismo camino. Las cuatro muestras de 5 ms o más (6 ms en el primer mensaje, 5, 11 y 5 ms después) coinciden una a una con los `PUBACK` lentos del middleware, o sea que son del host (planificador, reenvío de puertos de OrbStack, emulación amd64 de la imagen) y no del protocolo. Contra IoT Hub este tramo cruzaría Internet con TLS y pasaría por el endpoint compatible con Event Hubs, así que estos números son un piso del tramo nube, no una estimación de Azure.
 
-**Publicación.** El enunciado pide publicar la adaptación en GitHub o equivalente. El código vive en el repo `dreamxist/tel329`, carpeta `tarea4/a4-azure/`, que hoy es privado: **[FALTA]** decidir si se hace público, se publica en un repo aparte o se adjunta como zip (ver `entrega/Pendientes_Tarea4.md`).
+**Publicación.** El enunciado pide publicar la adaptación en GitHub o equivalente. El código está publicado en el repo público `dreamxist/tel329`, carpeta `tarea4/a4-azure/`: [github.com/dreamxist/tel329/tree/main/tarea4/a4-azure](https://github.com/dreamxist/tel329/tree/main/tarea4/a4-azure).
 
 ---
 
