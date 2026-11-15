@@ -3,7 +3,7 @@
 **Asignatura:** TEL329 Redes de Sensores · 2026  
 **Autor:** Francisco Zúñiga  
 **Repositorio:** `tel329`, rama `tarea4`, carpeta `tarea4/` (código en `a1-coap/`, `a2-mqtt/`, `a4-azure/`; evidencia en `evidencia/`)  
-**Entorno:** Contiki-NG (develop) en la imagen `contiker/contiki-ng` sobre OrbStack; Cooja headless con semilla 123456; Mosquitto 2.0.11; Node 22  
+**Entorno:** Contiki-NG (develop) en la imagen `contiker/contiki-ng` sobre OrbStack; Cooja headless con semilla 123456; Mosquitto 2.0.11; Node 22 con `mqtt` 5; TShark 3.6.2  
 **Entrega:** jueves 19-nov-2026
 
 Informe autocontenido: las cuatro actividades con sus números, el código clave en bloques y la lista de archivos de evidencia con su ruta. El código completo está en el repo. Lo pendiente está marcado **[FALTA]** y detallado en `Pendientes_Tarea4.md`.
@@ -155,7 +155,7 @@ En 299 s simulados: 273 `PUBLISH` QoS 1 y 273 `PUBACK` (entre 51 y 58 por client
 
 Las dos mitades usan la misma fuente primaria: el *Mote output* de Cooja, que antepone a cada línea el instante simulado en microsegundos. En CoAP el tiempo de respuesta de cada petición es la diferencia entre la línea `RX` y la línea `TX` del mismo par (cliente, seq) — del `POST` confirmable a su respuesta `2.04` piggybacked en el ACK — y la empareja `a1-coap/tiempos.py` (→ `evidencia/a1-tiempos-coap.csv`, una fila por petición). En MQTT es la diferencia entre `A2,PUBACK` y `A2,PUB` del mismo `packet id` — de `mqtt_publish()` al evento `MQTT_EVENT_PUBACK` — y la empareja `a2-mqtt/analizar.py` (→ `evidencia/a2-tiempos-mqtt.csv`). Los saltos salen en CoAP del hop limit que lee la raíz (`64 − ttl + 1`) y en MQTT de la cadena de padres RPL que reporta cada cliente, cotejada con el hop limit del pcap en `tun0`.
 
-Las capturas de tráfico son distintas por naturaleza del camino. En CoAP el tráfico nunca sale de la red de radio, así que la captura es del radio: `evidencia/a1-coap.pcap`, 820 tramas IEEE 802.15.4 (linktype 195), de 4,28 s a 282,36 s. Cooja trae esa exportación en el *Radio Logger* ("6LoWPAN Analyzer with PCAP"), pero ese plugin es un `VisPlugin` y la versión actual no lo arranca en `--no-gui`, así que `js/volcar-log.js` escribe el pcap por su cuenta enganchándose a los triggers de transmisión del radio medium, con el mismo formato que `PcapExporter.java`. En MQTT el tráfico cruza al host, y ahí se capturó con `tcpdump` en `tun0`: `evidencia/a2-mqtt.pcap` (901 paquetes TCP al/desde :1883, reloj del host). Las tramas de Cooja no llevan FCS, así que para abrir `a1-coap.pcap` en Wireshark hay que fijar *IEEE 802.15.4 → FCS format: None* (`-o wpan.fcs_format:0` en `tshark`).
+Las capturas de tráfico son distintas por naturaleza del camino. En CoAP el tráfico nunca sale de la red de radio, así que la captura es del radio: `evidencia/a1-coap.pcap`, 820 tramas IEEE 802.15.4 (linktype 195), de 4,28 s a 282,36 s. Cooja trae esa exportación en el *Radio Logger* ("6LoWPAN Analyzer with PCAP"), pero ese plugin es un `VisPlugin` y la versión actual no lo arranca en `--no-gui`, así que `js/volcar-log.js` escribe el pcap por su cuenta enganchándose a los triggers de transmisión del radio medium, con el mismo formato que `PcapExporter.java`. En MQTT el tráfico cruza al host, y ahí se capturó con `tcpdump` en `tun0`: `evidencia/a2-mqtt.pcap` (901 paquetes TCP al/desde :1883, reloj del host). Las tramas de Cooja no llevan FCS, así que para abrir `a1-coap.pcap` en Wireshark hay que fijar *IEEE 802.15.4 → FCS format: None* (`-o wpan.fcs_format:0` en `tshark`). Los dos pcap se validaron con `tshark` 3.6.2 (`evidencia/a1-tshark.txt`, `evidencia/a2-tshark.txt`): en `a1-coap.pcap` decodifica 6LoWPAN y CoAP en 358 de las 820 tramas, 179 `CON POST /sensores/temp` y 179 `ACK 2.04 Changed` con 129 MID distintos de cada tipo, que son las 129 peticiones del log (las 50 tramas de más por tipo son las peticiones a dos saltos, que el radio ve dos veces con el mismo MID: la del cliente y el reenvío del mote intermedio); en `a2-mqtt.pcap` decodifica MQTT en 556 de los 901 paquetes, 5 `CONNECT`, 5 `CONNACK`, 273 `PUBLISH` y 273 `PUBACK`, sin `PINGREQ` ni retransmisiones de `PUBLISH`, lo mismo que cuenta el log de los motes.
 
 ### Tabla comparativa
 
@@ -176,7 +176,7 @@ Notas de la tabla. Las filas por salto de CoAP se agregan desde `a1-tiempos-coap
 
 ### Análisis
 
-**Primero la salvedad: la comparación mezcla protocolo y camino.** En la Actividad 1 el servidor CoAP corre en la propia raíz del DODAG, así que la respuesta `2.04` sale del mismo mote que termina la ruta RPL y la ida y vuelta es puramente de radio. En la Actividad 2 el broker está en el host: el `PUBACK` nace en Mosquitto después de cruzar el border router, el enlace serial SLIP (`tunslip6`), `tun0` y la pila TCP de Linux, y vuelve por el mismo camino. Entonces la diferencia entre filas no es "CoAP contra MQTT" a secas, es "CoAP sobre UDP terminado en la raíz" contra "MQTT sobre TCP terminado en un broker detrás de un border router". Separar las dos contribuciones exigiría poner el servidor CoAP también detrás de `tunslip6`; **[FALTA]** no se hizo. Con esa salvedad, lo que las cifras sí dicen es lo siguiente.
+**Primero la salvedad: la comparación mezcla protocolo y camino.** En la Actividad 1 el servidor CoAP corre en la propia raíz del DODAG, así que la respuesta `2.04` sale del mismo mote que termina la ruta RPL y la ida y vuelta es puramente de radio. En la Actividad 2 el broker está en el host: el `PUBACK` nace en Mosquitto después de cruzar el border router, el enlace serial SLIP (`tunslip6`), `tun0` y la pila TCP de Linux, y vuelve por el mismo camino. Entonces la diferencia entre filas no es "CoAP contra MQTT" a secas, es "CoAP sobre UDP terminado en la raíz" contra "MQTT sobre TCP terminado en un broker detrás de un border router". Separar las dos contribuciones exigiría poner el servidor CoAP también detrás de `tunslip6`; **[FALTA, opcional]** no se hizo. Con esa salvedad, lo que las cifras sí dicen es lo siguiente.
 
 **A igual número de saltos las medianas son comparables y el orden es el esperado.** A un salto, 46,8 ms CoAP contra 60,3 ms MQTT; a dos, 98,4 contra 164,3 ms. Los dos protocolos hacen una ida y una vuelta por dato (RFC 7252 §5.2.1: respuesta piggybacked en el ACK del CON; OASIS MQTT 3.1.1 §3.4: `PUBACK` por cada `PUBLISH` con QoS 1), así que la mediana la fija el costo por trama, no el protocolo de aplicación. La diferencia que sobra la explican tres cosas: MQTT carga 20 bytes de cabecera TCP por segmento donde CoAP carga 8 de UDP y 4 de cabecera CoAP, lo que vuelve las tramas más largas; en los primeros intercambios de cada conexión Linux responde con dos paquetes por publicación (el ACK puro y el segmento con el `PUBACK`, separados mientras está en *quick ACK*), que son dos tramas más bajando por la red de radio; y el `PUBACK` paga además el tramo SLIP + host que el `2.04` de CoAP no paga.
 
@@ -190,27 +190,30 @@ Notas de la tabla. Las filas por salto de CoAP se agregan desde `a1-tiempos-coap
 
 **En resumen.** En esta red el tiempo de respuesta de CoAP es, en mediana, 47 ms a un salto y ~98 ms a dos; el de MQTT con QoS 1, 60 ms a un salto, 164 a dos y 212 a tres, entre 1,3 y 1,7 veces el de CoAP a igual profundidad, con la salvedad de que el `PUBACK` cruza además el border router y el host. Los dos escalan linealmente con los saltos porque lo que manda es el backoff CSMA por trama (hasta 42 ms por trama en Cooja), no la cabecera de aplicación. La diferencia cualitativa está en la cola: CoAP sobre UDP no tiene *handshake*, no mantiene conexión y sus reintentos son acotados por la aplicación, de modo que su máximo quedó en 141 ms; MQTT sobre TCP paga el *handshake* bloqueado hasta el DAO, el *keep alive* si publica poco, y cuando el enlace SLIP corrompe un segmento la latencia la decide el RTO de TCP (6,2 s). Lo que MQTT da a cambio es la entrega *al menos una vez* con *packet id* (§4.3.2), el desacople publicador/suscriptor por el broker y la sesión persistente, que CoAP no ofrece por sí solo.
 
-**Supuestos y límites.** Red simulada (UDGM con éxito 1,0 y sin pérdida por distancia, 6 motes, semilla fija 123456), broker en la misma máquina: los números miden el costo del protocolo y de la pila, no un enlace real. En MQTT el tiempo simulado corre a 1,0× contra el reloj del host; en los tramos en que el host se atrasa, el RTT medido desde el mote incluye ese atraso. **[FALTA]** los pcap no se validaron con Wireshark/tshark (no están instalados en la máquina); `a1-coap.pcap` se validó por estructura con Python (magic, linktype 195, 428 tramas de datos + 392 ACK, payload CoAP legible en 358 tramas de datos) y `a2-mqtt.pcap` con el volcado de `tcpdump -tt -nn -v`.
+**Supuestos y límites.** Red simulada (UDGM con éxito 1,0 y sin pérdida por distancia, 6 motes, semilla fija 123456), broker en la misma máquina: los números miden el costo del protocolo y de la pila, no un enlace real. En MQTT el tiempo simulado corre a 1,0× contra el reloj del host; en los tramos en que el host se atrasa, el RTT medido desde el mote incluye ese atraso. Los conteos de tramas y paquetes de los dos pcap coinciden con los logs: `tshark` decodifica las 129 peticiones CoAP con su `2.04` y los 273 pares `PUBLISH`/`PUBACK` (ver *Cómo se capturó*).
 
 ---
 
-## Actividad 4 — Sensores Contiki-NG en Azure IoT Hub
+## Actividad 4 — Sensores Contiki-NG en la nube
 
-Código y evidencia en `tarea4/a4-azure/` y `tarea4/evidencia/a4-*`. La cadena completa sensor → enrutador → middleware quedó verificada localmente dentro del contenedor `contiker/contiki-ng`; el tramo contra Azure IoT Hub está implementado y listo, pero su corrida depende de las cadenas de conexión del portal, que se marcan como **[FALTA: cadena de conexión de Azure]**.
+Código en `tarea4/a4-azure/` y evidencia en `tarea4/evidencia/a4-*`. **La nube de esta entrega es un broker MQTT local, no Azure.** El enunciado dice que la actividad "implica la ejecución de Contiki-NG ya sea en un host local o en la nube de Microsoft Azure" y que el código "puede ser adaptado de acuerdo al escenario o caso de uso que determine"; se tomó el host local. Mosquitto 2.0.11, que ya viene en la imagen `contiker/contiki-ng`, cumple en la cadena el mismo rol que IoT Hub: recibe la telemetría *device-to-cloud* del middleware y se la entrega al suscriptor. La cadena sensor → enrutador → middleware → broker → suscriptor corrió completa durante 90 s (`a4-azure/correr-local.sh`). El camino Azure (`azure-iot-device-mqtt` hacia IoT Hub y `@azure/event-hubs` en el suscriptor) queda como **variante implementada, no ejecutada por falta de suscripción**; los pasos para correrla están en `a4-azure/README.md` §"Azure en 5 minutos".
 
 ```
  ┌──────────────────────── contenedor contiker/contiki-ng (--privileged) ───────────────────────┐
  │  sensor/                       router/                                                      │
  │  mote Contiki-NG      6LoWPAN  rpl-border-router + tunslip6 (Cooja)   tun0 fd00::1/64        │
- │  httpd-ws :80  ──────────────▶ o TARGET=native (tun directo)  ──────▶ tcp-forward.py :8080 ──┼──┐
+ │  httpd-ws :80  ──────────────▶ o TARGET=native (tun directo)  ──────▶ tcp-forward.py :8080 ──┼──┐ -p 127.0.0.1:8080
  │  {"temp":..,"hum":..}          fd00::302:304:506:708                                         │  │
- └──────────────────────────────────────────────────────────────────────────────────────────────┘  │ docker -p 127.0.0.1:8080
-                                                                                                   ▼
-   middleware/  Node 22: fetch cada 3 s ──▶ {deviceId,temperature,humidity} + prop. temperatureAlert
-                azure-iot-device + azure-iot-device-mqtt  ── MQTT/TLS 8883 ──▶  Azure IoT Hub (F1)
-                                                                                      │ built-in endpoint
-                                                                                      │ (Event Hubs-compatible, AMQP)
-   subscriber/  Node 22: @azure/event-hubs EventHubConsumerClient  ◀──────────────────┘
+ │                                                                                              │  │
+ │  mosquitto :1883 (a2-mqtt/mosquitto.conf)  ◀────────────────────────────────────────────────┼──┼─┐ -p 127.0.0.1:1883
+ └──────────────────────────────────────────────────────────────────────────────────────────────┘  │ │
+                                                                                                   ▼ │
+   middleware/  Node 22: fetch cada 3 s ──▶ {deviceId,temperature,humidity,timestamp}               │
+                --destino local: mqtt (MQTT 5, QoS 1) ── usm/tel329/cloud/contiki-ng-01/telemetry ──┤
+                --destino azure: azure-iot-device-mqtt ── MQTT/TLS 8883 ──▶ Azure IoT Hub (variante) │
+                                                                                                     │
+   subscriber/  cloud-subscriber.js: mqtt, usm/tel329/cloud/+/telemetry  ◀──────────────────────────┘
+                azure-sensor-subscriber.js: @azure/event-hubs al built-in endpoint (variante Azure)
 ```
 
 ### 4.b ¿Cuál es el resultado presentado por el sensor o mote?
@@ -242,78 +245,70 @@ httpd_ws_get_script(struct httpd_ws_state *s)
 
 Por eso se eligió HTTP sobre CoAP: el enunciado habla de servidor web, el middleware original hace `GET`, y así el tramo Node queda con `fetch` nativo sin librerías CoAP. Hubo que habilitar TCP (`UIP_CONF_TCP 1`), fijar MSS y ventana TCP en 128 B y alinear los buffers de `httpd-ws` (sin eso no compila: la cabecera exige buffer >= ventana y GCC moderno dispara `-Werror=format-truncation` en `httpd-ws.c:255`), y forzar `Content-Type: application/json`. El mote se compiló en el contenedor para `TARGET=native`, donde la plataforma crea el `tun0` (`fd00::1/64`) y el nodo queda en `fd00::302:304:506:708`.
 
-**Evidencia** (`evidencia/a4-sensor.log`, `evidencia/a4-curl.txt`). Al arrancar, el mote reporta `Routing: RPL Lite`, `Net: tun6`, link-layer `0102.0304.0506.0708` y `tun0` con `fd00::1/64`. Desde el contenedor, `ping6 -c 3 fd00::302:304:506:708` responde los tres paquetes (0 % de pérdida, RTT 0,07 a 0,77 ms) y tres `GET http://[fd00::302:304:506:708]/` devuelven `HTTP 200 OK`, `Server: Contiki`, `Content-Type: application/json` con cuerpos `{"temp":24,"hum":80}`, `{"temp":24,"hum":81}` y `{"temp":16,"hum":86}`; el mismo `GET` desde el Mac vía el puente TCP devolvió `{"temp":33,"hum":80}`. Del lado del mote, cada petición queda registrada como `[INFO: Sensor ] GET / -> {"temp":..,"hum":..}`. El enrutador `rpl-border-router` del árbol también compila para native en el contenedor (`evidencia/a4-border-router-build.log`, exit 0); la topología con Cooja + Serial Socket + `tunslip6` queda documentada en `a4-azure/router/README.md` pero no se corrió (requiere GUI).
+**Evidencia** (`evidencia/a4-sensor.log`, `evidencia/a4-curl.txt`, `evidencia/a4-sensor-local.log`). Al arrancar, el mote reporta `Routing: RPL Lite`, `Net: tun6`, link-layer `0102.0304.0506.0708` y `tun0` con `fd00::1/64`. Desde el contenedor, `ping6 -c 3 fd00::302:304:506:708` responde los tres paquetes (0 % de pérdida, RTT 0,07 a 0,77 ms) y tres `GET http://[fd00::302:304:506:708]/` devuelven `HTTP 200 OK`, `Server: Contiki`, `Content-Type: application/json` con cuerpos `{"temp":24,"hum":80}`, `{"temp":24,"hum":81}` y `{"temp":16,"hum":86}`; el mismo `GET` desde el Mac vía el puente TCP devolvió `{"temp":33,"hum":80}`. Del lado del mote, cada petición queda registrada como `[INFO: Sensor ] GET / -> {"temp":..,"hum":..}`. En la corrida de la cadena completa el mote atendió 32 `GET` (`a4-sensor-local.log`): dos del chequeo de arranque de `correr-local.sh` y 30 del middleware, uno cada 3 s, cada uno con el mismo JSON que el middleware publicó después. El enrutador `rpl-border-router` del árbol también compila para native en el contenedor (`evidencia/a4-border-router-build.log`, exit 0); la topología con Cooja + Serial Socket + `tunslip6` queda documentada en `a4-azure/router/README.md` pero no se corrió (requiere GUI).
 
 ### 4.a ¿Cuál es el resultado presentado por la interfaz middleware?
 
-**Planteamiento.** `middleware/middleware-azure.js` (Node 22, ESM) reemplaza al `middleware-azure.js` del libro: se quita `request` (deprecado) y Express (no participaba del flujo), se usa `fetch` nativo con timeout, y el SDK `azure-iot-device` + `azure-iot-device-mqtt` actual con su API de promesas (`Client.fromConnectionString(cs, Mqtt)`, `await client.open()`, `await client.sendEvent(message)`). Cada 3 s consulta `SENSOR_URL`, valida que `temp` y `hum` sean números, arma `{"deviceId","temperature","humidity"}` (el `deviceId` se toma de la propia cadena de conexión), agrega la propiedad de aplicación `temperatureAlert = temperature > 30` y lo envía al IoT Hub por MQTT. La cadena de conexión y la URL del sensor vienen sólo de variables de entorno (`.env.example` versionado, `.env` no). El modo `--dry-run` hace todo menos conectar a Azure e imprime el mensaje que mandaría, lo que permite probar sensor → middleware sin credenciales.
+**Planteamiento.** `middleware/middleware-azure.js` (Node 22, ESM) reemplaza al `middleware-azure.js` del libro: se quita `request` (deprecado) y Express (no participaba del flujo) y se usa `fetch` nativo con timeout. Cada 3 s consulta `SENSOR_URL`, valida que `temp` y `hum` sean números y arma `{"deviceId","temperature","humidity"}` con la propiedad `temperatureAlert = temperature > 30`. El destino se elige con `--destino local|azure` (o `DESTINO`):
+
+- **`local` (la corrida de esta entrega).** Publica con el paquete npm `mqtt` en `MQTT_URL` (por defecto `mqtt://127.0.0.1:1883`), tema `usm/tel329/cloud/contiki-ng-01/telemetry`, QoS 1, y registra el `PUBACK` de cada mensaje con su *packet id* y el tiempo hasta recibirlo. Al cuerpo se agrega `timestamp` (ISO 8601, hora de publicación), que el suscriptor usa para medir la latencia. **Se usa MQTT 5 y `temperatureAlert` va como *user property*** (OASIS MQTT 5.0 §3.3.2.3.7): en IoT Hub la alerta es una propiedad de aplicación que viaja fuera del cuerpo, y MQTT 3.1.1 no tiene dónde ponerla salvo dentro del JSON; MQTT 5 sí, y Mosquitto 2.0 lo habla, así que el cuerpo queda como el de Azure y la alerta en el mismo lugar lógico.
+- **`azure` (variante, por defecto en el código).** El SDK `azure-iot-device` + `azure-iot-device-mqtt` con su API de promesas (`Client.fromConnectionString(cs, Mqtt)`, `await client.open()`, `await client.sendEvent(message)`), la alerta como `message.properties`, la cadena de conexión sólo por entorno y el modo `--dry-run`, sin cambios respecto de la versión anterior.
 
 ```js
-function buildMessage({ temperature, humidity }) {
-  const data = JSON.stringify({ deviceId, temperature, humidity });
-  const message = new Message(data);
-  message.properties.add('temperatureAlert', temperature > TEMPERATURE_ALERT_C ? 'true' : 'false');
-  message.contentType = 'application/json';
-  message.contentEncoding = 'utf-8';
-  return message;
-}
-
-async function tick(client) {
-  const reading = await readSensor();            // fetch(SENSOR_URL) con timeout, valida temp/hum
-  const message = buildMessage(reading);
-  if (dryRun) {
-    console.log(`[dry-run] enviaría a IoT Hub: ${message.getData()} ...`);
-    return;
-  }
-  await client.sendEvent(message);               // Client.fromConnectionString(cs, Mqtt)
-  console.log(`[iothub] enviado: ${message.getData()} temperatureAlert=${alert}`);
-}
+const client = await mqtt.connectAsync(mqttUrl, { protocolVersion: 5, clientId: `middleware-${deviceId}`, clean: true });
+// por cada lectura del sensor:
+const data = JSON.stringify({ deviceId, temperature, humidity, timestamp: new Date().toISOString() });
+const t0 = performance.now();
+const packet = await client.publishAsync(topic, data, {
+  qos: 1,
+  properties: { contentType: 'application/json', userProperties: { temperatureAlert: alert } },
+});
+console.log(`[mqtt] PUBLISH mid=${packet.messageId} ${data} temperatureAlert=${alert} -> PUBACK en ${(performance.now() - t0).toFixed(2)} ms`);
 ```
 
-**Evidencia local** (`evidencia/a4-middleware-dryrun.log`). Corrido contra el sensor real durante 11 s: `Modo --dry-run ... deviceId=contiki-ng-01 sensor=http://127.0.0.1:8080/ cada 3000 ms`, seguido de cuatro pares de líneas `[sensor] ... -> {"temp":26,"hum":89}` / `[dry-run] enviaría a IoT Hub: {"deviceId":"contiki-ng-01","temperature":26,"humidity":89} properties={temperatureAlert:false}`; en la tercera lectura (`temp=35`) la propiedad pasa a `temperatureAlert:true`, lo que confirma el umbral.
+**Evidencia** (`evidencia/a4-middleware-local.log`, `evidencia/a4-mosquitto.log`). El middleware abrió la sesión con `Conectado a mqtt://127.0.0.1:1883 (MQTT 5) como middleware-contiki-ng-01; tema usm/tel329/cloud/contiki-ng-01/telemetry; consultando http://127.0.0.1:8080/ cada 3000 ms` y en 87 s hizo 30 lecturas del sensor y 30 `PUBLISH` QoS 1 (*packet id* 59099 a 59128), los 30 con su `PUBACK`. Cada lectura deja un par de líneas como:
 
-**Evidencia contra Azure.** **[FALTA: cadena de conexión de Azure]**. Cuando esté, correr desde `tarea4/a4-azure/middleware`:
-
-```bash
-AZURE_DEVICE_CONNECTION_STRING='HostName=<hub>.azure-devices.net;DeviceId=contiki-ng-01;SharedAccessKey=<clave>' \
-SENSOR_URL=http://127.0.0.1:8080/ node middleware-azure.js | tee ../../evidencia/a4-middleware-azure.log
+```
+[sensor] http://127.0.0.1:8080/ -> {"temp":32,"hum":85}
+[mqtt] PUBLISH mid=59100 {"deviceId":"contiki-ng-01","temperature":32,"humidity":85,"timestamp":"2026-11-15T17:26:38.164Z"} temperatureAlert=true -> PUBACK en 1.58 ms
 ```
 
-y pegar aquí la salida esperada: `Conectado a IoT Hub por MQTT como contiki-ng-01 ...` y luego una línea `[iothub] enviado: {...} temperatureAlert=...` por cada lectura, más el gráfico *Device to cloud messages* del portal.
+12 lecturas superaron los 30 °C y salieron con `temperatureAlert=true`; las otras 18, con `false`. Del otro lado, Mosquitto registra la misma secuencia mensaje por mensaje: `New client connected ... as middleware-contiki-ng-01 (p5, c1, k60)` (protocolo 5), y por cada dato `Received PUBLISH from middleware-contiki-ng-01 (d0, q1, r0, m59099, 'usm/tel329/cloud/contiki-ng-01/telemetry', ... (98 bytes))`, `Sending PUBLISH to cloud-subscriber-...`, `Sending PUBACK to middleware-contiki-ng-01 (m59099, rc0)` y `Received PUBACK from cloud-subscriber-...`: 30 de cada uno. El tiempo `PUBLISH → PUBACK` medido por el middleware fue de 0,73 a 11,07 ms, mediana 1,26 ms (tabla en 4.c).
 
 ### 4.c ¿Cuál es el resultado presentado por el suscriptor de Azure IoT Hub?
 
-**Planteamiento.** `subscriber/azure-sensor-subscriber.js` reemplaza el paquete archivado `azure-event-hubs` por `@azure/event-hubs` 6. El IoT Hub expone la telemetría en su endpoint integrado `messages/events`, compatible con Event Hubs (AMQP 5671), así que un `EventHubConsumerClient` con el consumer group `$Default` y la cadena "Event Hub-compatible endpoint" se suscribe a todas las particiones desde `latestEventPosition` (equivalente al `startAfterTime: Date.now()` del libro) e imprime, por cada evento, la partición, el `iothub-connection-device-id` de las propiedades de sistema, el cuerpo JSON y las propiedades de aplicación (`temperatureAlert`). La cadena viene sólo de `EVENTHUB_COMPATIBLE_CONNECTION_STRING`; si falta o si se pega por error la cadena del dispositivo (`HostName=...`), el programa termina con un mensaje que indica qué cadena corresponde.
+**Planteamiento.** `subscriber/cloud-subscriber.js` cumple el rol de `azure-sensor-subscriber.js` con el broker local: se conecta con `mqtt` (MQTT 5) a `MQTT_URL`, se suscribe con QoS 1 a `usm/tel329/cloud/+/telemetry` (el `+` toma cualquier `deviceId`, como el suscriptor de IoT Hub recibe de todos los dispositivos del hub) e imprime, por cada mensaje, la hora de llegada, el tema, el `deviceId` sacado del tema, el cuerpo JSON, las *user properties* (`temperatureAlert`) y la latencia middleware → suscriptor, que es la hora de llegada menos el `timestamp` del cuerpo. Middleware y suscriptor corren en el mismo Mac, así que los dos lados leen el mismo reloj y no hay desfase que corregir; la resolución es de 1 ms porque `timestamp` va en ISO 8601 con milisegundos. Al salir imprime n, mínimo, mediana, media y máximo.
 
 ```js
-const client = new EventHubConsumerClient(consumerGroup, connectionString);
-const subscription = client.subscribe(
-  {
-    processEvents: async (events, context) => {
-      for (const event of events) {
-        console.log(`Message received (partition ${context.partitionId}, deviceId=${event.systemProperties?.['iothub-connection-device-id'] ?? '?'}):`);
-        console.log(JSON.stringify(event.body));
-        if (event.properties && Object.keys(event.properties).length > 0) {
-          console.log(`properties: ${JSON.stringify(event.properties)}`);
-        }
-      }
-    },
-    processError: async (err, context) => { console.error(`Error en partición ${context.partitionId ?? '?'}: ${err.message}`); },
-  },
-  { startPosition: latestEventPosition },
-);
+await client.subscribeAsync('usm/tel329/cloud/+/telemetry', { qos: 1 });
+client.on('message', (topic, payload, packet) => {
+  const llegada = Date.now();
+  const body = JSON.parse(payload.toString());
+  latencias.push(llegada - Date.parse(body.timestamp));
+  console.log(`Message received ${new Date(llegada).toISOString()} (topic ${topic}, deviceId=${topic.split('/')[3]}, latencia ${llegada - Date.parse(body.timestamp)} ms):`);
+  console.log(payload.toString());
+  console.log(`properties: ${JSON.stringify(packet.properties?.userProperties)}`);
+});
 ```
 
-**Evidencia local** (`evidencia/a4-subscriber-sinvar.log`). Sin la variable, el programa arranca y sale con código 1 y el mensaje `Falta EVENTHUB_COMPATIBLE_CONNECTION_STRING (IoT Hub > Built-in endpoints > Event Hub compatible endpoint)`; con una cadena de tipo dispositivo responde `La cadena no parece la del endpoint compatible con Event Hubs ...`.
+La variante Azure, `subscriber/azure-sensor-subscriber.js`, reemplaza el paquete archivado `azure-event-hubs` por `@azure/event-hubs` 6: un `EventHubConsumerClient` con el consumer group `$Default` y la cadena "Event Hub-compatible endpoint" se suscribe a todas las particiones del endpoint integrado `messages/events` desde `latestEventPosition` (el `startAfterTime: Date.now()` del libro). Sin la cadena sale con código 1 y un mensaje que dice cuál falta (`evidencia/a4-subscriber-sinvar.log`).
 
-**Evidencia contra Azure.** **[FALTA: cadena de conexión de Azure]**. Cuando esté, correr desde `tarea4/a4-azure/subscriber`, con el middleware enviando en otra terminal:
+**Evidencia** (`evidencia/a4-subscriber-local.log`). El suscriptor arrancó con `Suscrito a usm/tel329/cloud/+/telemetry en mqtt://127.0.0.1:1883 (MQTT 5, QoS 1); esperando mensajes...` y recibió los 30 mensajes, en orden y con el mismo cuerpo, byte a byte, que el middleware reporta como publicados. Cada uno se ve así:
 
-```bash
-EVENTHUB_COMPATIBLE_CONNECTION_STRING='Endpoint=sb://<ns>.servicebus.windows.net/;SharedAccessKeyName=service;SharedAccessKey=<clave>;EntityPath=<hub>' \
-node azure-sensor-subscriber.js | tee ../../evidencia/a4-subscriber-azure.log
+```
+Message received 2026-11-15T17:26:38.166Z (topic usm/tel329/cloud/contiki-ng-01/telemetry, deviceId=contiki-ng-01, latencia 2 ms):
+{"deviceId":"contiki-ng-01","temperature":32,"humidity":85,"timestamp":"2026-11-15T17:26:38.164Z"}
+properties: {"temperatureAlert":"true"}
 ```
 
-y pegar aquí la salida esperada: `Suscrito al IoT Hub (consumer group $Default); esperando mensajes...` y luego, cada 3 s, `Message received (partition N, deviceId=contiki-ng-01):` con `{"deviceId":"contiki-ng-01","temperature":T,"humidity":H}` y `properties: {"temperatureAlert":"true|false"}`, que debe coincidir uno a uno con lo que el middleware reporta como enviado.
+Latencias de la corrida (90 s, un mensaje cada 3 s, middleware y suscriptor en el Mac, broker en el contenedor detrás del reenvío de puertos de OrbStack):
+
+| tramo | n | mín | mediana | media | máx |
+|---|---|---|---|---|---|
+| middleware → suscriptor (llegada − `timestamp`, resolución 1 ms) | 30 | 1 ms | 1 ms | 2,2 ms | 11 ms |
+| middleware `PUBLISH` → `PUBACK` (`performance.now()`) | 30 | 0,73 ms | 1,26 ms | 2,00 ms | 11,07 ms |
+
+La mediana de 1 ms dice que entregar un dato a través del broker cuesta lo mismo que la ida y vuelta al broker: Mosquitto reenvía el `PUBLISH` al suscriptor antes de mandar el `PUBACK` al middleware (en ese orden aparecen en `a4-mosquitto.log`), así que las dos columnas miden casi el mismo camino. Las cuatro muestras de 5 ms o más (6 ms en el primer mensaje, 5, 11 y 5 ms después) coinciden una a una con los `PUBACK` lentos del middleware, o sea que son del host (planificador, reenvío de puertos de OrbStack, emulación amd64 de la imagen) y no del protocolo. Contra IoT Hub este tramo cruzaría Internet con TLS y pasaría por el endpoint compatible con Event Hubs, así que estos números son un piso del tramo nube, no una estimación de Azure.
 
 **Publicación.** El enunciado pide publicar la adaptación en GitHub o equivalente. El código vive en el repo `dreamxist/tel329`, carpeta `tarea4/a4-azure/`, que hoy es privado: **[FALTA]** decidir si se hace público, se publica en un repo aparte o se adjunta como zip (ver `entrega/Pendientes_Tarea4.md`).
 
@@ -340,9 +335,15 @@ Rutas relativas a `tarea4/` en el repo.
 | `evidencia/a4-curl.txt` | A4.b | `ifconfig tun0`, `ping6` al mote (0 % pérdida), tres GET con 200 OK + application/json, y el curl desde el Mac vía el puente TCP |
 | `evidencia/a4-border-router-build.log` | A4.b | `make TARGET=native` del `rpl-border-router` del árbol, exit 0 |
 | `evidencia/a4-middleware-dryrun.log` | A4.a | middleware real contra el sensor real, 11 s: cuatro lecturas, mensaje {deviceId,temperature,humidity} y temperatureAlert que pasa a true con temp=35 |
-| `evidencia/a4-subscriber-sinvar.log` | A4.c | el suscriptor arranca y falla con mensaje claro sin EVENTHUB_COMPATIBLE_CONNECTION_STRING |
+| `evidencia/a4-subscriber-sinvar.log` | A4.c | variante Azure: el suscriptor arranca y falla con mensaje claro sin EVENTHUB_COMPATIBLE_CONNECTION_STRING |
+| `evidencia/a4-sensor-local.log` | A4.b | corrida de punta a punta: arranque del mote y los 32 GET atendidos (2 del chequeo de arranque, 30 del middleware) |
+| `evidencia/a4-middleware-local.log` | A4.a | middleware --destino local, 87 s: 30 lecturas y 30 PUBLISH MQTT 5 QoS 1 con su PUBACK y el tiempo hasta él (mediana 1,26 ms) |
+| `evidencia/a4-mosquitto.log` | A4.a/A4.c | el broker en -v: clientes en MQTT 5 y, por cada dato, PUBLISH recibido del middleware, reenviado al suscriptor y los dos PUBACK (30 de cada uno) |
+| `evidencia/a4-subscriber-local.log` | A4.c | los 30 mensajes recibidos con hora de llegada, temperatureAlert como user property y latencia; resumen n=30, mediana 1 ms, máx 11 ms |
+| `evidencia/a1-tshark.txt` | A3 | tshark 3.6.2 sobre a1-coap.pcap: 358 tramas CoAP (179 POST, 179 2.04, 129 MID distintos) y las primeras 40 líneas |
+| `evidencia/a2-tshark.txt` | A3 | tshark 3.6.2 sobre a2-mqtt.pcap: 556 paquetes MQTT (5 CONNECT, 5 CONNACK, 273 PUBLISH, 273 PUBACK) y las primeras 40 líneas |
 
-Pendiente de generar (ver `Pendientes_Tarea4.md`): `evidencia/a4-middleware-azure.log`, `evidencia/a4-subscriber-azure.log` y `evidencia/a4-portal-d2c.png` (envío real a Azure); capturas GUI de Cooja `evidencia/a1-cooja-*.png`, `evidencia/a2-cooja-*.png`; capturas de Wireshark `evidencia/a1-wireshark.png`, `evidencia/a2-wireshark.png`.
+Pendiente de generar (ver `Pendientes_Tarea4.md`): capturas GUI de Cooja `evidencia/a1-cooja-*.png`, `evidencia/a2-cooja-*.png`.
 
 ## Código entregado
 
@@ -358,12 +359,14 @@ Pendiente de generar (ver `Pendientes_Tarea4.md`): `evidencia/a4-middleware-azur
 | `a2-mqtt/correr.sh · js/volcar-log.js · analizar.py · Dockerfile` | orquestación mosquitto + Cooja + tunslip6 + tcpdump, log → CSV + resumen |
 | `a4-azure/sensor/sensor-azure.c · project-conf.h · Makefile` | mote sensor con httpd-ws que responde {"temp","hum"} |
 | `a4-azure/router/README.md · tcp-forward.py` | rpl-border-router (Cooja + tunslip6 o native) y puente TCP hacia el Mac |
-| `a4-azure/middleware/middleware-azure.js · package.json · .env.example` | middleware Node 22: fetch al sensor → azure-iot-device (MQTT) |
-| `a4-azure/subscriber/azure-sensor-subscriber.js · package.json · .env.example` | suscriptor @azure/event-hubs al endpoint integrado del IoT Hub |
+| `a4-azure/middleware/middleware-azure.js · package.json · .env.example` | middleware Node 22: fetch al sensor → --destino local (mqtt, MQTT 5 QoS 1 a Mosquitto) o azure (azure-iot-device, variante) |
+| `a4-azure/subscriber/cloud-subscriber.js` | suscriptor mqtt a usm/tel329/cloud/+/telemetry con hora de llegada y latencia |
+| `a4-azure/subscriber/azure-sensor-subscriber.js · package.json · .env.example` | variante Azure: suscriptor @azure/event-hubs al endpoint integrado del IoT Hub |
+| `a4-azure/correr-local.sh` | cadena completa sin Azure: contenedor con sensor + puente + Mosquitto, middleware y suscriptor en el Mac, logs a evidencia/ |
 
 ## Registro de ejecución
 
-Las dos simulaciones Cooja corrieron sin GUI dentro de `contiker/contiki-ng`, con un `ScriptRunner` inyectado por `correr.sh` que vuelca el Mote output con tiempo simulado y corta la corrida: A1 a los 282,4 s simulados, cuando los cinco clientes llegaron a 25 respuestas; A2 a los 300 s simulados (299 s de log), a velocidad 1,0 porque Mosquitto y `tunslip6` viven en el reloj del host y el contenedor corrió con `--privileged` por `/dev/net/tun`. El sensor de la A4 se compiló para `TARGET=native` en el mismo contenedor y se consultó desde adentro (`ping6`, `GET`) y desde el Mac a través de `tcp-forward.py` publicado en `127.0.0.1:8080`; el middleware corrió en el Mac en `--dry-run` contra ese puente. Los comandos exactos de cada corrida están en `tarea4/README.md` §"Reproducir cada corrida".
+Las dos simulaciones Cooja corrieron sin GUI dentro de `contiker/contiki-ng`, con un `ScriptRunner` inyectado por `correr.sh` que vuelca el Mote output con tiempo simulado y corta la corrida: A1 a los 282,4 s simulados, cuando los cinco clientes llegaron a 25 respuestas; A2 a los 300 s simulados (299 s de log), a velocidad 1,0 porque Mosquitto y `tunslip6` viven en el reloj del host y el contenedor corrió con `--privileged` por `/dev/net/tun`. El sensor de la A4 se compiló para `TARGET=native` en el mismo contenedor y se consultó desde adentro (`ping6`, `GET`) y desde el Mac a través de `tcp-forward.py` publicado en `127.0.0.1:8080`; el middleware corrió en el Mac primero en `--dry-run` contra ese puente y después, con `a4-azure/correr-local.sh 90`, la cadena completa: Mosquitto en el mismo contenedor publicado en `127.0.0.1:1883`, middleware `--destino local` y `cloud-subscriber.js` en el Mac durante 90 s, y el contenedor borrado al final. Los pcap de A1 y A2 se validaron con `tshark` en un contenedor efímero de la misma imagen. Los comandos exactos de cada corrida están en `tarea4/README.md` §"Reproducir cada corrida".
 
 ---
 
@@ -372,10 +375,13 @@ Las dos simulaciones Cooja corrieron sin GUI dentro de `contiker/contiki-ng`, co
 - Shelby, Z., Hartke, K., Bormann, C. (2014). *RFC 7252: The Constrained Application Protocol (CoAP)*. IETF. §3 (formato de mensaje), §4.2 (mensajes confirmables y retransmisión), §4.8 (parámetros de transmisión), §5 (modelo petición/respuesta), §5.2.1 (respuestas piggybacked), §6.1 (puerto 5683).
 - Hartke, K. (2015). *RFC 7641: Observing Resources in CoAP*. IETF.
 - OASIS (2014). *MQTT Version 3.1.1*. OASIS Standard. §3.1.2.10 (keep alive), §3.3–3.4 (PUBLISH/PUBACK), §4.2 (transporte sobre TCP), §4.3.2 (QoS 1, al menos una vez).
+- OASIS (2019). *MQTT Version 5.0*. OASIS Standard. §3.3.2.3.7 (User Property en PUBLISH), §3.3.2.3.9 (Content Type).
+- MQTT.js 5 (paquete npm `mqtt`), [github.com/mqttjs/MQTT.js](https://github.com/mqttjs/MQTT.js).
 - TEL329, Lección 8 — pila de protocolos de la WSN (aplicación sobre UDP/uIP, IPv6 + RPL, 6LoWPAN, CSMA/802.15.4).
 - TEL329, Lección 10 — CoAP: modelo de petición/respuesta y formato del mensaje.
 - Contiki-NG. Documentación: [CoAP](https://docs.contiki-ng.org/en/develop/doc/programming/CoAP.html), [MQTT](https://docs.contiki-ng.org/en/develop/doc/tutorials/MQTT.html), [RPL border router](https://docs.contiki-ng.org/en/develop/doc/tutorials/RPL-border-router.html); fuentes `os/net/mac/csma/csma-output.c`, `os/net/app-layer/coap/`, `os/net/app-layer/mqtt/`, `os/net/app-layer/httpd-ws/`, `examples/coap/`, `examples/mqtt-client/`, `examples/rpl-border-router/`; `tools/cooja/doc/ChangeLog.md` ("Avoid starting the AWT thread in headless mode").
 - Eclipse Mosquitto 2.0.11, [mosquitto.org](https://mosquitto.org/).
+- Wireshark/TShark 3.6.2, [wireshark.org](https://www.wireshark.org/) (disectores IEEE 802.15.4, 6LoWPAN, CoAP y MQTT).
 - Kurniawan, A. (2018). *Practical Contiki-NG: Programming for Wireless Sensor Networks*. Apress. Cap. "Contiki-NG en la nube".
 - Microsoft Learn: [Create an IoT hub](https://learn.microsoft.com/azure/iot-hub/create-hub), [Register and connect an IoT device](https://learn.microsoft.com/azure/iot-hub/create-connect-device?tabs=portal), [Understand the built-in endpoint](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-read-builtin).
 - Enunciado `TEL329-Tarea4-2026-v1.0.ipynb` (B. Contreras, UTFSM, 2026).

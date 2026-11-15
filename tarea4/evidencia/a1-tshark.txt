@@ -1,0 +1,48 @@
+# TShark (Wireshark) 3.6.2 (Git v3.6.2 packaged as 3.6.2-2)
+# tshark -o wpan.fcs_format:0 -r evidencia/a1-coap.pcap -Y coap
+# total de tramas en el pcap: 820
+# tramas con CoAP decodificado: 358
+#   POST: 179 · 2.04 Changed: 179
+#   MID distintos: 129 POST y 129 2.04 (-T fields -e coap.mid | sort -u). Las 50 de más son las peticiones a dos saltos,
+#   que el radio ve dos veces: la transmisión del cliente y el reenvío del mote intermedio, con el mismo MID.
+# primeras 40 líneas:
+   42  16.434000  ::204:4:4:4 → ::201:1:1:1  CoAP 81 CON, MID:17114, POST (text/plain), /sensores/temp
+   44  16.442000  ::201:1:1:1 → ::204:4:4:4  CoAP 56 ACK, MID:17114, 2.04 Changed (text/plain)
+   48  18.433000  ::202:2:2:2 → ::201:1:1:1  CoAP 81 CON, MID:13578, POST (text/plain), /sensores/temp
+   50  18.440000  ::201:1:1:1 → ::202:2:2:2  CoAP 56 ACK, MID:13578, 2.04 Changed (text/plain)
+   54  20.345000  ::203:3:3:3 → ::201:1:1:1  CoAP 81 CON, MID:22683, POST (text/plain), /sensores/temp
+   56  20.372000  ::201:1:1:1 → ::203:3:3:3  CoAP 56 ACK, MID:22683, 2.04 Changed (text/plain)
+   80  26.426000  ::204:4:4:4 → ::201:1:1:1  CoAP 81 CON, MID:17115, POST (text/plain), /sensores/temp
+   82  26.454000  ::201:1:1:1 → ::204:4:4:4  CoAP 56 ACK, MID:17115, 2.04 Changed (text/plain)
+   86  28.439000  ::202:2:2:2 → ::201:1:1:1  CoAP 81 CON, MID:13579, POST (text/plain), /sensores/temp
+   88  28.469000  ::201:1:1:1 → ::202:2:2:2  CoAP 56 ACK, MID:13579, 2.04 Changed (text/plain)
+   91  30.360000  ::203:3:3:3 → ::201:1:1:1  CoAP 81 CON, MID:22684, POST (text/plain), /sensores/temp
+   93  30.366624  ::201:1:1:1 → ::203:3:3:3  CoAP 56 ACK, MID:22684, 2.04 Changed (text/plain)
+   95  32.582000  ::205:5:5:5 → ::201:1:1:1  CoAP 89 CON, MID:65080, POST (text/plain), /sensores/temp
+   97  32.604000  ::205:5:5:5 → ::201:1:1:1  CoAP 90 CON, MID:65080, POST (text/plain), /sensores/temp
+   99  32.633000  ::201:1:1:1 → ::205:5:5:5  CoAP 64 ACK, MID:65080, 2.04 Changed (text/plain)
+  101  32.646000  ::201:1:1:1 → ::205:5:5:5  CoAP 73 ACK, MID:65080, 2.04 Changed (text/plain)
+  112  36.449000  ::204:4:4:4 → ::201:1:1:1  CoAP 81 CON, MID:17116, POST (text/plain), /sensores/temp
+  114  36.455624  ::201:1:1:1 → ::204:4:4:4  CoAP 56 ACK, MID:17116, 2.04 Changed (text/plain)
+  117  38.023000  ::206:6:6:6 → ::201:1:1:1  CoAP 89 CON, MID:48844, POST (text/plain), /sensores/temp
+  119  38.038000  ::206:6:6:6 → ::201:1:1:1  CoAP 90 CON, MID:48844, POST (text/plain), /sensores/temp
+  121  38.056000  ::201:1:1:1 → ::206:6:6:6  CoAP 64 ACK, MID:48844, 2.04 Changed (text/plain)
+  123  38.095000  ::201:1:1:1 → ::206:6:6:6  CoAP 73 ACK, MID:48844, 2.04 Changed (text/plain)
+  125  38.434000  ::202:2:2:2 → ::201:1:1:1  CoAP 81 CON, MID:13580, POST (text/plain), /sensores/temp
+  127  38.442000  ::201:1:1:1 → ::202:2:2:2  CoAP 56 ACK, MID:13580, 2.04 Changed (text/plain)
+  132  40.348000  ::203:3:3:3 → ::201:1:1:1  CoAP 81 CON, MID:22685, POST (text/plain), /sensores/temp
+  134  40.358000  ::201:1:1:1 → ::203:3:3:3  CoAP 56 ACK, MID:22685, 2.04 Changed (text/plain)
+  136  42.591000  ::205:5:5:5 → ::201:1:1:1  CoAP 89 CON, MID:65081, POST (text/plain), /sensores/temp
+  138  42.625000  ::205:5:5:5 → ::201:1:1:1  CoAP 90 CON, MID:65081, POST (text/plain), /sensores/temp
+  140  42.643000  ::201:1:1:1 → ::205:5:5:5  CoAP 64 ACK, MID:65081, 2.04 Changed (text/plain)
+  142  42.667000  ::201:1:1:1 → ::205:5:5:5  CoAP 73 ACK, MID:65081, 2.04 Changed (text/plain)
+  145  46.462000  ::204:4:4:4 → ::201:1:1:1  CoAP 81 CON, MID:17117, POST (text/plain), /sensores/temp
+  147  46.508000  ::201:1:1:1 → ::204:4:4:4  CoAP 56 ACK, MID:17117, 2.04 Changed (text/plain)
+  150  48.025000  ::206:6:6:6 → ::201:1:1:1  CoAP 89 CON, MID:48845, POST (text/plain), /sensores/temp
+  152  48.051000  ::206:6:6:6 → ::201:1:1:1  CoAP 90 CON, MID:48845, POST (text/plain), /sensores/temp
+  154  48.058000  ::201:1:1:1 → ::206:6:6:6  CoAP 64 ACK, MID:48845, 2.04 Changed (text/plain)
+  156  48.102000  ::201:1:1:1 → ::206:6:6:6  CoAP 73 ACK, MID:48845, 2.04 Changed (text/plain)
+  158  48.423000  ::202:2:2:2 → ::201:1:1:1  CoAP 81 CON, MID:13581, POST (text/plain), /sensores/temp
+  160  48.451000  ::201:1:1:1 → ::202:2:2:2  CoAP 56 ACK, MID:13581, 2.04 Changed (text/plain)
+  163  50.343000  ::203:3:3:3 → ::201:1:1:1  CoAP 81 CON, MID:22686, POST (text/plain), /sensores/temp
+  165  50.380000  ::201:1:1:1 → ::203:3:3:3  CoAP 56 ACK, MID:22686, 2.04 Changed (text/plain)

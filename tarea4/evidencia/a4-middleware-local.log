@@ -1,0 +1,62 @@
+Conectado a mqtt://127.0.0.1:1883 (MQTT 5) como middleware-contiki-ng-01; tema usm/tel329/cloud/contiki-ng-01/telemetry; consultando http://127.0.0.1:8080/ cada 3000 ms
+Contiki-NG local MQTT Middleware started.
+[sensor] http://127.0.0.1:8080/ -> {"temp":17,"hum":86}
+[mqtt] PUBLISH mid=59099 {"deviceId":"contiki-ng-01","temperature":17,"humidity":86,"timestamp":"2026-11-15T17:26:35.111Z"} temperatureAlert=false -> PUBACK en 4.94 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":32,"hum":85}
+[mqtt] PUBLISH mid=59100 {"deviceId":"contiki-ng-01","temperature":32,"humidity":85,"timestamp":"2026-11-15T17:26:38.164Z"} temperatureAlert=true -> PUBACK en 1.58 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":32,"hum":85}
+[mqtt] PUBLISH mid=59101 {"deviceId":"contiki-ng-01","temperature":32,"humidity":85,"timestamp":"2026-11-15T17:26:41.166Z"} temperatureAlert=true -> PUBACK en 1.07 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":30,"hum":87}
+[mqtt] PUBLISH mid=59102 {"deviceId":"contiki-ng-01","temperature":30,"humidity":87,"timestamp":"2026-11-15T17:26:44.166Z"} temperatureAlert=false -> PUBACK en 1.19 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":33,"hum":81}
+[mqtt] PUBLISH mid=59103 {"deviceId":"contiki-ng-01","temperature":33,"humidity":81,"timestamp":"2026-11-15T17:26:47.166Z"} temperatureAlert=true -> PUBACK en 3.52 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":30,"hum":81}
+[mqtt] PUBLISH mid=59104 {"deviceId":"contiki-ng-01","temperature":30,"humidity":81,"timestamp":"2026-11-15T17:26:50.169Z"} temperatureAlert=false -> PUBACK en 0.93 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":31,"hum":84}
+[mqtt] PUBLISH mid=59105 {"deviceId":"contiki-ng-01","temperature":31,"humidity":84,"timestamp":"2026-11-15T17:26:53.168Z"} temperatureAlert=true -> PUBACK en 0.81 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":30,"hum":85}
+[mqtt] PUBLISH mid=59106 {"deviceId":"contiki-ng-01","temperature":30,"humidity":85,"timestamp":"2026-11-15T17:26:56.172Z"} temperatureAlert=false -> PUBACK en 2.55 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":34,"hum":89}
+[mqtt] PUBLISH mid=59107 {"deviceId":"contiki-ng-01","temperature":34,"humidity":89,"timestamp":"2026-11-15T17:26:59.173Z"} temperatureAlert=true -> PUBACK en 1.67 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":21,"hum":89}
+[mqtt] PUBLISH mid=59108 {"deviceId":"contiki-ng-01","temperature":21,"humidity":89,"timestamp":"2026-11-15T17:27:02.171Z"} temperatureAlert=false -> PUBACK en 1.19 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":29,"hum":80}
+[mqtt] PUBLISH mid=59109 {"deviceId":"contiki-ng-01","temperature":29,"humidity":80,"timestamp":"2026-11-15T17:27:05.172Z"} temperatureAlert=false -> PUBACK en 0.73 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":22,"hum":83}
+[mqtt] PUBLISH mid=59110 {"deviceId":"contiki-ng-01","temperature":22,"humidity":83,"timestamp":"2026-11-15T17:27:08.175Z"} temperatureAlert=false -> PUBACK en 0.79 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":20,"hum":82}
+[mqtt] PUBLISH mid=59111 {"deviceId":"contiki-ng-01","temperature":20,"humidity":82,"timestamp":"2026-11-15T17:27:11.183Z"} temperatureAlert=false -> PUBACK en 4.63 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":36,"hum":83}
+[mqtt] PUBLISH mid=59112 {"deviceId":"contiki-ng-01","temperature":36,"humidity":83,"timestamp":"2026-11-15T17:27:14.180Z"} temperatureAlert=true -> PUBACK en 0.80 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":39,"hum":86}
+[mqtt] PUBLISH mid=59113 {"deviceId":"contiki-ng-01","temperature":39,"humidity":86,"timestamp":"2026-11-15T17:27:17.178Z"} temperatureAlert=true -> PUBACK en 1.09 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":27,"hum":83}
+[mqtt] PUBLISH mid=59114 {"deviceId":"contiki-ng-01","temperature":27,"humidity":83,"timestamp":"2026-11-15T17:27:20.176Z"} temperatureAlert=false -> PUBACK en 1.30 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":23,"hum":81}
+[mqtt] PUBLISH mid=59115 {"deviceId":"contiki-ng-01","temperature":23,"humidity":81,"timestamp":"2026-11-15T17:27:23.202Z"} temperatureAlert=false -> PUBACK en 1.38 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":19,"hum":85}
+[mqtt] PUBLISH mid=59116 {"deviceId":"contiki-ng-01","temperature":19,"humidity":85,"timestamp":"2026-11-15T17:27:26.179Z"} temperatureAlert=false -> PUBACK en 11.07 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":25,"hum":89}
+[mqtt] PUBLISH mid=59117 {"deviceId":"contiki-ng-01","temperature":25,"humidity":89,"timestamp":"2026-11-15T17:27:29.178Z"} temperatureAlert=false -> PUBACK en 1.00 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":39,"hum":82}
+[mqtt] PUBLISH mid=59118 {"deviceId":"contiki-ng-01","temperature":39,"humidity":82,"timestamp":"2026-11-15T17:27:32.222Z"} temperatureAlert=true -> PUBACK en 2.34 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":31,"hum":87}
+[mqtt] PUBLISH mid=59119 {"deviceId":"contiki-ng-01","temperature":31,"humidity":87,"timestamp":"2026-11-15T17:27:35.189Z"} temperatureAlert=true -> PUBACK en 1.22 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":16,"hum":80}
+[mqtt] PUBLISH mid=59120 {"deviceId":"contiki-ng-01","temperature":16,"humidity":80,"timestamp":"2026-11-15T17:27:38.193Z"} temperatureAlert=false -> PUBACK en 1.52 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":31,"hum":88}
+[mqtt] PUBLISH mid=59121 {"deviceId":"contiki-ng-01","temperature":31,"humidity":88,"timestamp":"2026-11-15T17:27:41.190Z"} temperatureAlert=true -> PUBACK en 0.96 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":21,"hum":87}
+[mqtt] PUBLISH mid=59122 {"deviceId":"contiki-ng-01","temperature":21,"humidity":87,"timestamp":"2026-11-15T17:27:44.191Z"} temperatureAlert=false -> PUBACK en 1.04 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":30,"hum":82}
+[mqtt] PUBLISH mid=59123 {"deviceId":"contiki-ng-01","temperature":30,"humidity":82,"timestamp":"2026-11-15T17:27:47.201Z"} temperatureAlert=false -> PUBACK en 4.54 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":38,"hum":82}
+[mqtt] PUBLISH mid=59124 {"deviceId":"contiki-ng-01","temperature":38,"humidity":82,"timestamp":"2026-11-15T17:27:50.197Z"} temperatureAlert=true -> PUBACK en 1.45 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":17,"hum":87}
+[mqtt] PUBLISH mid=59125 {"deviceId":"contiki-ng-01","temperature":17,"humidity":87,"timestamp":"2026-11-15T17:27:53.198Z"} temperatureAlert=false -> PUBACK en 1.46 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":33,"hum":80}
+[mqtt] PUBLISH mid=59126 {"deviceId":"contiki-ng-01","temperature":33,"humidity":80,"timestamp":"2026-11-15T17:27:56.200Z"} temperatureAlert=true -> PUBACK en 1.52 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":16,"hum":81}
+[mqtt] PUBLISH mid=59127 {"deviceId":"contiki-ng-01","temperature":16,"humidity":81,"timestamp":"2026-11-15T17:27:59.200Z"} temperatureAlert=false -> PUBACK en 0.94 ms
+[sensor] http://127.0.0.1:8080/ -> {"temp":21,"hum":83}
+[mqtt] PUBLISH mid=59128 {"deviceId":"contiki-ng-01","temperature":21,"humidity":83,"timestamp":"2026-11-15T17:28:02.200Z"} temperatureAlert=false -> PUBACK en 0.91 ms

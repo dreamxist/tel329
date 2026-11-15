@@ -10,7 +10,7 @@ tarea4/
 ├── respuestas.md                   las 4 actividades respondidas en un solo documento (empezar acá)
 ├── a1-coap/                        A1 · RPL Lite + CoAP en Cooja, y la mitad CoAP de la A3
 ├── a2-mqtt/                        A2 · RPL Lite + MQTT (border router + tunslip6 + Mosquitto), y la mitad MQTT de la A3
-├── a4-azure/                       A4 · sensor httpd-ws + rpl-border-router + middleware Node + suscriptor Azure
+├── a4-azure/                       A4 · sensor httpd-ws + rpl-border-router + middleware Node + broker MQTT local (Azure como variante) + suscriptor
 ├── evidencia/                      logs, pcap, CSV y resúmenes de las corridas (a1-*, a2-*, a4-*)
 └── entrega/                        lo que se sube a Aula: notebook con respuestas, informe, pendientes
 ```
@@ -44,8 +44,11 @@ docker run --rm --privileged -e CCACHE_DISABLE=1 -v ~/contiki-ng:/home/user/cont
 
 # A3 · no corre nada: las tablas salen de los dos resúmenes de arriba (ver respuestas.md)
 
-# A4 · sensor en el contenedor + middleware en --dry-run en el Mac (sin Azure); el paso a paso completo está en a4-azure/README.md
-docker run -d --name a4sensor --privileged -p 127.0.0.1:8080:8080 -e CCACHE_DISABLE=1 -v ~/contiki-ng:/home/user/contiki-ng -v "$PWD":/work -w /work/tarea4/a4-azure/sensor contiker/contiki-ng sleep infinity && docker exec a4sensor make CONTIKI=/home/user/contiki-ng TARGET=native && docker exec -d a4sensor sh -c './build/native/sensor-azure.native > /work/tarea4/evidencia/a4-sensor.log 2>&1' && docker exec -d a4sensor python3 /work/tarea4/a4-azure/router/tcp-forward.py 8080 fd00::302:304:506:708 80 && (cd tarea4/a4-azure/middleware && npm install && SENSOR_URL=http://127.0.0.1:8080/ node middleware-azure.js --dry-run)
+# A4 · sensor + puente + Mosquitto en el contenedor, middleware y suscriptor en el Mac (Node 22), 90 s; deja evidencia/a4-sensor-local.log, a4-mosquitto.log, a4-middleware-local.log, a4-subscriber-local.log y borra el contenedor
+tarea4/a4-azure/correr-local.sh 90
+
+# A3 · validación de los pcap con tshark en un contenedor efímero (evidencia/a1-tshark.txt, a2-tshark.txt)
+docker run --rm -v "$PWD":/work contiker/contiki-ng bash -c 'export DEBIAN_FRONTEND=noninteractive; sudo -E apt-get update -qq && sudo -E apt-get install -y -qq tshark; tshark -o wpan.fcs_format:0 -r /work/tarea4/evidencia/a1-coap.pcap -Y coap | head -40; tshark -r /work/tarea4/evidencia/a2-mqtt.pcap -Y mqtt | head -40'
 ```
 
 Los volúmenes de Gradle (`~/.gradle-contiker`, `tel329-gradle`) son opcionales:
@@ -59,8 +62,8 @@ a velocidad 1,0 porque el broker y `tunslip6` viven en el reloj del host.
 |---|---|---|---|
 | A1 · RPL Lite + CoAP | ✅ | ✅ | ✅ log, pcap, CSV, resumen · ⚠️ falta captura GUI |
 | A2 · RPL Lite + MQTT | ✅ | ✅ | ✅ logs, pcap en tun0, CSV, resumen · ⚠️ falta captura GUI |
-| A3 · CoAP vs MQTT | — (no lleva) | ✅ tabla por saltos + análisis | ⚠️ pcap sin validar en Wireshark |
-| A4 · Azure IoT Hub | ✅ | ✅ 4.a, 4.b, 4.c | ✅ sensor + middleware `--dry-run` en local · ❌ falta el envío real a Azure (dos cadenas de conexión) |
+| A3 · CoAP vs MQTT | — (no lleva) | ✅ tabla por saltos + análisis | ✅ pcap validados con tshark (`a1-tshark.txt`, `a2-tshark.txt`) |
+| A4 · Contiki-NG en la nube | ✅ | ✅ 4.a, 4.b, 4.c | ✅ cadena completa con broker MQTT local, 90 s, 30/30 mensajes, latencias · Azure IoT Hub implementado como variante, no ejecutado (sin suscripción) |
 
 Todo lo pendiente está marcado **[FALTA]** en [respuestas.md](respuestas.md) y
 con los pasos para cerrarlo en [entrega/Pendientes_Tarea4.md](entrega/Pendientes_Tarea4.md).

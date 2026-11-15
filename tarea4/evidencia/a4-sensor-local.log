@@ -1,0 +1,60 @@
+opened tun device ``/dev/tun0''
+tun0: flags=4305<UP,POINTOPOINT,RUNNING,NOARP,MULTICAST>  mtu 1500
+        inet 192.168.215.2  netmask 255.255.255.255  destination 192.168.215.2
+        inet6 fe80::2363:d666:e951:28a3  prefixlen 64  scopeid 0x20<link>
+        inet6 fd00::1  prefixlen 64  scopeid 0x0<global>
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 500  (UNSPEC)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[INFO: Main      ] Starting Contiki-NG-7a4df8a-dirty
+[INFO: Main      ] - Routing: RPL Lite
+[INFO: Main      ] - Net: tun6
+[INFO: Main      ] - MAC: nullmac
+[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+[INFO: Main      ] - 802.15.4 Default channel: 26
+[INFO: Main      ] Node ID: 1800
+[INFO: Main      ] Link-layer address: 0102.0304.0506.0708
+[INFO: Main      ] Tentative link-local IPv6 address: fe80::302:304:506:708
+[INFO: Native    ] Added global IPv6 address fd00::302:304:506:708
+[INFO: Sensor    ] HTTP server listening on port 80, serving {"temp","hum"}
+[INFO: Native    ] stdin closed (EOF); no longer monitoring stdin
+[ERR : IPv6      ] Unknown ICMPv6 message type/code 133
+[INFO: Sensor    ] GET / -> {"temp":19,"hum":88}
+[INFO: Sensor    ] GET / -> {"temp":36,"hum":82}
+[INFO: Sensor    ] GET / -> {"temp":17,"hum":86}
+[ERR : IPv6      ] Unknown ICMPv6 message type/code 133
+[INFO: Sensor    ] GET / -> {"temp":32,"hum":85}
+[INFO: Sensor    ] GET / -> {"temp":32,"hum":85}
+[ERR : IPv6      ] Unknown ICMPv6 message type/code 133
+[INFO: Sensor    ] GET / -> {"temp":30,"hum":87}
+[INFO: Sensor    ] GET / -> {"temp":33,"hum":81}
+[INFO: Sensor    ] GET / -> {"temp":30,"hum":81}
+[INFO: Sensor    ] GET / -> {"temp":31,"hum":84}
+[INFO: Sensor    ] GET / -> {"temp":30,"hum":85}
+[ERR : IPv6      ] Unknown ICMPv6 message type/code 133
+[INFO: Sensor    ] GET / -> {"temp":34,"hum":89}
+[INFO: Sensor    ] GET / -> {"temp":21,"hum":89}
+[INFO: Sensor    ] GET / -> {"temp":29,"hum":80}
+[INFO: Sensor    ] GET / -> {"temp":22,"hum":83}
+[INFO: Sensor    ] GET / -> {"temp":20,"hum":82}
+[INFO: Sensor    ] GET / -> {"temp":36,"hum":83}
+[INFO: Sensor    ] GET / -> {"temp":39,"hum":86}
+[INFO: Sensor    ] GET / -> {"temp":27,"hum":83}
+[INFO: Sensor    ] GET / -> {"temp":23,"hum":81}
+[INFO: Sensor    ] GET / -> {"temp":19,"hum":85}
+[ERR : IPv6      ] Unknown ICMPv6 message type/code 133
+[INFO: Sensor    ] GET / -> {"temp":25,"hum":89}
+[INFO: Sensor    ] GET / -> {"temp":39,"hum":82}
+[INFO: Sensor    ] GET / -> {"temp":31,"hum":87}
+[INFO: Sensor    ] GET / -> {"temp":16,"hum":80}
+[INFO: Sensor    ] GET / -> {"temp":31,"hum":88}
+[INFO: Sensor    ] GET / -> {"temp":21,"hum":87}
+[INFO: Sensor    ] GET / -> {"temp":30,"hum":82}
+[INFO: Sensor    ] GET / -> {"temp":38,"hum":82}
+[INFO: Sensor    ] GET / -> {"temp":17,"hum":87}
+[INFO: Sensor    ] GET / -> {"temp":33,"hum":80}
+[INFO: Sensor    ] GET / -> {"temp":16,"hum":81}
+[INFO: Sensor    ] GET / -> {"temp":21,"hum":83}

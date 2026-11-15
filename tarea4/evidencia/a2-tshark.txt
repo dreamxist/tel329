@@ -1,0 +1,52 @@
+# TShark (Wireshark) 3.6.2 (Git v3.6.2 packaged as 3.6.2-2)
+# tshark -r evidencia/a2-mqtt.pcap -Y mqtt
+# total de paquetes en el pcap: 901
+# paquetes con MQTT decodificado: 556
+#   CONNECT: 5
+#   CONNACK: 5
+#   PUBLISH: 273
+#   PUBACK: 273
+#   PUBLISH distintos por (ipv6.src, mqtt.msgid): 273 (sin retransmisiones de PUBLISH vistas en tun0)
+#   PINGREQ: 0
+#   DISCONNECT: 0
+# primeras 40 líneas:
+   11   3.124346 fd00::203:3:3:3 → fd00::1      MQTT 89 Connect Command
+   13   3.133394      fd00::1 → fd00::203:3:3:3 MQTT 64 Connect Ack
+   15   3.245079 fd00::203:3:3:3 → fd00::1      MQTT 119 Publish Message (id=3) [usm/tel329/temp]
+   16   3.246328      fd00::1 → fd00::203:3:3:3 MQTT 64 Publish Ack (id=3)
+   24   8.321664 fd00::203:3:3:3 → fd00::1      MQTT 119 Publish Message (id=5) [usm/tel329/temp]
+   25   8.322534      fd00::1 → fd00::203:3:3:3 MQTT 64 Publish Ack (id=5)
+   30   9.773701 fd00::202:2:2:2 → fd00::1      MQTT 89 Connect Command
+   32   9.791470      fd00::1 → fd00::202:2:2:2 MQTT 64 Connect Ack
+   42  13.275203 fd00::203:3:3:3 → fd00::1      MQTT 119 Publish Message (id=7) [usm/tel329/temp]
+   43  13.275627      fd00::1 → fd00::203:3:3:3 MQTT 64 Publish Ack (id=7)
+   45  13.359693 fd00::202:2:2:2 → fd00::1      MQTT 119 Publish Message (id=3) [usm/tel329/temp]
+   47  13.360024      fd00::1 → fd00::202:2:2:2 MQTT 64 Publish Ack (id=3)
+   54  15.579864 fd00::205:5:5:5 → fd00::1      MQTT 89 Connect Command
+   56  15.580076      fd00::1 → fd00::205:5:5:5 MQTT 64 Connect Ack
+   60  16.188579 fd00::205:5:5:5 → fd00::1      MQTT 119 Publish Message (id=3) [usm/tel329/temp]
+   61  16.188731      fd00::1 → fd00::205:5:5:5 MQTT 64 Publish Ack (id=3)
+   66  18.341155 fd00::203:3:3:3 → fd00::1      MQTT 119 Publish Message (id=9) [usm/tel329/temp]
+   67  18.341337      fd00::1 → fd00::203:3:3:3 MQTT 64 Publish Ack (id=9)
+   73  19.859781 fd00::202:2:2:2 → fd00::1      MQTT 119 Publish Message (id=5) [usm/tel329/temp]
+   75  19.860147      fd00::1 → fd00::202:2:2:2 MQTT 64 Publish Ack (id=5)
+   78  21.130184 fd00::205:5:5:5 → fd00::1      MQTT 119 Publish Message (id=5) [usm/tel329/temp]
+   79  21.130452      fd00::1 → fd00::205:5:5:5 MQTT 64 Publish Ack (id=5)
+   84  22.458122 fd00::204:4:4:4 → fd00::1      MQTT 89 Connect Command
+   86  22.458366      fd00::1 → fd00::204:4:4:4 MQTT 64 Connect Ack
+   87  23.320613 fd00::203:3:3:3 → fd00::1      MQTT 119 Publish Message (id=11) [usm/tel329/temp]
+   88  23.320874      fd00::1 → fd00::203:3:3:3 MQTT 64 Publish Ack (id=11)
+   92  24.918406 fd00::202:2:2:2 → fd00::1      MQTT 119 Publish Message (id=7) [usm/tel329/temp]
+   93  24.918646      fd00::1 → fd00::202:2:2:2 MQTT 64 Publish Ack (id=7)
+   97  26.048332 fd00::204:4:4:4 → fd00::1      MQTT 119 Publish Message (id=3) [usm/tel329/temp]
+   99  26.048565      fd00::1 → fd00::204:4:4:4 MQTT 64 Publish Ack (id=3)
+  100  26.245679 fd00::205:5:5:5 → fd00::1      MQTT 119 Publish Message (id=7) [usm/tel329/temp]
+  101  26.245891      fd00::1 → fd00::205:5:5:5 MQTT 64 Publish Ack (id=7)
+  104  28.282511 fd00::203:3:3:3 → fd00::1      MQTT 119 Publish Message (id=13) [usm/tel329/temp]
+  105  28.282826      fd00::1 → fd00::203:3:3:3 MQTT 64 Publish Ack (id=13)
+  107  29.879053 fd00::202:2:2:2 → fd00::1      MQTT 119 Publish Message (id=9) [usm/tel329/temp]
+  108  29.879409      fd00::1 → fd00::202:2:2:2 MQTT 64 Publish Ack (id=9)
+  110  31.022661 fd00::204:4:4:4 → fd00::1      MQTT 119 Publish Message (id=5) [usm/tel329/temp]
+  111  31.023366      fd00::1 → fd00::204:4:4:4 MQTT 64 Publish Ack (id=5)
+  112  31.199602 fd00::205:5:5:5 → fd00::1      MQTT 119 Publish Message (id=9) [usm/tel329/temp]
+  113  31.199826      fd00::1 → fd00::205:5:5:5 MQTT 64 Publish Ack (id=9)

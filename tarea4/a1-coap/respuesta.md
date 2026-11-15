@@ -60,4 +60,4 @@ En resumen: en esta red el tiempo de respuesta de CoAP es, en mediana, **47 ms a
 - `tarea4/evidencia/a1-tiempos-coap.csv` — una fila por petición (129).
 - `tarea4/evidencia/a1-resumen-coap.md` — el resumen que genera `tiempos.py`.
 - `[FALTA]` captura de pantalla de la GUI (Visualizer/Timeline/Radio Logger): la corrida se hizo headless; el `a1-coap.csc` queda listo para abrirlo y sacarla.
-- `[FALTA]` el pcap no se validó con Wireshark/tshark (no están instalados en la máquina); se validó la estructura con Python (magic, linktype 195, 428 data + 392 ACK, payload CoAP legible en 358 tramas de datos).
+- El pcap se validó con `tshark` 3.6.2 (`-o wpan.fcs_format:0`, salida en `evidencia/a1-tshark.txt`): de las 820 tramas, 358 decodifican hasta CoAP, 179 `CON POST /sensores/temp` y 179 `ACK 2.04 Changed`, con 129 MID distintos de cada uno (las 129 peticiones del log; las 50 de más son el reenvío del mote intermedio en las peticiones a dos saltos).
