@@ -6,6 +6,7 @@ Repo del ramo. Una carpeta por entrega, cada una autocontenida.
 |---|---|---|
 | [tarea1/](tarea1/) | Cooja, difusión, temporizadores y capa de enlace (NullNet + TSCH manual) | jue 27-ago-2026 ✅ |
 | [tarea3/](tarea3/) | uIP y RPL (`rpl-udp`, RPL Lite vs. Classic) | jue 22-oct-2026 |
+| [tarea4/](tarea4/) | Mensajería CoAP y MQTT sobre RPL Lite, tiempos de respuesta, sensores en Azure IoT Hub | jue 19-nov-2026 |
 
 La Tarea 2 no está acá: su enunciado existe (`TEL329-Tarea2-2026-v1.0.ipynb`, del
 22-sep) pero no se trabajó en este repo. Revisar en Aula si quedó entregada — las
